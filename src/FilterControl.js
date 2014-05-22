@@ -13,8 +13,10 @@ var FilterControl = L.Control.extend({
     initialize: function (options) {
         L.setOptions(this, options);
         this.dimension = this.options.dimension;
-        this.filters = {};
 
+        this._numItems = 0;
+        this.filters = {};
+	
         this._initLayout();
         this._initItems();
         this.update();
@@ -23,15 +25,25 @@ var FilterControl = L.Control.extend({
     container: function () { return this._container; },
 
     update: function () {
-        var group = this.dimension.group();
+        var group = this.dimension.group(),
+            filteredData = group.all();
+
+        if (!filteredData.length && !this._numItems) {
+            return;
+        }
+
+        this._initItems();
 
         if (this.options.type === 'radio') {
-            var label = this.filters['All'];
-            label.children[1].innerHTML = this._label(group.all().reduce(function (p, c) { 
-                return { key: "All", value: p.value + c.value };
-            }), true);
+            var label = this.filters.All;
+
+            if (filteredData.length) {
+                label.children[1].innerHTML = this._label(filteredData.reduce(function (p, c) { 
+                    return { key: "All", value: p.value + c.value };
+                }), true);
+            }
         }
-        group.all().forEach(function (item) {
+        filteredData.forEach(function (item) {
             var label = this.filters[item.key];
             label.children[1].innerHTML = this._label(item);
         }, this);
@@ -63,16 +75,20 @@ var FilterControl = L.Control.extend({
     },
 
     _initItems: function () {
-        var group = this.dimension.group();
+        var group = this.dimension.group(),
+            filteredData = group.all();
 
-        if (this.options.type === 'radio') {
-            this.filters['All'] = this._addItem(group.all().reduce(function (p, c) { 
+        if (this.options.type === 'radio' && filteredData.length && !this.filters.All) {
+            this.filters.All = this._addItem(filteredData.reduce(function (p, c) { 
                 return { key: "All", value: p.value + c.value };
             }), true);
         }
 
-        group.all().forEach(function (item) {
-            this.filters[item.key] = this._addItem(item);
+        filteredData.forEach(function (item) {
+            if (!this.filters[item.key]) {
+                this._numItems++;
+                this.filters[item.key] = this._addItem(item);
+            }
         }, this);
     },
 
@@ -112,9 +128,9 @@ var FilterControl = L.Control.extend({
     },
 
     _label: function (item) {
-        return item.key;
+        // return item.key;
         // TODO: Fix filter count values updating.
-        // return ' ' + item.key + ' (' + item.value + ')';
+        return ' ' + item.key + ' (' + item.value + ')';
     },
 
     _onInputClick: function () {
