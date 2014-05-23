@@ -303,10 +303,25 @@ textarea {
     }
 }
 
+/* UNHCR-specific */
 html,
 body,
 #map {
-  height: 90%;
+    height: 90%;
+  }
+/* Temporary filter styles for neatness during development */
+div.filter {
+    float: left;
+    padding: 10px;
+    font-size: 0.8em;
 }
-#activityCategoryFilter {
+div.filter form label {
+    display: block;
 }
+div#activityCategory,
+div#activityName,
+div#startDate,
+div#endDate {
+    height: 150px;
+}
+
