@@ -9,19 +9,19 @@ var $ = require('jquery'),
     crossfilter = require('crossfilter'),
     console = require('console'),
     categoryFilter = require("./CategoryFilter");
-// Mapbox automatically attaches to Leaflet's L.
+// Mapbox doesn't need its own var - it automatically attaches to Leaflet's L.
 require('mapbox.js');
 
 // Initialize the map, using Affinity Bridge's mapbox account.
 var map = L.mapbox.map('map', 'affinitybridge.ia7h38nj');
 // Add the data layer to the map.
 var dataLayer = L.geoJson(null, {
-    // Add the info popups - commented out for now
+    // Add the info popups.
     onEachFeature: function (feature, layer) {
-        layer.bindPopup(feature.properties.locationName);
+        var comments = feature.properties.comments ? feature.properties.comments.replace(/\r\n|\n|\r/g, '<br />') : null;
+        layer.bindPopup('<h3>' + feature.properties.locationName + '</h3>' + comments);
     }
 }).addTo(map);
-
 
 // Define the filters
 // TODO: add the filters as an array, so we can loop through them later
@@ -157,7 +157,8 @@ var cf_14 = categoryFilter({
 */
 
 
-// Special dimension, used to grab the final set of data with all other dimensions' filters applied.
+// Special meta-dimension for our crossFilter dimensions, used to grab the final set
+// of data with all other dimensions' filters applied.
 var dimension = cf.dimension(function (f) { return f.properties.activityCategory; });
 
 // Whenever the user changes their selection in the filters, run our update() method.
@@ -188,7 +189,7 @@ cf_14.on('update', update);
 */
 
 // Define the data sources.
-// TODO: provide a way to administer the data sources.
+// TODO: aggregate these separately.
 var jsonSourceURLs = [
     "https://www.syrianrefugeeresponse.org/resources/sites/points?activity=5574",
     "https://www.syrianrefugeeresponse.org/resources/sites/points?activity=5579",
@@ -198,6 +199,7 @@ var jsonSourceURLs = [
 ];
 
 // Store the data as it comes in asynchronously, and update the filters and the map layer.
+// TODO: once we're aggregating the data sources separately, we won't need this anymore.
 var jsonSources = [],
     onSuccess = function (data, textStatus, jqXHR) {
         jsonSources = jsonSources.concat(data.features);
