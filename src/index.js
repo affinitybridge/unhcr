@@ -5,7 +5,7 @@
 
 // Require some libs. 
 var $ = require('jquery'),
-    L = require('leaflet'),
+//    L = require('leaflet'),
     crossfilter = require('crossfilter'),
     console = require('console'),
     categoryFilter = require("./CategoryFilter");
