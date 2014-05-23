@@ -14,6 +14,9 @@ var jQuery = require('jquery'),
 
 var CategoryFilter = BaseFilter.extend({
     initialize: function (dimension, container, options) {
+
+        if (!container) { container = document.getElementById(options.container); }
+
         this._filter = filterControl({ dimension: dimension, type: options.type });
 
         this._filter.on('filter', function (e) {
