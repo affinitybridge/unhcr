@@ -15,19 +15,21 @@ var jQuery = require('jquery'),
 var CategoryFilter = BaseFilter.extend({
     initialize: function (dimension, container, options) {
 
-        if (!container) { container = document.getElementById(options.container); }
+        if (options && dimension ) {
+            if (!container) { container = document.getElementById(options.container); }
 
-        this._filter = filterControl({ dimension: dimension, type: options.type });
+            this._filter = filterControl({ dimension: dimension, type: options.type });
 
-        this._filter.on('filter', function (e) {
-            dimension.filterAll();
-            dimension.filter(function (f) {
-                return e.active.length === 0 ? true : jQuery.inArray(f, e.active) >= 0;
-            });
-            this.render();
-        }, this);
+            this._filter.on('filter', function (e) {
+                dimension.filterAll();
+                dimension.filter(function (f) {
+                    return e.active.length === 0 ? true : jQuery.inArray(f, e.active) >= 0;
+                });
+                this.render();
+            }, this);
 
-        container.appendChild(this._filter.container());
+            container.appendChild(this._filter.container());
+        }
     },
 
     update: function () {

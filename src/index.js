@@ -5,22 +5,52 @@
 
 // Require some libs. 
 var $ = require('jquery'),
-//    L = require('leaflet'),
     crossfilter = require('crossfilter'),
     console = require('console'),
     categoryFilter = require("./CategoryFilter");
 // Mapbox doesn't need its own var - it automatically attaches to Leaflet's L.
 require('mapbox.js');
+// Awesome Markers needs to be referred to by file path, because it's not in the build.
+// TODO: make Awesome Markers be properly part of the package.
+require('./leaflet.awesome-markers.js');
 
 // Initialize the map, using Affinity Bridge's mapbox account.
 var map = L.mapbox.map('map', 'affinitybridge.ia7h38nj');
+
 // Add the data layer to the map.
 var dataLayer = L.geoJson(null, {
+
+    // Add the font-style markers.
+    pointToLayer: function (feature) {
+        // TODO: streamline this JS, use an array or something.
+        // Match possible Activity Categories to Humanitarian Font icons.
+        var glyph = "heart";
+        var markerColor = "blue";
+        if (feature.properties.activityCategory) {
+            var activityCategory = feature.properties.activityCategory;
+            if (activityCategory == 'FOOD') { glyph = 'food'; markerColor = "red"; }
+            if (activityCategory == 'CASH') { glyph = 'money'; markerColor = "green"; }
+            if (activityCategory == 'NFI') { glyph = 'gift'; markerColor = "orange"; }
+            if (activityCategory == 'PROTECTION') { glyph = 'icon-ocha-sector-protection'; markerColor = "blue"; }
+            if (activityCategory == 'SHELTER') { glyph = 'home'; markerColor = "cadetblue"; }
+        }
+
+        // Create the icon
+        var fontIcon = L.AwesomeMarkers.icon({
+            icon: glyph,
+            prefix: 'icon', // necessary because Humanitarian Fonts prefixes their icon names with "icon"
+            markerColor: markerColor
+        });
+        return L.marker(feature.geometry.coordinates.reverse(), {icon: fontIcon});
+    },
+
     // Add the info popups.
     onEachFeature: function (feature, layer) {
+        // Preserve the line breaks in the original comment.
         var comments = feature.properties.comments ? feature.properties.comments.replace(/\r\n|\n|\r/g, '<br />') : null;
         layer.bindPopup('<h3>' + feature.properties.locationName + '</h3>' + comments);
     }
+
 }).addTo(map);
 
 // Define the filters
@@ -34,7 +64,7 @@ var cf_partnerName = categoryFilter({
 }, cf);
 var cf_activityCategory = categoryFilter({
     container: 'activityCategory',
-    type: 'checkbox',
+    type: 'radio',
     key: 'activityCategory',
     empty: 'Not even in a category'
 }, cf);
@@ -63,7 +93,10 @@ var cf_endDate = categoryFilter({
     empty: 'No data'
 }, cf);
 
-/* The rest of these fields have a data structure which FilterControl.js can't handle yet.
+/*
+The rest of these fields have a data structure which FilterControl.js can't handle yet.
+TODO: adapt the filter code and the geoJSON to work with each other.
+
 var cf_indicators = categoryFilter({
     container: 'indicatorsFilter',
     type: 'checkbox',
@@ -159,7 +192,7 @@ var cf_14 = categoryFilter({
 
 // Special meta-dimension for our crossFilter dimensions, used to grab the final set
 // of data with all other dimensions' filters applied.
-var dimension = cf.dimension(function (f) { return f.properties.activityCategory; });
+var metaDimension = cf.dimension(function (f) { return f.properties.activityCategory; });
 
 // Whenever the user changes their selection in the filters, run our update() method.
 // Bind the update() method to the "update" event on the category filter.
@@ -249,6 +282,6 @@ function update() {
 // Clear the data layer and re-render.
 function render() {
     dataLayer.clearLayers();
-    dataLayer.addData(dimension.top(Infinity));
+    dataLayer.addData(metaDimension.top(Infinity));
 }
 
