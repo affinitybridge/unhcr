@@ -325,3 +325,14 @@ div#endDate {
     height: 150px;
 }
 
+.awesome-marker i {
+    font-size: 18px !important;
+    margin: 7px 0 0 3px !important;
+} 
+.awesome-marker i.icon-ocha-sector-protection,
+.awesome-marker i.icon-ocha-sector-livelihood,
+.awesome-marker i.icon-ocha-sector-education,
+.awesome-marker i.icon-ocha-sector-wash {
+    font-size: 24px !important;
+    margin: 2px 0 0 8px !important;    
+}

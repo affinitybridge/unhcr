@@ -13,6 +13,7 @@ require('mapbox.js');
 // Awesome Markers needs to be referred to by file path, because it's not in the build.
 // TODO: make Awesome Markers be properly part of the package, so it downloads automatically.
 require('./leaflet.awesome-markers.js');
+var fs = require('fs');
 
 // Initialize the map, using Affinity Bridge's mapbox account.
 var map = L.mapbox.map('map', 'affinitybridge.ia7h38nj');
@@ -37,7 +38,9 @@ for (var i=0, len=iconGlyphs.length; i < len; i++){
     iconObjects[iconGlyphs[i].category] = L.AwesomeMarkers.icon({
         icon: iconGlyphs[i].glyph,
         prefix: 'icon', // necessary because Humanitarian Fonts prefixes its icon names with "icon"
-        markerColor: iconGlyphs[i].markerColor
+        iconColor: iconGlyphs[i].markerColor,
+        markerColor: "white",
+        extraClasses: iconGlyphs[i].category
     });
 }
 
@@ -62,7 +65,7 @@ cf_activityName.on('update', update);
 
 // Get the pre-compiled JSON from the file, and loop through it creating markers.
 jQuery.getJSON( "src/compiled.json", function( data ) {
-    $.each( data.features, function( key, feature ) {
+    $.each( data, function( key, feature ) {
 
         // Create and add the markers.
         var serviceMarker = L.marker(feature.geometry.coordinates.reverse(),
@@ -79,7 +82,7 @@ jQuery.getJSON( "src/compiled.json", function( data ) {
     });
 
     // Add the new data to the crossfilter
-    cf.add(data.features);
+    cf.add(data);
 
     // Add the markers to the map
     update();
