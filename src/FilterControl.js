@@ -117,10 +117,16 @@ var FilterControl = L.Control.extend({
         L.DomEvent.on(input, 'click', this._onInputClick, this);
 
         var name = L.DomUtil.create('span', 'filter-label-value');
+
+        // UNHCR: add the corresponding Humanitarian Font symbols.
+        var filterNameParts = filter.key.split(' ');
+        var glyph = L.DomUtil.create('span', 'glyph ' + filterNameParts[0]);
+
         name.innerHTML = this._label(filter);
 
         label.appendChild(input);
         label.appendChild(name);
+        label.appendChild(glyph);
 
         this._form.appendChild(label);
 

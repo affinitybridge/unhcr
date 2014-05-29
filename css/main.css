@@ -303,11 +303,13 @@ textarea {
     }
 }
 
-/* UNHCR-specific */
+/*
+ * UNHCR-specific
+ */
 html,
-body,
+body { height: 100%; }
 #map {
-    height: 90%;
+    height: 70%;
   }
 /* Temporary filter styles for neatness during development */
 div.filter {
@@ -325,3 +327,44 @@ div#endDate {
     height: 150px;
 }
 
+/* Marker styles */
+.awesome-marker i {
+    font-size: 18px !important;
+    margin: 6px 0 0 4px !important;
+} 
+.awesome-marker i.icon-ocha-sector-protection,
+.awesome-marker i.icon-ocha-sector-livelihood,
+.awesome-marker i.icon-ocha-sector-education,
+.awesome-marker i.icon-ocha-sector-wash {
+    font-size: 24px !important;
+    margin: 2px 0 0 8px !important;    
+}
+
+/* Filter styles */
+span.glyph {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 18px;
+    padding: 0 5px;
+}
+span.glyph.Basic:before {
+    content: "\f36a";
+    color: #026cb6;
+}
+span.glyph.Child:before {
+    content: "\f368";
+    color: #1f4981;
+}
+span.glyph.Maintain:before {
+    content: "\f0f5";
+    color: #948a54;
+}
+span.glyph.Need:before {
+    content: "\f0d6";
+    color: #c00000;
+}
+span.glyph.Shelter:before {
+    content: "\f015";
+    color: #ffc000;
+}
