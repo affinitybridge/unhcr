@@ -1,0 +1,2339 @@
+{
+  "type" : "FeatureCollection",
+  "features" : [ {
+    "type" : "Feature",
+    "id" : 88298441,
+    "properties" : {
+      "locationName" : "Mafraq City",
+      "partnerName" : "CARE",
+      "comments" : "The CARE Emergency Cash Assistance designed to supplement regular cash payments .These payments are made to refugees found to be especially vulnerable, which is defined as living below the poverty line.\nSamah AL Zoubi \nSamah.AlZoubi@jo.care.org  \n778400339\n",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Urgent cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Follow up call" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "6. Availability" : {
+        "Every Day" : true
+      },
+      "7. Availability Day" : {
+        "Sun-Thurs" : true
+      },
+      "8. Office Open at" : {
+        "8:00am" : true
+      },
+      "9. Office close at" : {
+        "Close at 16:00pm" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Referrals only" : true
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : true
+      },
+      "1. Registration Type Requirement" : {
+        "Expired and Valid UNHCR ASC and MOI" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 36.20804, 32.34289 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 107128290,
+    "properties" : {
+      "locationName" : "Liwa Bani Ubayid",
+      "partnerName" : "ACF",
+      "comments" : "\nEmilie CROCI\nfieldmanager-ir@jo.missions-acf.org\n7 79 29 13 21\ndeputyfslpm-ir@jo.missions-acf.org",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Regular unconditional cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Follow up call" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "6. Availability" : {
+        "Once a month" : true
+      },
+      "2. Nationality" : {
+        "Jordanians only" : true
+      },
+      "1. Registration Type Requirement" : {
+        "MOI card" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Referrals only" : true
+      },
+      "5. Coverage" : {
+        "City where the service is located" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.88602, 32.44761 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 248295481,
+    "properties" : {
+      "locationName" : "Ajlun City",
+      "partnerName" : "ACTED",
+      "comments" : "Targeted Districts:\nQasabet Ajloun,Kofranja District \n\nafter cross check on our database if referred cases not  by ACTED we continue follow up the case. -all Referral cases will be taken through ACTED scoring system. unconditional assistant.                                   -all assistant provided by ACTED  it is houshold assisstant.             cash assisstant for each household for just 3 months \nNesreen Abu Dalbooh\nmafraq.database@acted.org\n798020992\nHAMMAM SHDIFAT  (0798021476)                mafraq.commob@acted.org",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2013-11-26",
+      "endDate" : "2014-03-31",
+      "indicators" : {
+        "Urgent cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : false,
+        "Delay One month" : true,
+        "Delay One day" : false,
+        "Delay One week" : false
+      },
+      "10. Referral Method" : {
+        "RAIS" : false,
+        "IA Form" : false,
+        "Telephone on a per case basis" : false,
+        "No Referral" : false,
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Client approaches receiving organisation" : false,
+        "Follow up call" : true,
+        "Call to arrange  home visit" : false
+      },
+      "12. Response delay after referrals" : {
+        "One week" : false,
+        "More than a month" : false,
+        "One month" : false,
+        "One day" : false,
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "No feedback mecanism" : false,
+        "Email to refering organisation" : true,
+        "Excel Tracking table" : false,
+        "Sending back IA form signed" : false,
+        "With consent of the beneficiary" : false,
+        "Event entered in RAIS" : false,
+        "Phone call to sender organisation" : false,
+        "To be requested by the sending organisation" : false,
+        "Case Conference" : false
+      },
+      "6. Availability" : {
+        "One Off" : false,
+        "Once a week" : false,
+        "Once a month" : false,
+        "One time" : false,
+        "Biweekly" : false,
+        "Once per trimester or more" : false,
+        "Bimonthly" : true,
+        "Every Day" : false
+      },
+      "7. Availability Day" : {
+        "Fridays only" : false,
+        "Wednesdays only" : false,
+        "Mondays only" : false,
+        "Sundays only" : false,
+        "Sun-Thurs" : true,
+        "Thursdays only" : false,
+        "Saturdays only" : false,
+        "Mon-Thurs  and Sat" : false,
+        "Tuesdays only" : false
+      },
+      "8. Office Open at" : {
+        "10:30am" : false,
+        "14:00pm" : false,
+        "11:00am" : false,
+        "10:00am" : false,
+        "9:30am" : false,
+        "11:30am" : false,
+        "13:00pm" : false,
+        "8:00am" : true,
+        "12:00am" : false,
+        "Always open" : false,
+        "9:00am" : false,
+        "8:30am" : false
+      },
+      "9. Office close at" : {
+        "Close at 12:00am" : false,
+        "Close at 19:00pm" : false,
+        "Close at 18:00pm" : false,
+        "Never closed" : false,
+        "Close at 13:00pm" : false,
+        "Close at 12:30pm" : false,
+        "Close at 16:00pm" : false,
+        "Close at 15:00pm" : false,
+        "Close at 14:00pm" : false,
+        "Close at 17:00pm" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true,
+        "Syrians only" : false,
+        "Other nationalities only" : false,
+        "Jordanians only" : false
+      },
+      "3. Intake Criteria" : {
+        "Unaccompanied or separated child" : false,
+        "Single parent or caregiver" : false,
+        "SGBV" : false,
+        "Child at risk" : false,
+        "Older person at risk" : false,
+        "Disability" : false,
+        "Specific legal and physical protection needs" : false,
+        "Family unity" : false,
+        "Woman at risk" : false,
+        "Serious medical condition" : false,
+        "Torture" : false,
+        "Specific Vulnerability Calculation/Scoring" : true,
+        "Open to all" : false
+      },
+      "4. Accessibility" : {
+        "Hotline and follow up home visit" : false,
+        "Outreach" : true,
+        "Walk-in" : false,
+        "Outreach, Information hotline" : false,
+        "All the above" : false,
+        "Referrals only" : false
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : false,
+        "Central" : false,
+        "Governorate & Adjacent Governorates" : false,
+        "Countrywide" : false,
+        "Office location only - walk in distance" : false,
+        "North" : true,
+        "South" : false,
+        "District where the service is located" : false,
+        "City where the service is located" : false
+      },
+      "1. Registration Type Requirement" : {
+        "UNHCR ASC" : false,
+        "Copy of Proof of Syrian ID" : false,
+        "MOI card" : false,
+        "Orginal Proof of Syrian ID" : false,
+        "Expired and Valid UNHCR ASC and MOI" : true,
+        "No Requirement" : false,
+        "Valid UNHCR ASC and MOI card" : false
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.75238, 32.33385 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 313532962,
+    "properties" : {
+      "locationName" : "Amman Governorate",
+      "partnerName" : "OXFAM",
+      "comments" : "\nEmily Sloane \nesloane@oxfam.org.uk\n790219646\nEmily Sloane, esloane@oxfam.org.uk, 0790216946, Nedal Arabyat, narabyat@oxfam.org.uk, 0790219651",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Urgent cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Follow up call" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Phone call to sender organisation" : true
+      },
+      "6. Availability" : {
+        "One Off" : true
+      },
+      "7. Availability Day" : {
+        "Sun-Thurs" : true
+      },
+      "8. Office Open at" : {
+        "9:00am" : true
+      },
+      "9. Office close at" : {
+        "Close at 17:00pm" : true
+      },
+      "2. Nationality" : {
+        "Syrians only" : true
+      },
+      "3. Intake Criteria" : {
+        "Older person at risk" : true
+      },
+      "4. Accessibility" : {
+        "Outreach, Information hotline" : true
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : true
+      },
+      "1. Registration Type Requirement" : {
+        "Expired and Valid UNHCR ASC and MOI" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.945705, 31.956582 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 621269864,
+    "properties" : {
+      "locationName" : "Liwa Bani Kinanah",
+      "partnerName" : "MC",
+      "comments" : "\nHala Abu Tayeh\nhabutayeh@jo.mercycorps.org\n77 63 77 999\nHala Abu Tayeh, habutayeh@jo.mercycorps.org",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Urgent cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Call to arrange  home visit" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "6. Availability" : {
+        "One Off" : true
+      },
+      "7. Availability Day" : {
+        "Sun-Thurs" : true
+      },
+      "8. Office Open at" : {
+        "9:00am" : true
+      },
+      "2. Nationality" : {
+        "Syrians only" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Outreach" : true
+      },
+      "5. Coverage" : {
+        "District where the service is located" : true
+      },
+      "1. Registration Type Requirement" : {
+        "Expired and Valid UNHCR ASC and MOI" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.76732, 32.67996 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 658975942,
+    "properties" : {
+      "locationName" : "Liwa ar Ramtha",
+      "partnerName" : "MC",
+      "comments" : "\nHala Abu Tayeh\nhabutayeh@jo.mercycorps.org\n77 63 77 999\nHala Abu Tayeh, habutayeh@jo.mercycorps.org",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Urgent cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Call to arrange  home visit" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "6. Availability" : {
+        "One Off" : true
+      },
+      "7. Availability Day" : {
+        "Sun-Thurs" : true
+      },
+      "8. Office Open at" : {
+        "9:00am" : true
+      },
+      "2. Nationality" : {
+        "Syrians only" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Outreach" : true
+      },
+      "5. Coverage" : {
+        "District where the service is located" : true
+      },
+      "1. Registration Type Requirement" : {
+        "Expired and Valid UNHCR ASC and MOI" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.98125, 32.62517 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 715818392,
+    "properties" : {
+      "locationName" : "Liwa Bani Ubayid",
+      "partnerName" : "ACF",
+      "comments" : "\nEmilie CROCI\nfieldmanager-ir@jo.missions-acf.org\n7 79 29 13 21\ndeputyfslpm-ir@jo.missions-acf.org",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Regular unconditional cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Follow up call" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "6. Availability" : {
+        "Once a month" : true
+      },
+      "2. Nationality" : {
+        "Jordanians only" : true
+      },
+      "1. Registration Type Requirement" : {
+        "MOI card" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Referrals only" : true
+      },
+      "5. Coverage" : {
+        "City where the service is located" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.88602, 32.44761 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 908808587,
+    "properties" : {
+      "locationName" : "Mafraq Governorate",
+      "partnerName" : "MC",
+      "comments" : "\nHala Abu Tayeh\nhabutayeh@jo.mercycorps.org\n77 63 77 999\nHala Abu Tayeh, habutayeh@jo.mercycorps.org",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Urgent cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Call to arrange  home visit" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "6. Availability" : {
+        "One Off" : true
+      },
+      "7. Availability Day" : {
+        "Sun-Thurs" : true
+      },
+      "8. Office Open at" : {
+        "9:00am" : true
+      },
+      "2. Nationality" : {
+        "Syrians only" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Outreach" : true
+      },
+      "5. Coverage" : {
+        "District where the service is located" : true
+      },
+      "1. Registration Type Requirement" : {
+        "Expired and Valid UNHCR ASC and MOI" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 38.318316, 32.42128 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1146689772,
+    "properties" : {
+      "locationName" : "Zarqa Governorate",
+      "partnerName" : "MC",
+      "comments" : "\nHala Abu Tayeh\nhabutayeh@jo.mercycorps.org\n77 63 77 999\nHala Abu Tayeh, habutayeh@jo.mercycorps.org",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Urgent cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Call to arrange  home visit" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "6. Availability" : {
+        "One Off" : true
+      },
+      "7. Availability Day" : {
+        "Sun-Thurs" : true
+      },
+      "8. Office Open at" : {
+        "9:00am" : true
+      },
+      "2. Nationality" : {
+        "Syrians only" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Outreach" : true
+      },
+      "5. Coverage" : {
+        "District where the service is located" : true
+      },
+      "1. Registration Type Requirement" : {
+        "Expired and Valid UNHCR ASC and MOI" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 36.0349833333333, 32.0263416666667 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1159265671,
+    "properties" : {
+      "locationName" : "Irbid City",
+      "partnerName" : "CARE",
+      "comments" : "The CARE Emergency Cash Assistance designed to supplement regular cash payments .These payments are made to refugees found to be especially vulnerable, which is defined as living below the poverty line.\nIyad Al-Rashdan  \nIyad.Alrashdan@jo.care.org  \n778407434\n",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Urgent cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Follow up call" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "6. Availability" : {
+        "Every Day" : true
+      },
+      "7. Availability Day" : {
+        "Sun-Thurs" : true
+      },
+      "8. Office Open at" : {
+        "8:00am" : true
+      },
+      "9. Office close at" : {
+        "Close at 16:00pm" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Referrals only" : true
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : true
+      },
+      "1. Registration Type Requirement" : {
+        "Expired and Valid UNHCR ASC and MOI" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.85, 32.55556 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1208364542,
+    "properties" : {
+      "locationName" : "Karak Governorate",
+      "partnerName" : "DRC",
+      "comments" : "\nDalia Al Awqati \n dalia.alawqati@drc-jordan.org\n796487300\nCarmen Issa, carmen.issa@drc-jordan.org",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Urgent cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Follow up call" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "7. Availability Day" : {
+        "Sun-Thurs" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true
+      },
+      "1. Registration Type Requirement" : {
+        "Expired and Valid UNHCR ASC and MOI" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Outreach" : true
+      },
+      "5. Coverage" : {
+        "Governorate & Adjacent Governorates" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.761281, 31.166305 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1218458286,
+    "properties" : {
+      "locationName" : "Irbid City",
+      "partnerName" : "SCI",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : false,
+        "Delay One month" : false,
+        "Delay One day" : false,
+        "Delay One week" : false
+      },
+      "10. Referral Method" : {
+        "RAIS" : false,
+        "IA Form" : false,
+        "Telephone on a per case basis" : false,
+        "No Referral" : false,
+        "Email on a per case basis" : false
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Client approaches receiving organisation" : false,
+        "Follow up call" : false,
+        "Call to arrange  home visit" : false
+      },
+      "12. Response delay after referrals" : {
+        "One week" : false,
+        "More than a month" : false,
+        "One month" : false,
+        "One day" : false,
+        "Case by case basis" : false
+      },
+      "13. Feedback Mechanism" : {
+        "No feedback mecanism" : false,
+        "Email to refering organisation" : false,
+        "Excel Tracking table" : false,
+        "Sending back IA form signed" : false,
+        "With consent of the beneficiary" : false,
+        "Event entered in RAIS" : false,
+        "Phone call to sender organisation" : false,
+        "To be requested by the sending organisation" : false,
+        "Case Conference" : false
+      },
+      "6. Availability" : {
+        "One Off" : false,
+        "Once a week" : false,
+        "Once a month" : false,
+        "One time" : false,
+        "Biweekly" : false,
+        "Once per trimester or more" : false,
+        "Bimonthly" : false,
+        "Every Day" : false
+      },
+      "7. Availability Day" : {
+        "Fridays only" : false,
+        "Wednesdays only" : false,
+        "Mondays only" : false,
+        "Sundays only" : false,
+        "Sun-Thurs" : false,
+        "Thursdays only" : false,
+        "Saturdays only" : false,
+        "Mon-Thurs  and Sat" : false,
+        "Tuesdays only" : false
+      },
+      "8. Office Open at" : {
+        "10:30am" : false,
+        "14:00pm" : false,
+        "11:00am" : false,
+        "10:00am" : false,
+        "9:30am" : false,
+        "11:30am" : false,
+        "13:00pm" : false,
+        "8:00am" : false,
+        "12:00am" : false,
+        "Always open" : false,
+        "9:00am" : false,
+        "8:30am" : false
+      },
+      "9. Office close at" : {
+        "Close at 12:00am" : false,
+        "Close at 19:00pm" : false,
+        "Close at 18:00pm" : false,
+        "Never closed" : false,
+        "Close at 13:00pm" : false,
+        "Close at 12:30pm" : false,
+        "Close at 16:00pm" : false,
+        "Close at 15:00pm" : false,
+        "Close at 14:00pm" : false,
+        "Close at 17:00pm" : false
+      },
+      "2. Nationality" : {
+        "No restriction" : false,
+        "Syrians only" : false,
+        "Other nationalities only" : false,
+        "Jordanians only" : false
+      },
+      "3. Intake Criteria" : {
+        "Unaccompanied or separated child" : false,
+        "Single parent or caregiver" : false,
+        "SGBV" : false,
+        "Child at risk" : false,
+        "Older person at risk" : false,
+        "Disability" : false,
+        "Specific legal and physical protection needs" : false,
+        "Family unity" : false,
+        "Woman at risk" : false,
+        "Serious medical condition" : false,
+        "Torture" : false,
+        "Specific Vulnerability Calculation/Scoring" : false,
+        "Open to all" : false
+      },
+      "4. Accessibility" : {
+        "Hotline and follow up home visit" : false,
+        "Outreach" : false,
+        "Walk-in" : false,
+        "Outreach, Information hotline" : false,
+        "All the above" : false,
+        "Referrals only" : false
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : false,
+        "Central" : false,
+        "Governorate & Adjacent Governorates" : false,
+        "Countrywide" : false,
+        "Office location only - walk in distance" : false,
+        "North" : false,
+        "South" : false,
+        "District where the service is located" : false,
+        "City where the service is located" : false
+      },
+      "1. Registration Type Requirement" : {
+        "UNHCR ASC" : false,
+        "Copy of Proof of Syrian ID" : false,
+        "MOI card" : false,
+        "Orginal Proof of Syrian ID" : false,
+        "Expired and Valid UNHCR ASC and MOI" : false,
+        "No Requirement" : false,
+        "Valid UNHCR ASC and MOI card" : false
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.85, 32.55556 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1227317101,
+    "properties" : {
+      "locationName" : "Ajlun Governorate",
+      "partnerName" : "IRD",
+      "comments" : "IRD does not accept referrals for this activity. UNHCR provides actual cash assistance; IRD assists in need assessment on their behalf. UNHCR provides IRD's Outreach team (200 volunteers) with lists of registered Syrian and Iraqi refugees in Jordan. Each volunteer visits approx. 30 families/individuals from the list each month, arranging visit times independently, and completes a Home Visit Form with a wide range of detailed information on the family/individual's situation. Based on this information IRD makes recommendations for cash assistance. This information is entered into RAIS and dispactched to UNHCR for final assessment. \nMarzieh Goudarzi  \nm.goudarzi@ird-jo.org\n790224765\nHana Janini Outreach Coordinator Hana.Janini@ird-jo.org + 962 6 5563399 ",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Monthly Cash Assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay One week" : true
+      },
+      "10. Referral Method" : {
+        "RAIS" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Event entered in RAIS" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true
+      },
+      "1. Registration Type Requirement" : {
+        "UNHCR ASC" : true
+      },
+      "3. Intake Criteria" : {
+        "Open to all" : true
+      },
+      "4. Accessibility" : {
+        "Referrals only" : true
+      },
+      "5. Coverage" : {
+        "Countrywide" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.749422, 32.331246 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1228806321,
+    "properties" : {
+      "locationName" : "Irbid Governorate",
+      "partnerName" : "HI",
+      "comments" : "Only for HI's beneficiaries, person with disability/injuries/older person\nValerie LEON\nfieldco.irbid.jd@hi-emergency.org \n785593872\ndvfp.intake.irbid@gmail.com, 0787275399",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-06-30",
+      "indicators" : {
+        "Urgent cash assistance" : 0.0,
+        "Monthly Cash Assistance" : 0.0,
+        "Regular unconditional cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true,
+        "Delay One month" : false,
+        "Delay One day" : false,
+        "Delay One week" : false
+      },
+      "10. Referral Method" : {
+        "RAIS" : false,
+        "IA Form" : false,
+        "Telephone on a per case basis" : false,
+        "No Referral" : false,
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Client approaches receiving organisation" : false,
+        "Follow up call" : true,
+        "Call to arrange  home visit" : false
+      },
+      "12. Response delay after referrals" : {
+        "One week" : false,
+        "More than a month" : false,
+        "One month" : false,
+        "One day" : false,
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "No feedback mecanism" : false,
+        "Email to refering organisation" : true,
+        "Excel Tracking table" : false,
+        "Sending back IA form signed" : false,
+        "With consent of the beneficiary" : false,
+        "Event entered in RAIS" : false,
+        "Phone call to sender organisation" : false,
+        "To be requested by the sending organisation" : false,
+        "Case Conference" : false
+      },
+      "6. Availability" : {
+        "One Off" : false,
+        "Once a week" : false,
+        "Once a month" : false,
+        "One time" : false,
+        "Biweekly" : false,
+        "Once per trimester or more" : false,
+        "Bimonthly" : false,
+        "Every Day" : true
+      },
+      "7. Availability Day" : {
+        "Fridays only" : false,
+        "Wednesdays only" : false,
+        "Mondays only" : false,
+        "Sundays only" : false,
+        "Sun-Thurs" : true,
+        "Thursdays only" : false,
+        "Saturdays only" : false,
+        "Mon-Thurs  and Sat" : false,
+        "Tuesdays only" : false
+      },
+      "8. Office Open at" : {
+        "10:30am" : false,
+        "14:00pm" : false,
+        "11:00am" : false,
+        "10:00am" : false,
+        "9:30am" : false,
+        "11:30am" : false,
+        "13:00pm" : false,
+        "8:00am" : false,
+        "12:00am" : false,
+        "Always open" : false,
+        "9:00am" : false,
+        "8:30am" : true
+      },
+      "9. Office close at" : {
+        "Close at 12:00am" : false,
+        "Close at 19:00pm" : false,
+        "Close at 18:00pm" : false,
+        "Never closed" : false,
+        "Close at 13:00pm" : false,
+        "Close at 12:30pm" : false,
+        "Close at 16:00pm" : false,
+        "Close at 15:00pm" : false,
+        "Close at 14:00pm" : false,
+        "Close at 17:00pm" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true,
+        "Syrians only" : false,
+        "Other nationalities only" : false,
+        "Jordanians only" : false
+      },
+      "3. Intake Criteria" : {
+        "Unaccompanied or separated child" : false,
+        "Single parent or caregiver" : false,
+        "SGBV" : false,
+        "Child at risk" : false,
+        "Older person at risk" : false,
+        "Disability" : false,
+        "Specific legal and physical protection needs" : false,
+        "Family unity" : false,
+        "Woman at risk" : false,
+        "Serious medical condition" : false,
+        "Torture" : false,
+        "Specific Vulnerability Calculation/Scoring" : true,
+        "Open to all" : false
+      },
+      "4. Accessibility" : {
+        "Hotline and follow up home visit" : false,
+        "Outreach" : false,
+        "Walk-in" : false,
+        "Outreach, Information hotline" : false,
+        "All the above" : true,
+        "Referrals only" : false
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : true,
+        "Central" : false,
+        "Governorate & Adjacent Governorates" : false,
+        "Countrywide" : false,
+        "Office location only - walk in distance" : false,
+        "North" : false,
+        "South" : false,
+        "District where the service is located" : false,
+        "City where the service is located" : false
+      },
+      "1. Registration Type Requirement" : {
+        "UNHCR ASC" : false,
+        "Copy of Proof of Syrian ID" : false,
+        "MOI card" : false,
+        "Orginal Proof of Syrian ID" : false,
+        "Expired and Valid UNHCR ASC and MOI" : false,
+        "No Requirement" : true,
+        "Valid UNHCR ASC and MOI card" : false
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.85719, 32.545642 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1241469719,
+    "properties" : {
+      "locationName" : "Irbid City",
+      "partnerName" : "CARE",
+      "comments" : "The CARE Emergency Cash Assistance designed to supplement regular cash payments .These payments are made to refugees found to be especially vulnerable, which is defined as living below the poverty line.\nWidad Al-Tamimi  \nwidad.altamimi@jo.care.org  \n778412461\n",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Urgent cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Follow up call" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "6. Availability" : {
+        "Every Day" : true
+      },
+      "7. Availability Day" : {
+        "Sun-Thurs" : true
+      },
+      "8. Office Open at" : {
+        "8:00am" : true
+      },
+      "9. Office close at" : {
+        "Close at 16:00pm" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Referrals only" : true
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : true
+      },
+      "1. Registration Type Requirement" : {
+        "Expired and Valid UNHCR ASC and MOI" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.85, 32.55556 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1291402536,
+    "properties" : {
+      "locationName" : "Liwa Bani Ubayid",
+      "partnerName" : "MC",
+      "comments" : "\nHala Abu Tayeh\nhabutayeh@jo.mercycorps.org\n77 63 77 999\nHala Abu Tayeh, habutayeh@jo.mercycorps.org",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Urgent cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Call to arrange  home visit" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "6. Availability" : {
+        "One Off" : true
+      },
+      "7. Availability Day" : {
+        "Sun-Thurs" : true
+      },
+      "8. Office Open at" : {
+        "9:00am" : true
+      },
+      "2. Nationality" : {
+        "Syrians only" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Outreach" : true
+      },
+      "5. Coverage" : {
+        "District where the service is located" : true
+      },
+      "1. Registration Type Requirement" : {
+        "Expired and Valid UNHCR ASC and MOI" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.88602, 32.44761 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1491529369,
+    "properties" : {
+      "locationName" : "Amman Governorate",
+      "partnerName" : "OXFAM",
+      "comments" : "\nEmily Sloane \nesloane@oxfam.org.uk\n790219646\nEmily Sloane, esloane@oxfam.org.uk, 0790216946, Nedal Arabyat, narabyat@oxfam.org.uk, 0790219651",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Regular unconditional cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Telephone on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Follow up call" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Phone call to sender organisation" : true
+      },
+      "6. Availability" : {
+        "Once a month" : true
+      },
+      "7. Availability Day" : {
+        "Sun-Thurs" : true
+      },
+      "8. Office Open at" : {
+        "9:00am" : true
+      },
+      "9. Office close at" : {
+        "Close at 17:00pm" : true
+      },
+      "2. Nationality" : {
+        "Syrians only" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Outreach, Information hotline" : true
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : true
+      },
+      "1. Registration Type Requirement" : {
+        "Expired and Valid UNHCR ASC and MOI" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.945705, 31.956582 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1502653863,
+    "properties" : {
+      "locationName" : "Jarash Governorate",
+      "partnerName" : "HI",
+      "comments" : "Only for HI's beneficiaries, person with disability/injuries/older person\nValerie LEON\nfieldco.irbid.jd@hi-emergency.org \n785593872\ndvfp.intake.irbid@gmail.com, 0787275399",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-06-30",
+      "indicators" : {
+        "Urgent cash assistance" : 0.0,
+        "Monthly Cash Assistance" : 0.0,
+        "Regular unconditional cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true,
+        "Delay One month" : false,
+        "Delay One day" : false,
+        "Delay One week" : false
+      },
+      "10. Referral Method" : {
+        "RAIS" : false,
+        "IA Form" : false,
+        "Telephone on a per case basis" : false,
+        "No Referral" : false,
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Client approaches receiving organisation" : false,
+        "Follow up call" : true,
+        "Call to arrange  home visit" : false
+      },
+      "12. Response delay after referrals" : {
+        "One week" : false,
+        "More than a month" : false,
+        "One month" : false,
+        "One day" : false,
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "No feedback mecanism" : false,
+        "Email to refering organisation" : true,
+        "Excel Tracking table" : false,
+        "Sending back IA form signed" : false,
+        "With consent of the beneficiary" : false,
+        "Event entered in RAIS" : false,
+        "Phone call to sender organisation" : false,
+        "To be requested by the sending organisation" : false,
+        "Case Conference" : false
+      },
+      "6. Availability" : {
+        "One Off" : false,
+        "Once a week" : false,
+        "Once a month" : false,
+        "One time" : false,
+        "Biweekly" : false,
+        "Once per trimester or more" : false,
+        "Bimonthly" : false,
+        "Every Day" : true
+      },
+      "7. Availability Day" : {
+        "Fridays only" : false,
+        "Wednesdays only" : false,
+        "Mondays only" : false,
+        "Sundays only" : false,
+        "Sun-Thurs" : true,
+        "Thursdays only" : false,
+        "Saturdays only" : false,
+        "Mon-Thurs  and Sat" : false,
+        "Tuesdays only" : false
+      },
+      "8. Office Open at" : {
+        "10:30am" : false,
+        "14:00pm" : false,
+        "11:00am" : false,
+        "10:00am" : false,
+        "9:30am" : false,
+        "11:30am" : false,
+        "13:00pm" : false,
+        "8:00am" : false,
+        "12:00am" : false,
+        "Always open" : false,
+        "9:00am" : false,
+        "8:30am" : true
+      },
+      "9. Office close at" : {
+        "Close at 12:00am" : false,
+        "Close at 19:00pm" : false,
+        "Close at 18:00pm" : false,
+        "Never closed" : false,
+        "Close at 13:00pm" : false,
+        "Close at 12:30pm" : false,
+        "Close at 16:00pm" : false,
+        "Close at 15:00pm" : false,
+        "Close at 14:00pm" : false,
+        "Close at 17:00pm" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true,
+        "Syrians only" : false,
+        "Other nationalities only" : false,
+        "Jordanians only" : false
+      },
+      "3. Intake Criteria" : {
+        "Unaccompanied or separated child" : false,
+        "Single parent or caregiver" : false,
+        "SGBV" : false,
+        "Child at risk" : false,
+        "Older person at risk" : false,
+        "Disability" : false,
+        "Specific legal and physical protection needs" : false,
+        "Family unity" : false,
+        "Woman at risk" : false,
+        "Serious medical condition" : false,
+        "Torture" : false,
+        "Specific Vulnerability Calculation/Scoring" : true,
+        "Open to all" : false
+      },
+      "4. Accessibility" : {
+        "Hotline and follow up home visit" : false,
+        "Outreach" : false,
+        "Walk-in" : false,
+        "Outreach, Information hotline" : false,
+        "All the above" : true,
+        "Referrals only" : false
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : true,
+        "Central" : false,
+        "Governorate & Adjacent Governorates" : false,
+        "Countrywide" : false,
+        "Office location only - walk in distance" : false,
+        "North" : false,
+        "South" : false,
+        "District where the service is located" : false,
+        "City where the service is located" : false
+      },
+      "1. Registration Type Requirement" : {
+        "UNHCR ASC" : false,
+        "Copy of Proof of Syrian ID" : false,
+        "MOI card" : false,
+        "Orginal Proof of Syrian ID" : false,
+        "Expired and Valid UNHCR ASC and MOI" : false,
+        "No Requirement" : true,
+        "Valid UNHCR ASC and MOI card" : false
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.905547, 32.277174 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1522852972,
+    "properties" : {
+      "locationName" : "Jarash Governorate",
+      "partnerName" : "IRD",
+      "comments" : "IRD does not accept referrals for this activity. UNHCR provides actual cash assistance; IRD assists in need assessment on their behalf. UNHCR provides IRD's Outreach team (200 volunteers) with lists of registered Syrian and Iraqi refugees in Jordan. Each volunteer visits approx. 30 families/individuals from the list each month, arranging visit times independently, and completes a Home Visit Form with a wide range of detailed information on the family/individual's situation. Based on this information IRD makes recommendations for cash assistance. This information is entered into RAIS and dispactched to UNHCR for final assessment. \nMarzieh Goudarzi  \nm.goudarzi@ird-jo.org\n790224767\nHana Janini Outreach Coordinator Hana.Janini@ird-jo.org + 962 6 5563399 ",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Monthly Cash Assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay One week" : true
+      },
+      "10. Referral Method" : {
+        "RAIS" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Event entered in RAIS" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true
+      },
+      "1. Registration Type Requirement" : {
+        "UNHCR ASC" : true
+      },
+      "3. Intake Criteria" : {
+        "Open to all" : true
+      },
+      "4. Accessibility" : {
+        "Referrals only" : true
+      },
+      "5. Coverage" : {
+        "Countrywide" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.905547, 32.277174 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1718894378,
+    "properties" : {
+      "locationName" : "Mafraq Governorate",
+      "partnerName" : "MEDAIR",
+      "comments" : "\nDora Piscoi  \ncash-nfipm-jor@medair.org \n 079867 5131\nDora Piscoi  E-mail: cash-nfipm-jor@medair.org Phone (079867 5131)",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Regular unconditional cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Call to arrange  home visit" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "6. Availability" : {
+        "Once a month" : true
+      },
+      "7. Availability Day" : {
+        "Sun-Thurs" : true
+      },
+      "8. Office Open at" : {
+        "8:30am" : true
+      },
+      "9. Office close at" : {
+        "Close at 16:00pm" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Outreach" : true
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : true
+      },
+      "1. Registration Type Requirement" : {
+        "No Requirement" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 38.318316, 32.42128 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1788610447,
+    "properties" : {
+      "locationName" : "Liwa Bani Ubayid",
+      "partnerName" : "ACF",
+      "comments" : "\nEmilie CROCI\nfieldmanager-ir@jo.missions-acf.org\n7 79 29 13 21\ndeputyfslpm-ir@jo.missions-acf.org",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Regular unconditional cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Follow up call" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "6. Availability" : {
+        "Once a month" : true
+      },
+      "2. Nationality" : {
+        "Syrians only" : true
+      },
+      "1. Registration Type Requirement" : {
+        "UNHCR ASC" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Referrals only" : true
+      },
+      "5. Coverage" : {
+        "City where the service is located" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.88602, 32.44761 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1798872578,
+    "properties" : {
+      "locationName" : "Irbid Governorate",
+      "partnerName" : "IRD",
+      "comments" : "IRD does not accept referrals for this activity. UNHCR provides actual cash assistance; IRD assists in need assessment on their behalf. UNHCR provides IRD's Outreach team (200 volunteers) with lists of registered Syrian and Iraqi refugees in Jordan. Each volunteer visits approx. 30 families/individuals from the list each month, arranging visit times independently, and completes a Home Visit Form with a wide range of detailed information on the family/individual's situation. Based on this information IRD makes recommendations for cash assistance. This information is entered into RAIS and dispactched to UNHCR for final assessment. \nMarzieh Goudarzi  \nm.goudarzi@ird-jo.org\n790224765\nHana Janini Outreach Coordinator Hana.Janini@ird-jo.org + 962 6 5563399 ",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Monthly Cash Assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay One week" : true
+      },
+      "10. Referral Method" : {
+        "RAIS" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Event entered in RAIS" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true
+      },
+      "1. Registration Type Requirement" : {
+        "UNHCR ASC" : true
+      },
+      "3. Intake Criteria" : {
+        "Open to all" : true
+      },
+      "4. Accessibility" : {
+        "Referrals only" : true
+      },
+      "5. Coverage" : {
+        "Countrywide" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.85719, 32.545642 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1841225526,
+    "properties" : {
+      "locationName" : "Jarash City",
+      "partnerName" : "ACTED",
+      "comments" : " after cross check on our database if referred cases not  by ACTED we continue follow up the case. -all Referral cases will be taken through ACTED scoring system. unconditional assistant.                                   -all assistant provided by ACTED  it is houshold assisstant.             cash assisstant for each household for just 3 months \nNesreen Abu Dalbooh\nmafraq.database@acted.org\n798020992\nHAMMAM SHDIFAT  (0798021476)                mafraq.commob@acted.org",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2013-11-26",
+      "endDate" : "2014-03-31",
+      "indicators" : {
+        "Urgent cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : false,
+        "Delay One month" : true,
+        "Delay One day" : false,
+        "Delay One week" : false
+      },
+      "10. Referral Method" : {
+        "RAIS" : false,
+        "IA Form" : false,
+        "Telephone on a per case basis" : false,
+        "No Referral" : false,
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Client approaches receiving organisation" : false,
+        "Follow up call" : true,
+        "Call to arrange  home visit" : false
+      },
+      "12. Response delay after referrals" : {
+        "One week" : false,
+        "More than a month" : false,
+        "One month" : false,
+        "One day" : false,
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "No feedback mecanism" : false,
+        "Email to refering organisation" : true,
+        "Excel Tracking table" : false,
+        "Sending back IA form signed" : false,
+        "With consent of the beneficiary" : false,
+        "Event entered in RAIS" : false,
+        "Phone call to sender organisation" : false,
+        "To be requested by the sending organisation" : false,
+        "Case Conference" : false
+      },
+      "6. Availability" : {
+        "One Off" : false,
+        "Once a week" : false,
+        "Once a month" : false,
+        "One time" : false,
+        "Biweekly" : false,
+        "Once per trimester or more" : false,
+        "Bimonthly" : true,
+        "Every Day" : false
+      },
+      "7. Availability Day" : {
+        "Fridays only" : false,
+        "Wednesdays only" : false,
+        "Mondays only" : false,
+        "Sundays only" : false,
+        "Sun-Thurs" : true,
+        "Thursdays only" : false,
+        "Saturdays only" : false,
+        "Mon-Thurs  and Sat" : false,
+        "Tuesdays only" : false
+      },
+      "8. Office Open at" : {
+        "10:30am" : false,
+        "14:00pm" : false,
+        "11:00am" : false,
+        "10:00am" : false,
+        "9:30am" : false,
+        "11:30am" : false,
+        "13:00pm" : false,
+        "8:00am" : true,
+        "12:00am" : false,
+        "Always open" : false,
+        "9:00am" : false,
+        "8:30am" : false
+      },
+      "9. Office close at" : {
+        "Close at 12:00am" : false,
+        "Close at 19:00pm" : false,
+        "Close at 18:00pm" : false,
+        "Never closed" : false,
+        "Close at 13:00pm" : false,
+        "Close at 12:30pm" : false,
+        "Close at 16:00pm" : false,
+        "Close at 15:00pm" : false,
+        "Close at 14:00pm" : false,
+        "Close at 17:00pm" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true,
+        "Syrians only" : false,
+        "Other nationalities only" : false,
+        "Jordanians only" : false
+      },
+      "3. Intake Criteria" : {
+        "Unaccompanied or separated child" : false,
+        "Single parent or caregiver" : false,
+        "SGBV" : false,
+        "Child at risk" : false,
+        "Older person at risk" : false,
+        "Disability" : false,
+        "Specific legal and physical protection needs" : false,
+        "Family unity" : false,
+        "Woman at risk" : false,
+        "Serious medical condition" : false,
+        "Torture" : false,
+        "Specific Vulnerability Calculation/Scoring" : true,
+        "Open to all" : false
+      },
+      "4. Accessibility" : {
+        "Hotline and follow up home visit" : false,
+        "Outreach" : true,
+        "Walk-in" : false,
+        "Outreach, Information hotline" : false,
+        "All the above" : false,
+        "Referrals only" : false
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : false,
+        "Central" : false,
+        "Governorate & Adjacent Governorates" : false,
+        "Countrywide" : false,
+        "Office location only - walk in distance" : false,
+        "North" : true,
+        "South" : false,
+        "District where the service is located" : false,
+        "City where the service is located" : false
+      },
+      "1. Registration Type Requirement" : {
+        "UNHCR ASC" : false,
+        "Copy of Proof of Syrian ID" : false,
+        "MOI card" : false,
+        "Orginal Proof of Syrian ID" : false,
+        "Expired and Valid UNHCR ASC and MOI" : true,
+        "No Requirement" : false,
+        "Valid UNHCR ASC and MOI card" : false
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.89929, 32.28082 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1857314310,
+    "properties" : {
+      "locationName" : "Liwa Bani Ubayid",
+      "partnerName" : "ACF",
+      "comments" : "\nEmilie CROCI\nfieldmanager-ir@jo.missions-acf.org\n7 79 29 13 21\ndeputyfslpm-ir@jo.missions-acf.org",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Regular unconditional cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Follow up call" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "6. Availability" : {
+        "Once a month" : true
+      },
+      "2. Nationality" : {
+        "Syrians only" : true
+      },
+      "1. Registration Type Requirement" : {
+        "UNHCR ASC" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Referrals only" : true
+      },
+      "5. Coverage" : {
+        "City where the service is located" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.88602, 32.44761 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1994358647,
+    "properties" : {
+      "locationName" : "Maan Governorate",
+      "partnerName" : "DRC",
+      "comments" : "\nDalia Al Awqati\n dalia.alawqati@drc-jordan.org\n796487300\nCarmen Issa, carmen.issa@drc-jordan.org",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-12-31",
+      "indicators" : {
+        "Urgent cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true
+      },
+      "10. Referral Method" : {
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Follow up call" : true
+      },
+      "12. Response delay after referrals" : {
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "Email to refering organisation" : true
+      },
+      "7. Availability Day" : {
+        "Sun-Thurs" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true
+      },
+      "1. Registration Type Requirement" : {
+        "Expired and Valid UNHCR ASC and MOI" : true
+      },
+      "3. Intake Criteria" : {
+        "Specific Vulnerability Calculation/Scoring" : true
+      },
+      "4. Accessibility" : {
+        "Outreach" : true
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : true
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.7333333333333, 30.2 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 1996911234,
+    "properties" : {
+      "locationName" : "Liwa al Kurah",
+      "partnerName" : "SCI",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-04-16",
+      "endDate" : "2014-04-30",
+      "indicators" : {
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true,
+        "Delay One month" : false,
+        "Delay One day" : false,
+        "Delay One week" : false
+      },
+      "10. Referral Method" : {
+        "RAIS" : false,
+        "IA Form" : true,
+        "Telephone on a per case basis" : false,
+        "No Referral" : false,
+        "Email on a per case basis" : false
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Client approaches receiving organisation" : false,
+        "Follow up call" : true,
+        "Call to arrange  home visit" : false
+      },
+      "12. Response delay after referrals" : {
+        "One week" : true,
+        "More than a month" : false,
+        "One month" : false,
+        "One day" : false,
+        "Case by case basis" : false
+      },
+      "13. Feedback Mechanism" : {
+        "No feedback mecanism" : false,
+        "Email to refering organisation" : false,
+        "Excel Tracking table" : false,
+        "Sending back IA form signed" : false,
+        "With consent of the beneficiary" : false,
+        "Event entered in RAIS" : false,
+        "Phone call to sender organisation" : false,
+        "To be requested by the sending organisation" : true,
+        "Case Conference" : false
+      },
+      "6. Availability" : {
+        "One Off" : false,
+        "Once a week" : false,
+        "Once a month" : false,
+        "One time" : false,
+        "Biweekly" : false,
+        "Once per trimester or more" : false,
+        "Bimonthly" : false,
+        "Every Day" : true
+      },
+      "7. Availability Day" : {
+        "Fridays only" : false,
+        "Wednesdays only" : false,
+        "Mondays only" : false,
+        "Sundays only" : false,
+        "Sun-Thurs" : true,
+        "Thursdays only" : false,
+        "Saturdays only" : false,
+        "Mon-Thurs  and Sat" : false,
+        "Tuesdays only" : false
+      },
+      "8. Office Open at" : {
+        "10:30am" : false,
+        "14:00pm" : false,
+        "11:00am" : false,
+        "10:00am" : false,
+        "9:30am" : false,
+        "11:30am" : false,
+        "13:00pm" : false,
+        "8:00am" : false,
+        "12:00am" : false,
+        "Always open" : false,
+        "9:00am" : false,
+        "8:30am" : true
+      },
+      "9. Office close at" : {
+        "Close at 12:00am" : false,
+        "Close at 19:00pm" : false,
+        "Close at 18:00pm" : false,
+        "Never closed" : false,
+        "Close at 13:00pm" : false,
+        "Close at 12:30pm" : false,
+        "Close at 16:00pm" : true,
+        "Close at 15:00pm" : false,
+        "Close at 14:00pm" : false,
+        "Close at 17:00pm" : false
+      },
+      "2. Nationality" : {
+        "No restriction" : true,
+        "Syrians only" : false,
+        "Other nationalities only" : false,
+        "Jordanians only" : false
+      },
+      "3. Intake Criteria" : {
+        "Unaccompanied or separated child" : false,
+        "Single parent or caregiver" : false,
+        "SGBV" : false,
+        "Child at risk" : false,
+        "Older person at risk" : false,
+        "Disability" : false,
+        "Specific legal and physical protection needs" : false,
+        "Family unity" : true,
+        "Woman at risk" : false,
+        "Serious medical condition" : false,
+        "Torture" : false,
+        "Specific Vulnerability Calculation/Scoring" : false,
+        "Open to all" : false
+      },
+      "4. Accessibility" : {
+        "Hotline and follow up home visit" : true,
+        "Outreach" : false,
+        "Walk-in" : false,
+        "Outreach, Information hotline" : false,
+        "All the above" : false,
+        "Referrals only" : false
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : false,
+        "Central" : false,
+        "Governorate & Adjacent Governorates" : false,
+        "Countrywide" : false,
+        "Office location only - walk in distance" : false,
+        "North" : true,
+        "South" : false,
+        "District where the service is located" : false,
+        "City where the service is located" : false
+      },
+      "1. Registration Type Requirement" : {
+        "UNHCR ASC" : false,
+        "Copy of Proof of Syrian ID" : false,
+        "MOI card" : false,
+        "Orginal Proof of Syrian ID" : true,
+        "Expired and Valid UNHCR ASC and MOI" : false,
+        "No Requirement" : false,
+        "Valid UNHCR ASC and MOI card" : false
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.65788, 32.45998 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 2009945396,
+    "properties" : {
+      "locationName" : "Irbid City",
+      "partnerName" : "ACTED",
+      "comments" : "targeted districts:\nAl-ramtha ,Bani kinana , Bani obaid and Qasabet irbid.\nafter cross check on our database if referred cases not  by ACTED we continue follow up the case. -all Referral cases will be taken through ACTED scoring system. unconditional assistant.                                   -all assistant provided by ACTED  it is houshold assisstant.             cash assisstant for each household for just 3 months \nNesreen Abu Dalbooh\nmafraq.database@acted.org\n798020992\nHAMMAM SHDIFAT  (0798021476)                mafraq.commob@acted.org",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2013-11-26",
+      "endDate" : "2014-03-31",
+      "indicators" : {
+        "Urgent cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : false,
+        "Delay One month" : true,
+        "Delay One day" : false,
+        "Delay One week" : false
+      },
+      "10. Referral Method" : {
+        "RAIS" : false,
+        "IA Form" : false,
+        "Telephone on a per case basis" : false,
+        "No Referral" : false,
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Client approaches receiving organisation" : false,
+        "Follow up call" : true,
+        "Call to arrange  home visit" : false
+      },
+      "12. Response delay after referrals" : {
+        "One week" : false,
+        "More than a month" : false,
+        "One month" : false,
+        "One day" : false,
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "No feedback mecanism" : false,
+        "Email to refering organisation" : true,
+        "Excel Tracking table" : false,
+        "Sending back IA form signed" : false,
+        "With consent of the beneficiary" : false,
+        "Event entered in RAIS" : false,
+        "Phone call to sender organisation" : false,
+        "To be requested by the sending organisation" : false,
+        "Case Conference" : false
+      },
+      "6. Availability" : {
+        "One Off" : false,
+        "Once a week" : false,
+        "Once a month" : false,
+        "One time" : false,
+        "Biweekly" : false,
+        "Once per trimester or more" : false,
+        "Bimonthly" : true,
+        "Every Day" : false
+      },
+      "7. Availability Day" : {
+        "Fridays only" : false,
+        "Wednesdays only" : false,
+        "Mondays only" : false,
+        "Sundays only" : false,
+        "Sun-Thurs" : true,
+        "Thursdays only" : false,
+        "Saturdays only" : false,
+        "Mon-Thurs  and Sat" : false,
+        "Tuesdays only" : false
+      },
+      "8. Office Open at" : {
+        "10:30am" : false,
+        "14:00pm" : false,
+        "11:00am" : false,
+        "10:00am" : false,
+        "9:30am" : false,
+        "11:30am" : false,
+        "13:00pm" : false,
+        "8:00am" : true,
+        "12:00am" : false,
+        "Always open" : false,
+        "9:00am" : false,
+        "8:30am" : false
+      },
+      "9. Office close at" : {
+        "Close at 12:00am" : false,
+        "Close at 19:00pm" : false,
+        "Close at 18:00pm" : false,
+        "Never closed" : false,
+        "Close at 13:00pm" : false,
+        "Close at 12:30pm" : false,
+        "Close at 16:00pm" : false,
+        "Close at 15:00pm" : false,
+        "Close at 14:00pm" : false,
+        "Close at 17:00pm" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true,
+        "Syrians only" : false,
+        "Other nationalities only" : false,
+        "Jordanians only" : false
+      },
+      "3. Intake Criteria" : {
+        "Unaccompanied or separated child" : false,
+        "Single parent or caregiver" : false,
+        "SGBV" : false,
+        "Child at risk" : false,
+        "Older person at risk" : false,
+        "Disability" : false,
+        "Specific legal and physical protection needs" : false,
+        "Family unity" : false,
+        "Woman at risk" : false,
+        "Serious medical condition" : false,
+        "Torture" : false,
+        "Specific Vulnerability Calculation/Scoring" : true,
+        "Open to all" : false
+      },
+      "4. Accessibility" : {
+        "Hotline and follow up home visit" : false,
+        "Outreach" : true,
+        "Walk-in" : false,
+        "Outreach, Information hotline" : false,
+        "All the above" : false,
+        "Referrals only" : false
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : false,
+        "Central" : false,
+        "Governorate & Adjacent Governorates" : false,
+        "Countrywide" : false,
+        "Office location only - walk in distance" : false,
+        "North" : true,
+        "South" : false,
+        "District where the service is located" : false,
+        "City where the service is located" : false
+      },
+      "1. Registration Type Requirement" : {
+        "UNHCR ASC" : false,
+        "Copy of Proof of Syrian ID" : false,
+        "MOI card" : false,
+        "Orginal Proof of Syrian ID" : false,
+        "Expired and Valid UNHCR ASC and MOI" : true,
+        "No Requirement" : false,
+        "Valid UNHCR ASC and MOI card" : false
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.85, 32.55556 ]
+    }
+  }, {
+    "type" : "Feature",
+    "id" : 2132755789,
+    "properties" : {
+      "locationName" : "Ajlun Governorate",
+      "partnerName" : "HI",
+      "comments" : "Only for HI's beneficiaries, person with disability/injuries/older person\nValerie LEON\nfieldco.irbid.jd@hi-emergency.org \n785593872\ndvfp.intake.irbid@gmail.com, 0787275399",
+      "activity" : 5574,
+      "activityCategory" : "CASH",
+      "activityName" : "Need Coverage",
+      "startDate" : "2014-01-01",
+      "endDate" : "2014-06-30",
+      "indicators" : {
+        "Urgent cash assistance" : 0.0,
+        "Monthly Cash Assistance" : 0.0,
+        "Regular unconditional cash assistance" : 1.0
+      },
+      "14. Feedback delay" : {
+        "Delay on Case by case" : true,
+        "Delay One month" : false,
+        "Delay One day" : false,
+        "Delay One week" : false
+      },
+      "10. Referral Method" : {
+        "RAIS" : false,
+        "IA Form" : false,
+        "Telephone on a per case basis" : false,
+        "No Referral" : false,
+        "Email on a per case basis" : true
+      },
+      "11. Immediate Next step  response after referal" : {
+        "Client approaches receiving organisation" : false,
+        "Follow up call" : true,
+        "Call to arrange  home visit" : false
+      },
+      "12. Response delay after referrals" : {
+        "One week" : false,
+        "More than a month" : false,
+        "One month" : false,
+        "One day" : false,
+        "Case by case basis" : true
+      },
+      "13. Feedback Mechanism" : {
+        "No feedback mecanism" : false,
+        "Email to refering organisation" : true,
+        "Excel Tracking table" : false,
+        "Sending back IA form signed" : false,
+        "With consent of the beneficiary" : false,
+        "Event entered in RAIS" : false,
+        "Phone call to sender organisation" : false,
+        "To be requested by the sending organisation" : false,
+        "Case Conference" : false
+      },
+      "6. Availability" : {
+        "One Off" : false,
+        "Once a week" : false,
+        "Once a month" : false,
+        "One time" : false,
+        "Biweekly" : false,
+        "Once per trimester or more" : false,
+        "Bimonthly" : false,
+        "Every Day" : true
+      },
+      "7. Availability Day" : {
+        "Fridays only" : false,
+        "Wednesdays only" : false,
+        "Mondays only" : false,
+        "Sundays only" : false,
+        "Sun-Thurs" : true,
+        "Thursdays only" : false,
+        "Saturdays only" : false,
+        "Mon-Thurs  and Sat" : false,
+        "Tuesdays only" : false
+      },
+      "8. Office Open at" : {
+        "10:30am" : false,
+        "14:00pm" : false,
+        "11:00am" : false,
+        "10:00am" : false,
+        "9:30am" : false,
+        "11:30am" : false,
+        "13:00pm" : false,
+        "8:00am" : false,
+        "12:00am" : false,
+        "Always open" : false,
+        "9:00am" : false,
+        "8:30am" : true
+      },
+      "9. Office close at" : {
+        "Close at 12:00am" : false,
+        "Close at 19:00pm" : false,
+        "Close at 18:00pm" : false,
+        "Never closed" : false,
+        "Close at 13:00pm" : false,
+        "Close at 12:30pm" : false,
+        "Close at 16:00pm" : false,
+        "Close at 15:00pm" : false,
+        "Close at 14:00pm" : false,
+        "Close at 17:00pm" : true
+      },
+      "2. Nationality" : {
+        "No restriction" : true,
+        "Syrians only" : false,
+        "Other nationalities only" : false,
+        "Jordanians only" : false
+      },
+      "3. Intake Criteria" : {
+        "Unaccompanied or separated child" : false,
+        "Single parent or caregiver" : false,
+        "SGBV" : false,
+        "Child at risk" : false,
+        "Older person at risk" : false,
+        "Disability" : false,
+        "Specific legal and physical protection needs" : false,
+        "Family unity" : false,
+        "Woman at risk" : false,
+        "Serious medical condition" : false,
+        "Torture" : false,
+        "Specific Vulnerability Calculation/Scoring" : true,
+        "Open to all" : false
+      },
+      "4. Accessibility" : {
+        "Hotline and follow up home visit" : false,
+        "Outreach" : false,
+        "Walk-in" : false,
+        "Outreach, Information hotline" : false,
+        "All the above" : true,
+        "Referrals only" : false
+      },
+      "5. Coverage" : {
+        "Governorate where the service is located" : true,
+        "Central" : false,
+        "Governorate & Adjacent Governorates" : false,
+        "Countrywide" : false,
+        "Office location only - walk in distance" : false,
+        "North" : false,
+        "South" : false,
+        "District where the service is located" : false,
+        "City where the service is located" : false
+      },
+      "1. Registration Type Requirement" : {
+        "UNHCR ASC" : false,
+        "Copy of Proof of Syrian ID" : false,
+        "MOI card" : false,
+        "Orginal Proof of Syrian ID" : false,
+        "Expired and Valid UNHCR ASC and MOI" : false,
+        "No Requirement" : true,
+        "Valid UNHCR ASC and MOI card" : false
+      }
+    },
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ 35.749422, 32.331246 ]
+    }
+  } ]
+}
