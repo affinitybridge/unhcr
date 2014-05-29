@@ -49,7 +49,7 @@ for (var i=0, len=iconGlyphs.length; i < len; i++){
 var cf = crossfilter();
 var cf_activityName = categoryFilter({
     container: 'activityName',
-    type: 'checkbox',
+    type: 'radio',
     key: 'activityName',
     empty: 'No data'
 }, cf);

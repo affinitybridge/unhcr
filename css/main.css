@@ -303,11 +303,13 @@ textarea {
     }
 }
 
-/* UNHCR-specific */
+/*
+ * UNHCR-specific
+ */
 html,
-body,
+body { height: 100%; }
 #map {
-    height: 90%;
+    height: 70%;
   }
 /* Temporary filter styles for neatness during development */
 div.filter {
@@ -325,9 +327,10 @@ div#endDate {
     height: 150px;
 }
 
+/* Marker styles */
 .awesome-marker i {
     font-size: 18px !important;
-    margin: 7px 0 0 3px !important;
+    margin: 6px 0 0 4px !important;
 } 
 .awesome-marker i.icon-ocha-sector-protection,
 .awesome-marker i.icon-ocha-sector-livelihood,
