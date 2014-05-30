@@ -53,7 +53,12 @@ var cf_activityName = categoryFilter({
     key: 'activityName',
     empty: 'No data'
 }, cf);
-
+var cf_referralRequired = categoryFilter({
+    container: 'referralRequired',
+    type: 'radio',
+    key: 'Referral required',
+    empty: 'No data'
+}, cf);
 
 // Special meta-dimension for our crossFilter dimensions, used to grab the final set
 // of data with all other dimensions' filters applied.
@@ -62,6 +67,7 @@ var metaDimension = cf.dimension(function (f) { return f.properties.activityName
 // Whenever the user changes their selection in the filters, run our update() method.
 // Bind the update() method to the "update" event on the category filter.
 cf_activityName.on('update', update);
+cf_referralRequired.on('update', update);
 
 // Get the pre-compiled JSON from the file, and loop through it creating markers.
 jQuery.getJSON( "src/compiled.json", function( data ) {
@@ -131,6 +137,7 @@ jQuery.getJSON( "src/compiled.json", function( data ) {
 function update() {
     // Update the filters.
     cf_activityName.update();
+    cf_referralRequired.update();
 
     // Add the markers to the map.
     render();
