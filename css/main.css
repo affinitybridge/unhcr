@@ -332,6 +332,7 @@ div#endDate {
     font-size: 18px !important;
     margin: 6px 0 0 4px !important;
 } 
+/* Some of the Humanitarian Font glyphs are smaller than others. */
 .awesome-marker i.icon-ocha-sector-protection,
 .awesome-marker i.icon-ocha-sector-livelihood,
 .awesome-marker i.icon-ocha-sector-education,
@@ -364,6 +365,13 @@ span.glyph {
     font-style: normal;
     font-size: 18px;
     padding: 0 5px;
+}
+/* I repeat, some of the Humanitarian Font glyphs are smaller than others. */
+#filter-value-child-protection span.glyph,
+#filter-value-basic-needs span.glyph,
+#filter-value-education span.glyph,
+#filter-value-wash span.glyph {
+    font-size: 24px !important;
 }
 span.glyph.Basic:before {
     content: "\f36a";

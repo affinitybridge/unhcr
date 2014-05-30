@@ -21,6 +21,14 @@ var map = L.mapbox.map('map', 'affinitybridge.ia7h38nj');
 // Add the data layer to the map.
 var dataLayer = L.featureGroup().addTo(map);
 
+// Read the polygon file.
+// TODO: use these polygons as the basis for a filter/zoom tool
+jQuery.getJSON( "src/polygons.json", function( polygonData ) {
+    // Create the polygon layer and add to the map.
+    var polygonLayer = L.geoJson(polygonData);
+    map.addLayer(polygonLayer);
+});
+
 // Match possible Activity Categories to Humanitarian Font icons.
 var iconGlyphs = [
     {category: 'CASH', glyph: 'money', markerColor: '#c00000' },
