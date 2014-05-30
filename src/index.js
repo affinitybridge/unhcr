@@ -52,7 +52,6 @@ for (var i=0, len=iconGlyphs.length; i < len; i++){
     });
 }
 
-
 // Define the filters
 var cf = crossfilter();
 var cf_activityName = categoryFilter({
@@ -77,7 +76,19 @@ var metaDimension = cf.dimension(function (f) { return f.properties.activityName
 cf_activityName.on('update', update);
 cf_referralRequired.on('update', update);
 
-// Get the pre-compiled JSON from the file, and loop through it creating markers.
+// Make the list view hidden by default.
+$("#list").hide();
+$("#mapToggle").addClass("active");
+
+// Bind list/map view toggle to the toggler link.
+$("#toggler").click(function() {
+    $("#map").toggle();
+    $("#list").toggle();
+    $("#mapToggle").toggleClass("active");
+    $("#listToggle").toggleClass("active");
+});
+
+// Get the pre-compiled JSON from the file, and loop through it creating the markers.
 jQuery.getJSON( "src/compiled.json", function( data ) {
     $.each( data, function( key, feature ) {
 
@@ -86,45 +97,8 @@ jQuery.getJSON( "src/compiled.json", function( data ) {
                                      {icon: iconObjects[feature.properties.activityCategory]});
         serviceMarker.addTo(dataLayer);
 
-        // Add the info popups.
-        var locationName = '<h3>' + feature.properties.locationName + '</h3>';
-
-        // Preserve the line breaks in the original comment.
-        var comments = feature.properties.comments ? feature.properties.comments.replace(/\r\n|\n|\r/g, '<br />') : null;
-
-        // Get the info from the accessibility & availability fields.
-        var availability = '';
-        // Make an array of the fields we want to show in the popup.
-        var popupFields = [
-            "8. Office Open at",
-            "9. Office close at",
-            "6. Availability",
-            "7. Availability Day",
-            "10. Referral Method",
-            "1. Registration Type Requirement",
-            "2. Nationality",
-            "3. Intake Criteria",
-            "4. Accessibility",
-            "5. Coverage"
-        ];
-        // Loop through the array.
-        for (var i=0, len=popupFields.length; i < len; i++){
-            // Strip the leading numeral from the field name.
-            var fieldName = popupFields[i].substr(popupFields[i].indexOf(" ") + 1); 
-            // Add the field name to the output.
-            availability += '<br /><b>' + fieldName + ':</b> ';
-            // Get the field items (they are all Booleans, we want their labels)
-            values = feature.properties[popupFields[i]];
-            // Loop through the items, and if their value is TRUE, add their label to the output.
-            for (var lineItem in values) {
-                if (values[lineItem]) {
-                    availability += lineItem + ' ';
-                }
-            } 
-        }
-
         // Make the popup and bind it to the marker.
-        serviceMarker.bindPopup(locationName + comments + availability);
+        serviceMarker.bindPopup(renderServiceText(feature, "teaser"));
 
         // Add the marker layer we just created to "feature"
         feature.properties.marker = serviceMarker;
@@ -135,7 +109,6 @@ jQuery.getJSON( "src/compiled.json", function( data ) {
 
     // Add the markers to the map
     update();
-
 });
 
 
@@ -151,11 +124,63 @@ function update() {
     render();
 }
 
-// Clear the data layer and re-render.
+// Clear the data and re-render.
 function render() {
+    // Clear all the map markers.
     dataLayer.clearLayers();
+    var listOutput = '<h3>Services</h3>'; 
+    // Add the filtered markers back to the map data layer.
     metaDimension.top(Infinity).forEach( function (feature) {
-      dataLayer.addLayer(feature.properties.marker); 
+        // Add the filtered markers back to the map's data layer
+        dataLayer.addLayer(feature.properties.marker); 
+        // Build the output for the filtered list view
+        listOutput += '<p>' + renderServiceText(feature, "teaser") + '</p>';
     } );
+    // Replace the contents of the list div with the new filtered output.
+    $('#list').html(listOutput);
 }
 
+// Prepare text output for a single item, to show in the map popups or the list view
+function renderServiceText(feature, style) {
+    var locationName = '<h3>' + feature.properties.locationName + '</h3>';
+
+    // Preserve the line breaks in the original comment.
+    var comments = feature.properties.comments ? feature.properties.comments.replace(/\r\n|\n|\r/g, '<br />') : null;
+
+    // Get the info from the accessibility & availability fields.
+    var availability = '';
+
+    // Make an array of the fields we want to show.
+    var fields = [
+        "8. Office Open at",
+        "9. Office close at",
+        "10. Referral Method",
+    ];
+    if (style == 'full') {
+        fields = jQuery.merge(fields, [
+        "6. Availability",
+        "7. Availability Day",
+        "1. Registration Type Requirement",
+        "2. Nationality",
+        "3. Intake Criteria",
+        "4. Accessibility",
+        "5. Coverage"]);
+    }
+
+    // Loop through the array, preparing info for the popup.
+    for (var i=0, len=fields.length; i < len; i++){
+        // Strip the leading numeral from the field name.
+        var fieldName = fields[i].substr(fields[i].indexOf(" ") + 1);
+        // Add the field name to the output.
+        availability += '<br /><b>' + fieldName + ':</b> ';
+        // Get the field items (they are all Booleans, we want their labels)
+        values = feature.properties[fields[i]];
+        // Loop through the items, and if their value is TRUE, add their label to the output.
+        for (var lineItem in values) {
+            if (values[lineItem]) {
+                availability += lineItem + ' ';
+            }
+        }
+    }
+    return locationName + comments + availability;
+}

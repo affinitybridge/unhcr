@@ -309,24 +309,27 @@ textarea {
 html,
 body { height: 100%; }
 #map {
-    height: 70%;
+    height: 60%;
   }
-/* Temporary filter styles for neatness during development */
-div.filter {
-    float: left;
-    padding: 10px;
-    font-size: 0.8em;
-}
-div.filter form label {
-    display: block;
-}
-div#activityCategory,
-div#activityName,
-div#startDate,
-div#endDate {
-    height: 150px;
-}
 
+/* Toggle styles */
+#toggler {
+    border: 2px solid #ddd;
+    padding: 3px 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+#toggler span {
+    padding: 5px 7px;
+    margin: 0;
+    background-color: #bbb;
+}
+#toggler span.active {
+    background-color: #fff;
+}
+  
 /* Marker styles */
 .awesome-marker i {
     font-size: 18px !important;
@@ -359,6 +362,18 @@ div.leaflet-popup-content p {
 }
 
 /* Filter styles */
+div#filters {
+    width: 100%;
+    clear: both;
+}
+div.filter {
+    padding: 10px;
+    font-size: 0.8em;
+}
+div.filter form label {
+    display: block;
+}
+
 span.glyph {
     font-family: FontAwesome;
     font-weight: normal;
