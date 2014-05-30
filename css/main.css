@@ -385,3 +385,16 @@ span.glyph.Shelter:before {
     content: "\f015";
     color: #ffc000;
 }
+/* Not sure about these classes until I see the actual data for these categories */
+span.glyph.Education:before {
+    content: "\f362";
+    color: #31859c;
+}
+span.glyph.Health:before {
+    content: "\f0fa";
+    color: #43b305;
+}
+span.glyph.Wash:before {
+    content: "\f369";
+    color: #8064a2;
+}
