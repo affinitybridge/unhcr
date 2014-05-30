@@ -73,9 +73,44 @@ jQuery.getJSON( "src/compiled.json", function( data ) {
         serviceMarker.addTo(dataLayer);
 
         // Add the info popups.
+        var locationName = '<h3>' + feature.properties.locationName + '</h3>';
+
         // Preserve the line breaks in the original comment.
         var comments = feature.properties.comments ? feature.properties.comments.replace(/\r\n|\n|\r/g, '<br />') : null;
-        serviceMarker.bindPopup('<h3>' + feature.properties.locationName + '</h3>' + comments);
+
+        // Get the info from the accessibility & availability fields.
+        var availability = '';
+        // Make an array of the fields we want to show in the popup.
+        var popupFields = [
+            "8. Office Open at",
+            "9. Office close at",
+            "6. Availability",
+            "7. Availability Day",
+            "10. Referral Method",
+            "1. Registration Type Requirement",
+            "2. Nationality",
+            "3. Intake Criteria",
+            "4. Accessibility",
+            "5. Coverage"
+        ];
+        // Loop through the array.
+        for (var i=0, len=popupFields.length; i < len; i++){
+            // Strip the leading numeral from the field name.
+            var fieldName = popupFields[i].substr(popupFields[i].indexOf(" ") + 1); 
+            // Add the field name to the output.
+            availability += '<br /><b>' + fieldName + ':</b> ';
+            // Get the field items (they are all Booleans, we want their labels)
+            values = feature.properties[popupFields[i]];
+            // Loop through the items, and if their value is TRUE, add their label to the output.
+            for (var lineItem in values) {
+                if (values[lineItem]) {
+                    availability += lineItem + ' ';
+                }
+            } 
+        }
+
+        // Make the popup and bind it to the marker.
+        serviceMarker.bindPopup(locationName + comments + availability);
 
         // Add the marker layer we just created to "feature"
         feature.properties.marker = serviceMarker;
