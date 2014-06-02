@@ -31,14 +31,14 @@ jQuery.getJSON( "src/polygons.json", function( polygonData ) {
 
 // Match possible Activity Categories to Humanitarian Font icons.
 var iconGlyphs = [
-    {category: 'CASH', glyph: 'money', markerColor: '#c00000' },
-    {category: 'EDUCATION', glyph: 'ocha-sector-education', markerColor: '#31859c' },
-    {category: 'FOOD', glyph: 'food', markerColor: '#948a54' },
-    {category: 'HEALTH', glyph: 'medkit', markerColor: '#43b305' },
-    {category: 'NFI', glyph: 'ocha-sector-livelihood', markerColor: '#026cb6' },
-    {category: 'PROTECTION', glyph: 'ocha-sector-protection', markerColor: '#1f4981' },
-    {category: 'SHELTER', glyph: 'home', markerColor: '#ffc000' },
-    {category: 'WASH', glyph: 'ocha-sector-wash', markerColor: '#8064a2' }
+    {category: 'CASH', glyph: 'ocha-sector-cash', markerColor: '#a48658' },
+    {category: 'EDUCATION', glyph: 'ocha-sector-education', markerColor: '#c00000' },
+    {category: 'FOOD', glyph: 'ocha-sector-foodsecurity', markerColor: '#006600' },
+    {category: 'HEALTH', glyph: 'ocha-sector-health', markerColor: '#08a1d9' },
+    {category: 'NFI', glyph: 'ocha-item-reliefgood', markerColor: '#f96a1b' },
+    {category: 'PROTECTION', glyph: 'ocha-sector-protection', markerColor: '#1f497d' },
+    {category: 'SHELTER', glyph: 'ocha-sector-shelter', markerColor: '#989aac' },
+    {category: 'WASH', glyph: 'ocha-sector-wash', markerColor: '#7030a0' }
 ];
 var iconObjects = {};
 // Create the icons, as objects named eg iconFOOD.

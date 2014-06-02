@@ -559,8 +559,11 @@ ul.icons li [class*=" icon-"] {
 .icon-ocha-sector-livelihood:before             { content: "\f36a"; }
 .icon-ocha-sector-sgbv:before             { content: "\f3c8"; }
 .icon-ocha-sector-community:before             { content: "\f55c"; }
+.icon-ocha-sector-shelter:before             { content: "\f363"; }
+.icon-ocha-sector-childprotection:before             { content: "\f334"; }
+.icon-ocha-sector-cash:before             { content: "\f32a"; }
 
-/* Sector */
+/* Affected population */
 .icon-ocha-affected-population:before              { content: "\f3b0"; }
 .icon-ocha-affected-man:before             { content: "\f30c"; }
 .icon-ocha-affected-woman:before             { content: "\f30d"; }
@@ -587,6 +590,7 @@ ul.icons li [class*=" icon-"] {
 .icon-ocha-item-tent:before             { content: "\f415"; }
 .icon-ocha-item-mosquitonet:before             { content: "\f409"; }
 .icon-ocha-item-nonfooditem:before             { content: "\f410"; }
+.icon-ocha-cash:before             { content: "\f533"; }
 
 /* Event */
 .icon-event-bluehelmet:before             { content: "\f39f"; }

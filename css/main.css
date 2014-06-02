@@ -332,17 +332,9 @@ body { height: 100%; }
   
 /* Marker styles */
 .awesome-marker i {
-    font-size: 18px !important;
-    margin: 6px 0 0 4px !important;
-} 
-/* Some of the Humanitarian Font glyphs are smaller than others. */
-.awesome-marker i.icon-ocha-sector-protection,
-.awesome-marker i.icon-ocha-sector-livelihood,
-.awesome-marker i.icon-ocha-sector-education,
-.awesome-marker i.icon-ocha-sector-wash {
     font-size: 24px !important;
-    margin: 2px 0 0 8px !important;    
-}
+    margin: 2px 0 0 8px !important;
+} 
 
 /* Popup styles */
 div.leaflet-popup-content,
@@ -378,46 +370,41 @@ span.glyph {
     font-family: FontAwesome;
     font-weight: normal;
     font-style: normal;
-    font-size: 18px;
+    font-size: 24px;
     padding: 0 5px;
 }
-/* I repeat, some of the Humanitarian Font glyphs are smaller than others. */
-#filter-value-child-protection span.glyph,
-#filter-value-basic-needs span.glyph,
-#filter-value-education span.glyph,
-#filter-value-wash span.glyph {
-    font-size: 24px !important;
-}
 span.glyph.Basic:before {
-    content: "\f36a";
-    color: #026cb6;
+    content: "\f412";
+    color: #f96a1b;
 }
 span.glyph.Child:before {
     content: "\f368";
-    color: #1f4981;
+    color: #1f497d;
 }
 span.glyph.Maintain:before {
-    content: "\f0f5";
-    color: #948a54;
+    content: "\f366";
+    color: #006600;
 }
 span.glyph.Need:before {
-    content: "\f0d6";
-    color: #c00000;
+    content: "\f32a";
+    color: #a48658;
 }
 span.glyph.Shelter:before {
-    content: "\f015";
-    color: #ffc000;
+    content: "\f363";
+    color: #989aac;
 }
+
+
 /* Not sure about these classes until I see the actual data for these categories */
 span.glyph.Education:before {
     content: "\f362";
-    color: #31859c;
+    color: #c00000;
 }
 span.glyph.Health:before {
-    content: "\f0fa";
-    color: #43b305;
+    content: "\f364";
+    color: #08a1d9;
 }
 span.glyph.Wash:before {
     content: "\f369";
-    color: #8064a2;
+    color: #7030a0;
 }
