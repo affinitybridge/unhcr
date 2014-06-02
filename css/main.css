@@ -329,7 +329,13 @@ body { height: 100%; }
 #toggler span.active {
     background-color: #fff;
 }
-  
+.advancedToggler {
+    cursor: pointer;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+}
+
 /* Marker styles */
 .awesome-marker i {
     font-size: 24px !important;
@@ -358,14 +364,13 @@ div#filters {
     width: 100%;
     clear: both;
 }
-div.filter {
+div#filters div.filter {
     padding: 10px;
     font-size: 0.8em;
 }
 div.filter form label {
     display: block;
 }
-
 span.glyph {
     font-family: FontAwesome;
     font-weight: normal;
@@ -373,38 +378,101 @@ span.glyph {
     font-size: 24px;
     padding: 0 5px;
 }
-span.glyph.Basic:before {
+#filter-value-basic-needs span.glyph:before {
     content: "\f412";
     color: #f96a1b;
 }
-span.glyph.Child:before {
+#filter-value-child-protection span.glyph:before {
     content: "\f368";
     color: #1f497d;
 }
-span.glyph.Maintain:before {
+#filter-value-maintain-food-security span.glyph:before {
     content: "\f366";
     color: #006600;
 }
-span.glyph.Need:before {
+#filter-value-need-coverage span.glyph:before {
     content: "\f32a";
     color: #a48658;
 }
-span.glyph.Shelter:before {
+#filter-value-shelter-rehabilitation-jordanians---syrians span.glyph:before {
     content: "\f363";
     color: #989aac;
 }
-
-
-/* Not sure about these classes until I see the actual data for these categories */
-span.glyph.Education:before {
+#filter-value-education span.glyph:before {
     content: "\f362";
     color: #c00000;
 }
-span.glyph.Health:before {
+#filter-value-health span.glyph:before {
     content: "\f364";
     color: #08a1d9;
 }
-span.glyph.Wash:before {
+#filter-value-wash span.glyph:before {
     content: "\f369";
     color: #7030a0;
 }
+#partnerName span.glyph {
+    display: inline-block;
+    position: relative;
+    top: 4px;
+    margin: 0 0 0 10px;
+    width: 150px;
+    height: 30px;
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+}
+
+
+div#partnerName #filter-value-acf span.glyph { background-image: url("../src/images/partner/acf.jpg"); }
+div#partnerName #filter-value-acted span.glyph { background-image: url("../src/images/partner/acted.jpg"); }
+div#partnerName #filter-value-actionaid span.glyph { background-image: url("../src/images/partner/actionaid.jpg"); }
+div#partnerName #filter-value-adra span.glyph { background-image: url("../src/images/partner/adra.jpg"); }
+div#partnerName #filter-value-avsi span.glyph { background-image: url("../src/images/partner/avsi.jpg"); }
+div#partnerName #filter-value-care span.glyph { background-image: url("../src/images/partner/care.jpg"); }
+div#partnerName #filter-value-chf span.glyph { background-image: url("../src/images/partner/chf.jpg"); }
+div#partnerName #filter-value-cvt span.glyph { background-image: url("../src/images/partner/cvt.jpg"); }
+div#partnerName #filter-value-drc span.glyph { background-image: url("../src/images/partner/drc.jpg"); }
+div#partnerName #filter-value-fpsc span.glyph { background-image: url("../src/images/partner/fpsci.jpg"); }
+div#partnerName #filter-value-hi span.glyph { background-image: url("../src/images/partner/hi.jpg"); }
+div#partnerName #filter-value-ilo span.glyph { background-image: url("../src/images/partner/ilo.jpg"); }
+div#partnerName #filter-value-imc span.glyph { background-image: url("../src/images/partner/imc.jpg"); }
+div#partnerName #filter-value-intersos span.glyph { background-image: url("../src/images/partner/intersos.jpg"); }
+div#partnerName #filter-value-iocc span.glyph { background-image: url("../src/images/partner/iocc.jpg"); }
+div#partnerName #filter-value-iom span.glyph { background-image: url("../src/images/partner/iom.jpg"); }
+div#partnerName #filter-value-irw span.glyph { background-image: url("../src/images/partner/irw.jpg"); }
+div#partnerName #filter-value-irc span.glyph { background-image: url("../src/images/partner/irc.jpg"); }
+div#partnerName #filter-value-ird span.glyph { background-image: url("../src/images/partner/ird.jpg"); }
+div#partnerName #filter-value-jen span.glyph { background-image: url("../src/images/partner/jen.jpg"); }
+div#partnerName #filter-value-jhas span.glyph { background-image: url("../src/images/partner/jhas.jpg"); }
+div#partnerName #filter-value-jhco span.glyph { background-image: url("../src/images/partner/jhco.jpg"); }
+div#partnerName #filter-value-fao span.glyph { background-image: url("../src/images/partner/fao.jpg"); }
+div#partnerName #filter-value-knk span.glyph { background-image: url("../src/images/partner/knk.jpg"); }
+div#partnerName #filter-value-la span.glyph { background-image: url("../src/images/partner/la.jpg"); }
+div#partnerName #filter-value-lwf span.glyph { background-image: url("../src/images/partner/lwf.jpg"); }
+div#partnerName #filter-value-mc span.glyph { background-image: url("../src/images/partner/mc.jpg"); }
+div#partnerName #filter-value-msf-f span.glyph { background-image: url("../src/images/partner/mc.jpg"); }
+div#partnerName #filter-value-mdm span.glyph { background-image: url("../src/images/partner/mdm.jpg"); }
+div#partnerName #filter-value-medair span.glyph { background-image: url("../src/images/partner/medair.jpg"); }
+div#partnerName #filter-value-po-la-paz span.glyph { background-image: url("../src/images/partner/movimiento-po-la-paz.jpg"); }
+div#partnerName #filter-value-niccod span.glyph { background-image: url("../src/images/partner/niccod.jpg"); }
+div#partnerName #filter-value-nrc span.glyph { background-image: url("../src/images/partner/nrc.jpg"); }
+div#partnerName #filter-value-opm span.glyph { background-image: url("../src/images/partner/operation-mercy.jpg"); }
+div#partnerName #filter-value-oxfam span.glyph { background-image: url("../src/images/partner/oxfam.jpg"); }
+div#partnerName #filter-value-pu-ami span.glyph { background-image: url("../src/images/partner/pu-ami.jpg"); }
+div#partnerName #filter-value-questcope span.glyph { background-image: url("../src/images/partner/quetscope.jpg"); }
+div#partnerName #filter-value-ri span.glyph { background-image: url("../src/images/partner/ri.jpg"); }
+div#partnerName #filter-value-taghyeer span.glyph { background-image: url("../src/images/partner/taghyeer.jpg"); }
+div#partnerName #filter-value-tdh span.glyph { background-image: url("../src/images/partner/tdh.jpg"); }
+div#partnerName #filter-value-tdhi span.glyph { background-image: url("../src/images/partner/tdh-it.jpg"); }
+div#partnerName #filter-value-thw span.glyph { background-image: url("../src/images/partner/thw.jpg"); }
+div#partnerName #filter-value-tgh span.glyph { background-image: url("../src/images/partner/triangle.jpg"); }
+div#partnerName #filter-value-undp span.glyph { background-image: url("../src/images/partner/undp.jpg"); }
+div#partnerName #filter-value-unesco span.glyph { background-image: url("../src/images/partner/unesco.jpg"); }
+div#partnerName #filter-value-unhabitat span.glyph { background-image: url("../src/images/partner/unhabitat.jpg"); }
+div#partnerName #filter-value-unhcr span.glyph { background-image: url("../src/images/partner/unhcr.jpg"); }
+div#partnerName #filter-value-unicef span.glyph { background-image: url("../src/images/partner/unicef.jpg"); }
+div#partnerName #filter-value-unops span.glyph { background-image: url("../src/images/partner/unops.jpg"); }
+div#partnerName #filter-value-warchild span.glyph { background-image: url("../src/images/partner/warchild.jpg"); }
+div#partnerName #filter-value-wfp span.glyph { background-image: url("../src/images/partner/wfp.jpg"); }
+div#partnerName #filter-value-wvi span.glyph { background-image: url("../src/images/partner/wvi.jpg"); }
+

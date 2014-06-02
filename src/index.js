@@ -66,6 +66,12 @@ var cf_referralRequired = categoryFilter({
     key: 'Referral required',
     empty: 'No data'
 }, cf);
+var cf_partnerName = categoryFilter({
+    container: 'partnerName',
+    type: 'checkbox',
+    key: 'partnerName',
+    empty: 'No data'
+}, cf);
 
 // Special meta-dimension for our crossFilter dimensions, used to grab the final set
 // of data with all other dimensions' filters applied.
@@ -75,17 +81,30 @@ var metaDimension = cf.dimension(function (f) { return f.properties.activityName
 // Bind the update() method to the "update" event on the category filter.
 cf_activityName.on('update', update);
 cf_referralRequired.on('update', update);
+cf_partnerName.on('update', update);
 
 // Make the list view hidden by default.
 $("#list").hide();
-$("#mapToggle").addClass("active");
+$("#mapToggle").addClass("active"); // This make the "map" span in the map/list toggle look active.
+
+// Make the Advanced Search hidden by default.
+$("#advancedFilters").hide();
+$("#hideAdvanced").hide();
 
 // Bind list/map view toggle to the toggler link.
+// Thus, if user clicks anywhere on the toggler link, the map and list toggle their visibility,
+// and the Map and List spans in the toggler link toggle their active-looking-ness.
 $("#toggler").click(function() {
     $("#map").toggle();
     $("#list").toggle();
     $("#mapToggle").toggleClass("active");
     $("#listToggle").toggleClass("active");
+});
+// Bind advanced search filters visibility to the "Advanced Search" link.
+$(".advancedToggler").click(function() {
+    $("#advancedFilters").toggle();
+    $("#showAdvanced").toggle();
+    $("#hideAdvanced").toggle();
 });
 
 // Get the pre-compiled JSON from the file, and loop through it creating the markers.
@@ -119,6 +138,7 @@ function update() {
     // Update the filters.
     cf_activityName.update();
     cf_referralRequired.update();
+    cf_partnerName.update();
 
     // Add the markers to the map.
     render();
@@ -142,7 +162,19 @@ function render() {
 
 // Prepare text output for a single item, to show in the map popups or the list view
 function renderServiceText(feature, style) {
-    var locationName = '<h3>' + feature.properties.locationName + '</h3>';
+
+    // Get the partner logo, if any.
+    partnerName = feature.properties.partnerName;
+    var logo = partnerName;
+    var logoUrl = '/src/images/partner/' + partnerName + '.jpg';
+    var http = new XMLHttpRequest();
+    http.open('HEAD', logoUrl, false);
+    http.send();
+    if (http.status != 404) {
+        logo = '<img src="' + logoUrl + '" alt="' + partnerName + '" />';
+    }
+
+    var headline = '<h3>' + logo + '<br />' + feature.properties.locationName + '</h3>';
 
     // Preserve the line breaks in the original comment.
     var comments = feature.properties.comments ? feature.properties.comments.replace(/\r\n|\n|\r/g, '<br />') : null;
@@ -182,5 +214,5 @@ function renderServiceText(feature, style) {
             }
         }
     }
-    return locationName + comments + availability;
+    return headline + comments + availability;
 }

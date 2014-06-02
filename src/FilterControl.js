@@ -118,9 +118,8 @@ var FilterControl = L.Control.extend({
 
         var name = L.DomUtil.create('span', 'filter-label-value');
 
-        // UNHCR: add the corresponding Humanitarian Font symbols.
-        var filterNameParts = filter.key.split(' ');
-        var glyph = L.DomUtil.create('span', 'glyph ' + filterNameParts[0]);
+        // Add a space for a logo or symbol.
+        var glyph = L.DomUtil.create('span', 'glyph');
 
         name.innerHTML = this._label(filter);
 
