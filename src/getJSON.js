@@ -31,18 +31,23 @@ var jsonSources = [],
 
             // Parse the JSON objects: create a "Directly accessible" vs "Referral
             // required" field based on "Referral Method"
-            for (var featureid in data.features) {
-                // Check if this feature has referral method "No Referral" 
-                referralData = data.features[featureid].properties["10. Referral Method"];
-                var referralRequired = true;
-                if (referralData) {
-                    if (referralData["No Referral"] === true) {
-                        referralRequired = false;
+            var processed = [];
+            for (var i in data.features) {
+                // Check if this feature is already in the list.
+                featureID = data.features[i].id;
+                if (!processed[featureID]) {
+                    // Check if this feature has referral method "No Referral" 
+                    referralData = data.features[i].properties["10. Referral Method"];
+                    var referralRequired = true;
+                    if (referralData) {
+                        if (referralData["No Referral"] === true) {
+                            referralRequired = false;
+                        }
                     }
+                    // Create the "noreferral" field with the value of noreferral
+                    data.features[i].properties["Referral required"] = referralRequired ? 'Yes' : 'No';
+                    processed[featureID] = true;
                 }
-                // Create the "noreferral" field with the value of noreferral
-                data.features[featureid].properties["Referral required"] = referralRequired ? 'Yes' : 'No';
-
             }
 
             // Put all the JSON objects into the jsonSources array.

@@ -179,6 +179,9 @@ function renderServiceText(feature, style) {
     // Preserve the line breaks in the original comment.
     var comments = feature.properties.comments ? feature.properties.comments.replace(/\r\n|\n|\r/g, '<br />') : null;
 
+    // DEBUG: add the unique ID, to see if there are services that were entered in the database more than once.
+    comments += '<br /><b>ActivityInfo ID: </b>' + feature.id;
+
     // Get the info from the accessibility & availability fields.
     var availability = '';
 
