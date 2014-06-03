@@ -23,11 +23,13 @@ var dataLayer = L.featureGroup().addTo(map);
 
 // Read the polygon file.
 // TODO: use these polygons as the basis for a filter/zoom tool
+/* Commenting the polygons out for now because they aren't clickable yet
 jQuery.getJSON( "src/polygons.json", function( polygonData ) {
     // Create the polygon layer and add to the map.
     var polygonLayer = L.geoJson(polygonData);
     map.addLayer(polygonLayer);
 });
+*/
 
 // Match possible Activity Categories to Humanitarian Font icons.
 var iconGlyphs = [
@@ -117,7 +119,7 @@ jQuery.getJSON( "src/compiled.json", function( data ) {
         serviceMarker.addTo(dataLayer);
 
         // Make the popup and bind it to the marker.
-        serviceMarker.bindPopup(renderServiceText(feature, "teaser"));
+        serviceMarker.bindPopup(renderServiceText(feature, "marker"));
 
         // Add the marker layer we just created to "feature"
         feature.properties.marker = serviceMarker;
@@ -154,7 +156,7 @@ function render() {
         // Add the filtered markers back to the map's data layer
         dataLayer.addLayer(feature.properties.marker); 
         // Build the output for the filtered list view
-        listOutput += '<p>' + renderServiceText(feature, "teaser") + '</p>';
+        listOutput += '<p>' + renderServiceText(feature, "list") + '</p>';
     } );
     // Replace the contents of the list div with the new filtered output.
     $('#list').html(listOutput);
@@ -244,7 +246,7 @@ function renderServiceText(feature, style) {
         feature.properties.comments.trim().replace(/\r\n|\n|\r/g, '<br />') : null;
 
     // DEBUG: add the unique ID, to see if there are services that were entered in the database more than once.
-    var debug = '<p><b>ActivityInfo ID: </b>' + feature.id + '</p>';
+    var debug = style == 'list' ? '<p><b>ActivityInfo ID: </b>' + feature.id + '</p>' : null;
 
     return '<div class="serviceText">' + headline + hours + availability + comments + debug + '</div>';
 }

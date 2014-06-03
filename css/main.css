@@ -308,9 +308,13 @@ textarea {
  */
 html,
 body { height: 100%; }
+
+/* Map styles */
 #map {
     height: 60%;
-  }
+    float: none;
+    clear: both;
+}
 
 /* Toggle styles */
 #toggler {
@@ -332,11 +336,16 @@ body { height: 100%; }
 .advancedToggler {
     cursor: pointer;
     position: absolute;
-    top: 70px;
+    top: 130px;
     right: 20px;
 }
 
 /* List styles */
+div#list {
+   float: left;
+   clear: both;
+   padding: 0 15px;
+}
 div#list div.serviceText { margin: 0 0 15px 0; }
 div.serviceText h3 { margin: 0; }
 div.serviceText p {
@@ -374,9 +383,27 @@ div#filters {
 div#filters div.filter {
     padding: 10px;
     font-size: 0.8em;
+    border: 1px dashed #eee;
 }
 div.filter form label {
     display: block;
+}
+div.filter#activityName,
+div.filter#referralRequired { float: left; }
+div.filter#activityName form label { line-height: 1.2em; }
+div.filter#partnerName { width: 100%; float: left; clear: both; }
+div.filter#partnerName form label {
+    line-height: 1.2em;
+    float: left;
+    width: 235px;
+    padding: 0 20px 0 0;
+}
+div#advancedFilters {
+   float: left;
+   clear: both;
+   background-color: #eee;
+   border: 1px dashed #ccc;
+   margin: 0 5px 5px 5px;
 }
 span.glyph {
     font-family: FontAwesome;
@@ -384,6 +411,17 @@ span.glyph {
     font-style: normal;
     font-size: 24px;
     padding: 0 5px;
+    position: relative;
+    top: 4px;
+    display: inline-block;
+}
+#partnerName span.glyph {
+    margin: 0 0 0 6px;
+    width: 120px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left bottom;
 }
 #filter-value-basic-needs span.glyph:before {
     content: "\f412";
@@ -417,18 +455,6 @@ span.glyph {
     content: "\f369";
     color: #7030a0;
 }
-#partnerName span.glyph {
-    display: inline-block;
-    position: relative;
-    top: 4px;
-    margin: 0 0 0 10px;
-    width: 150px;
-    height: 30px;
-    background-size: contain !important;
-    background-repeat: no-repeat;
-    background-position: left bottom;
-}
-
 
 div#partnerName #filter-value-acf span.glyph { background-image: url("../src/images/partner/acf.jpg"); }
 div#partnerName #filter-value-acted span.glyph { background-image: url("../src/images/partner/acted.jpg"); }
