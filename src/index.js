@@ -166,7 +166,7 @@ function renderServiceText(feature, style) {
     // Get the partner logo, if any.
     partnerName = feature.properties.partnerName;
     var logo = partnerName;
-    var logoUrl = '/src/images/partner/' + partnerName + '.jpg';
+    var logoUrl = '/src/images/partner/' + partnerName.toLowerCase() + '.jpg';
     var http = new XMLHttpRequest();
     http.open('HEAD', logoUrl, false);
     http.send();
@@ -176,19 +176,34 @@ function renderServiceText(feature, style) {
 
     var headline = '<h3>' + logo + '<br />' + feature.properties.locationName + '</h3>';
 
-    // Preserve the line breaks in the original comment.
-    var comments = feature.properties.comments ? feature.properties.comments.replace(/\r\n|\n|\r/g, '<br />') : null;
+    // Prepare the office hours output.
+    var hours = '<b>Hours:</b> ';
+    var hourOpen = '';
+    var hourClosed = '';
+    for (var hoItem in feature.properties["8. Office Open at"]) {
+        if (feature.properties["8. Office Open at"][hoItem] === true) {
+            hourOpen = hoItem;
+        }
+    }
+    for (var hcItem in feature.properties["9. Office close at"]) {
+        if (feature.properties["9. Office close at"][hcItem] === true) {
+            hourClosed = hcItem;
+        }
+    }
+    if (hourOpen) {
+        // If we have hours, show them as compact as possible.
+        hours = hourClosed ? hours += hourOpen + ' - ' + hourClosed.replace('Close at', '') : hours + 'Open at ' + hourOpen;
+    } else {
+        // If we have neither an open nor a close time, say "unknown".
+        hours = hourClosed ? hours += hourClosed : hours + 'unknown';
+    }
 
-    // DEBUG: add the unique ID, to see if there are services that were entered in the database more than once.
-    comments += '<br /><b>ActivityInfo ID: </b>' + feature.id;
-
-    // Get the info from the accessibility & availability fields.
-    var availability = '';
+    // Create meta-fields for better display of office hours & indicators.
+    feature.properties["x. Activity Details"] = feature.properties.indicators;
 
     // Make an array of the fields we want to show.
     var fields = [
-        "8. Office Open at",
-        "9. Office close at",
+         "x. Activity Details",
         "10. Referral Method",
     ];
     if (style == 'full') {
@@ -203,19 +218,33 @@ function renderServiceText(feature, style) {
     }
 
     // Loop through the array, preparing info for the popup.
+    var availability = '';
     for (var i=0, len=fields.length; i < len; i++){
-        // Strip the leading numeral from the field name.
-        var fieldName = fields[i].substr(fields[i].indexOf(" ") + 1);
-        // Add the field name to the output.
-        availability += '<br /><b>' + fieldName + ':</b> ';
         // Get the field items (they are all Booleans, we want their labels)
         values = feature.properties[fields[i]];
-        // Loop through the items, and if their value is TRUE, add their label to the output.
-        for (var lineItem in values) {
-            if (values[lineItem]) {
-                availability += lineItem + ' ';
+        // Skip empty fields
+        if (values) {
+            if (Object.getOwnPropertyNames(values).length) { 
+                // Strip the leading numeral from the field name.
+                var fieldName = fields[i].substr(fields[i].indexOf(" ") + 1);
+                // Add the field name to the output.
+                availability += '<p><b>' + fieldName + ':</b> ';
+                // Loop through items, and if value is TRUE, add label to the output.
+                for (var lineItem in values) {
+                    if (values[lineItem]) {
+                        availability += lineItem + ' ';
+                    }
+                }
+                availability += '</p>';
             }
         }
     }
-    return headline + comments + availability;
+    // Preserve the line breaks in the original comment, but strip extra breaks from beginning and end.
+    var comments = feature.properties.comments ?
+        feature.properties.comments.trim().replace(/\r\n|\n|\r/g, '<br />') : null;
+
+    // DEBUG: add the unique ID, to see if there are services that were entered in the database more than once.
+    var debug = '<p><b>ActivityInfo ID: </b>' + feature.id + '</p>';
+
+    return '<div class="serviceText">' + headline + hours + availability + comments + debug + '</div>';
 }

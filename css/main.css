@@ -336,6 +336,13 @@ body { height: 100%; }
     right: 20px;
 }
 
+/* List styles */
+div#list div.serviceText { margin: 0 0 15px 0; }
+div.serviceText h3 { margin: 0; }
+div.serviceText p {
+    margin: 0;
+}
+
 /* Marker styles */
 .awesome-marker i {
     font-size: 24px !important;
@@ -432,33 +439,37 @@ div#partnerName #filter-value-care span.glyph { background-image: url("../src/im
 div#partnerName #filter-value-chf span.glyph { background-image: url("../src/images/partner/chf.jpg"); }
 div#partnerName #filter-value-cvt span.glyph { background-image: url("../src/images/partner/cvt.jpg"); }
 div#partnerName #filter-value-drc span.glyph { background-image: url("../src/images/partner/drc.jpg"); }
+div#partnerName #filter-value-fao span.glyph { background-image: url("../src/images/partner/fao.jpg"); }
+div#partnerName #filter-value-fca span.glyph { background-image: url("../src/images/partner/fca.jpg"); }
 div#partnerName #filter-value-fpsc span.glyph { background-image: url("../src/images/partner/fpsci.jpg"); }
 div#partnerName #filter-value-hi span.glyph { background-image: url("../src/images/partner/hi.jpg"); }
+div#partnerName #filter-value-ifh span.glyph { background-image: url("../src/images/partner/ifh.jpg"); }
 div#partnerName #filter-value-ilo span.glyph { background-image: url("../src/images/partner/ilo.jpg"); }
 div#partnerName #filter-value-imc span.glyph { background-image: url("../src/images/partner/imc.jpg"); }
 div#partnerName #filter-value-intersos span.glyph { background-image: url("../src/images/partner/intersos.jpg"); }
 div#partnerName #filter-value-iocc span.glyph { background-image: url("../src/images/partner/iocc.jpg"); }
 div#partnerName #filter-value-iom span.glyph { background-image: url("../src/images/partner/iom.jpg"); }
-div#partnerName #filter-value-irw span.glyph { background-image: url("../src/images/partner/irw.jpg"); }
 div#partnerName #filter-value-irc span.glyph { background-image: url("../src/images/partner/irc.jpg"); }
 div#partnerName #filter-value-ird span.glyph { background-image: url("../src/images/partner/ird.jpg"); }
+div#partnerName #filter-value-irw span.glyph { background-image: url("../src/images/partner/irw.jpg"); }
 div#partnerName #filter-value-jen span.glyph { background-image: url("../src/images/partner/jen.jpg"); }
 div#partnerName #filter-value-jhas span.glyph { background-image: url("../src/images/partner/jhas.jpg"); }
 div#partnerName #filter-value-jhco span.glyph { background-image: url("../src/images/partner/jhco.jpg"); }
-div#partnerName #filter-value-fao span.glyph { background-image: url("../src/images/partner/fao.jpg"); }
+div#partnerName #filter-value-jrs span.glyph { background-image: url("../src/images/partner/jrs.jpg"); }
 div#partnerName #filter-value-knk span.glyph { background-image: url("../src/images/partner/knk.jpg"); }
 div#partnerName #filter-value-la span.glyph { background-image: url("../src/images/partner/la.jpg"); }
 div#partnerName #filter-value-lwf span.glyph { background-image: url("../src/images/partner/lwf.jpg"); }
 div#partnerName #filter-value-mc span.glyph { background-image: url("../src/images/partner/mc.jpg"); }
-div#partnerName #filter-value-msf-f span.glyph { background-image: url("../src/images/partner/mc.jpg"); }
 div#partnerName #filter-value-mdm span.glyph { background-image: url("../src/images/partner/mdm.jpg"); }
 div#partnerName #filter-value-medair span.glyph { background-image: url("../src/images/partner/medair.jpg"); }
 div#partnerName #filter-value-po-la-paz span.glyph { background-image: url("../src/images/partner/movimiento-po-la-paz.jpg"); }
+div#partnerName #filter-value-msf span.glyph { background-image: url("../src/images/partner/msf.jpg"); }
 div#partnerName #filter-value-niccod span.glyph { background-image: url("../src/images/partner/niccod.jpg"); }
 div#partnerName #filter-value-nrc span.glyph { background-image: url("../src/images/partner/nrc.jpg"); }
 div#partnerName #filter-value-opm span.glyph { background-image: url("../src/images/partner/operation-mercy.jpg"); }
 div#partnerName #filter-value-oxfam span.glyph { background-image: url("../src/images/partner/oxfam.jpg"); }
 div#partnerName #filter-value-pu-ami span.glyph { background-image: url("../src/images/partner/pu-ami.jpg"); }
+div#partnerName #filter-value-qrc span.glyph { background-image: url("../src/images/partner/qrc.jpg"); }
 div#partnerName #filter-value-questcope span.glyph { background-image: url("../src/images/partner/quetscope.jpg"); }
 div#partnerName #filter-value-ri span.glyph { background-image: url("../src/images/partner/ri.jpg"); }
 div#partnerName #filter-value-taghyeer span.glyph { background-image: url("../src/images/partner/taghyeer.jpg"); }
@@ -468,11 +479,13 @@ div#partnerName #filter-value-thw span.glyph { background-image: url("../src/ima
 div#partnerName #filter-value-tgh span.glyph { background-image: url("../src/images/partner/triangle.jpg"); }
 div#partnerName #filter-value-undp span.glyph { background-image: url("../src/images/partner/undp.jpg"); }
 div#partnerName #filter-value-unesco span.glyph { background-image: url("../src/images/partner/unesco.jpg"); }
+div#partnerName #filter-value-unfpa span.glyph { background-image: url("../src/images/partner/unfpa.jpg"); }
 div#partnerName #filter-value-unhabitat span.glyph { background-image: url("../src/images/partner/unhabitat.jpg"); }
 div#partnerName #filter-value-unhcr span.glyph { background-image: url("../src/images/partner/unhcr.jpg"); }
 div#partnerName #filter-value-unicef span.glyph { background-image: url("../src/images/partner/unicef.jpg"); }
 div#partnerName #filter-value-unops span.glyph { background-image: url("../src/images/partner/unops.jpg"); }
 div#partnerName #filter-value-warchild span.glyph { background-image: url("../src/images/partner/warchild.jpg"); }
 div#partnerName #filter-value-wfp span.glyph { background-image: url("../src/images/partner/wfp.jpg"); }
+div#partnerName #filter-value-who span.glyph { background-image: url("../src/images/partner/who.jpg"); }
 div#partnerName #filter-value-wvi span.glyph { background-image: url("../src/images/partner/wvi.jpg"); }
 
