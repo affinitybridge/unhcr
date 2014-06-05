@@ -156,7 +156,7 @@ function render() {
         // Add the filtered markers back to the map's data layer
         dataLayer.addLayer(feature.properties.marker); 
         // Build the output for the filtered list view
-        listOutput += '<p>' + renderServiceText(feature, "list") + '</p>';
+        listOutput += renderServiceText(feature, "list");
     } );
     // Replace the contents of the list div with the new filtered output.
     $('#list').html(listOutput);
@@ -175,8 +175,6 @@ function renderServiceText(feature, style) {
     if (http.status != 404) {
         logo = '<img src="' + logoUrl + '" alt="' + partnerName + '" />';
     }
-
-    var headline = '<h3>' + logo + '<br />' + feature.properties.locationName + '</h3>';
 
     // Prepare the office hours output.
     var hours = '<b>Hours:</b> ';
@@ -204,10 +202,12 @@ function renderServiceText(feature, style) {
     feature.properties["x. Activity Details"] = feature.properties.indicators;
 
     // Make an array of the fields we want to show.
-    var fields = [
-         "x. Activity Details",
-        "10. Referral Method",
-    ];
+    var fields = {
+         "x. Activity Details": {'section': 'header'},
+         "10. Referral Method": {'section': 'content'},
+    };
+
+    /* Add these fields and more back in later, when we implement the "full" view.
     if (style == 'full') {
         fields = jQuery.merge(fields, [
         "6. Availability",
@@ -218,35 +218,50 @@ function renderServiceText(feature, style) {
         "4. Accessibility",
         "5. Coverage"]);
     }
+    */
 
     // Loop through the array, preparing info for the popup.
-    var availability = '';
-    for (var i=0, len=fields.length; i < len; i++){
+    var headerOutput = '';
+    var contentOutput = '';
+    for (var field in fields) { 
         // Get the field items (they are all Booleans, we want their labels)
-        values = feature.properties[fields[i]];
+        values = feature.properties[field];
+        var output = '';
         // Skip empty fields
         if (values) {
             if (Object.getOwnPropertyNames(values).length) { 
                 // Strip the leading numeral from the field name.
-                var fieldName = fields[i].substr(fields[i].indexOf(" ") + 1);
+                var fieldName = field.substr(field.indexOf(" ") + 1);
                 // Add the field name to the output.
-                availability += '<p><b>' + fieldName + ':</b> ';
+                output += '<p><b>' + fieldName + ':</b> ';
                 // Loop through items, and if value is TRUE, add label to the output.
                 for (var lineItem in values) {
                     if (values[lineItem]) {
-                        availability += lineItem + ' ';
+                        output += lineItem + ' ';
                     }
                 }
-                availability += '</p>';
+                output += '</p>';
             }
         }
+        if (fields[field].section == 'header') {
+            headerOutput += output;
+        } else {
+            contentOutput += output;
+        }
     }
+
+    // Get the activity-category icon.
+    activityCategory = feature.properties.activityCategory; // eg "CASH"
+
+    // Assemble the article header.
+    var header = '<header><h3>' + feature.properties.locationName + '</h3>' + hours + headerOutput + '</header>';
+
     // Preserve the line breaks in the original comment, but strip extra breaks from beginning and end.
     var comments = feature.properties.comments ?
         feature.properties.comments.trim().replace(/\r\n|\n|\r/g, '<br />') : null;
 
-    // DEBUG: add the unique ID, to see if there are services that were entered in the database more than once.
-    var debug = style == 'list' ? '<p><b>ActivityInfo ID: </b>' + feature.id + '</p>' : null;
+    // Assemble the article content.
+    var content = '<div class="content">' + logo + comments + '</div>';
 
-    return '<div class="serviceText">' + headline + hours + availability + comments + debug + '</div>';
+    return '<article class="serviceText">' + header + content + '</article>';
 }
