@@ -89,19 +89,28 @@ $("#mapToggle").addClass("active"); // This make the "map" span in the map/list 
 
 // Filter toggler
 $(".filter-toggler").click(function(event) {
-  event.preventDefault;
-  $(this)
-    .siblings()
-      .removeClass('active')
-    .end()
-    .addClass('active');
-
   var target = this.getAttribute('href');
-  $(target)
-    .siblings()
-      .removeClass('active')
-    .end()
-    .addClass('active');
+
+  event.preventDefault;
+
+  if ($(this).hasClass('active')) {
+    $(this).removeClass('active');
+    $(target).removeClass('active');
+  }
+  else {
+    $(this)
+      .parents('.filter-togglers')
+        .find('.active')
+          .removeClass('active')
+        .end()
+      .end()
+      .addClass('active');
+    $(target)
+      .siblings()
+        .removeClass('active')
+      .end()
+      .addClass('active');
+  }
 });
 
 // Bind list/map view toggle to the toggler link.
@@ -229,7 +238,7 @@ function renderServiceText(feature, style) {
     // Loop through the array, preparing info for the popup.
     var headerOutput = '';
     var contentOutput = '';
-    for (var field in fields) { 
+    for (var field in fields) {
         // Get the field items (they are all Booleans, we want their labels)
         values = feature.properties[field];
         var output = '';

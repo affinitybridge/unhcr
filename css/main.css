@@ -295,8 +295,8 @@ ul.filter-togglers {
     color: #333333;
     padding: 5px;
     text-decoration: none; }
-    ul.filter-togglers a:hover {
-      text-decoration: underline; }
+    ul.filter-togglers a:hover, ul.filter-togglers a.active {
+      color: black; }
 
 .filter-contents {
   background: #f3f3f3;
