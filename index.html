@@ -29,21 +29,27 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Markup for the map and the filters -->
-        <div id="filters">
-            <div class="filter" id="activityName"><strong>Activity Category</strong></div>
-            <div class="filter" id="referralRequired"><strong>Referral required?</strong></div>
-            <a class="advancedToggler" id="showAdvanced">Filter your results</a>
-            <a class="advancedToggler" id="hideAdvanced">Hide filters</a>
-            <div id="advancedFilters">
+        <main role="main">
+
+          <header class="clearfix">
+            <!-- Markup for the map and the filters -->
+            <div id="filters">
+              <div class="filter" id="activityName"><strong>Activity Category</strong></div>
+              <div class="filter" id="referralRequired"><strong>Referral required?</strong></div>
+              <a class="advancedToggler" id="showAdvanced">Filter your results</a>
+              <a class="advancedToggler" id="hideAdvanced">Hide filters</a>
+              <div id="advancedFilters">
                 <div class="filter" id="partnerName"><strong>Organization</strong></div>
+              </div>
             </div>
-        </div>
-        <a id="toggler">
-            <span id="mapToggle">Map</span><span id="listToggle">List</span>
-        </a>
-        <div id="map"></div>
-        <div id="list"></div>
+            <a id="toggler">
+              <span id="mapToggle">Map</span><span id="listToggle">List</span>
+            </a>
+          </header>
+
+          <section id="map"><h3 class="hide">Map</h3></section>
+          <section id="list"></section>
+        </main>
 
         <!-- Include jquery -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

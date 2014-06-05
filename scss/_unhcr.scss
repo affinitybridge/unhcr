@@ -3,7 +3,29 @@
    UNHCR-specific
    ========================================================================== */
 html,
-body { height: 100%; }
+body,
+main { height: 100%; }
+
+/* Variables */
+$grey-clear: #f3f3f3;
+$grey-medium: #e5e5e5;
+
+/* Utilities */
+.hide { display: none; }
+
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/* Header */
+header {
+  background: $grey-clear;
+  border-bottom: 1px solid $grey-medium;
+}
 
 /* Map styles */
 #map {
@@ -83,9 +105,12 @@ body { height: 100%; }
 
 /* Filter styles */
 #filters {
-  width: 100%;
-  clear: both;
+  padding-right: 100px; /* toggler's width */
 
+  > .filter,
+  > .advancedToggler {
+    float: left;
+  }
 }
 
 .filter {
@@ -98,8 +123,6 @@ body { height: 100%; }
   }
 }
 
-#activityName,
-#referralRequired { float: left; }
 #activityName form label { line-height: 1.2em; }
 #partnerName { width: 100%; float: left; clear: both; }
 #partnerName form label {

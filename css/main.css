@@ -208,8 +208,23 @@ textarea {
 /* ==========================================================================
    UNHCR-specific
    ========================================================================== */
-html, body {
+html, body, main {
   height: 100%; }
+
+/* Variables */
+/* Utilities */
+.hide {
+  display: none; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* Header */
+header {
+  background: #f3f3f3;
+  border-bottom: 1px solid #e5e5e5; }
 
 /* Map styles */
 #map {
@@ -268,8 +283,10 @@ html, body {
 
 /* Filter styles */
 #filters {
-  width: 100%;
-  clear: both; }
+  padding-right: 100px;
+  /* toggler's width */ }
+  #filters > .filter, #filters > .advancedToggler {
+    float: left; }
 
 .filter {
   padding: 10px;
@@ -277,9 +294,6 @@ html, body {
   border: 1px dashed #eee; }
   .filter form label {
     display: block; }
-
-#activityName, #referralRequired {
-  float: left; }
 
 #activityName form label {
   line-height: 1.2em; }
