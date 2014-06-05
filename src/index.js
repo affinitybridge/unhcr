@@ -3,7 +3,7 @@
  * processed through Browserify to protect namespace.
  */
 
-// Require some libs. 
+// Require some libs.
 var $ = require('jquery'),
     crossfilter = require('crossfilter'),
     console = require('console'),
@@ -85,28 +85,34 @@ cf_activityName.on('update', update);
 cf_referralRequired.on('update', update);
 cf_partnerName.on('update', update);
 
-// Make the list view hidden by default.
-$("#list").hide();
 $("#mapToggle").addClass("active"); // This make the "map" span in the map/list toggle look active.
 
-// Make the Advanced Search hidden by default.
-$("#advancedFilters").hide();
-$("#hideAdvanced").hide();
+// Filter toggler
+$(".filter-toggler").click(function(event) {
+  event.preventDefault;
+  $(this)
+    .siblings()
+      .removeClass('active')
+    .end()
+    .addClass('active');
+
+  var target = this.getAttribute('href');
+  $(target)
+    .siblings()
+      .removeClass('active')
+    .end()
+    .addClass('active');
+});
 
 // Bind list/map view toggle to the toggler link.
 // Thus, if user clicks anywhere on the toggler link, the map and list toggle their visibility,
 // and the Map and List spans in the toggler link toggle their active-looking-ness.
 $("#toggler").click(function() {
-    $("#map").toggle();
-    $("#list").toggle();
-    $("#mapToggle").toggleClass("active");
-    $("#listToggle").toggleClass("active");
-});
-// Bind advanced search filters visibility to the "Advanced Search" link.
-$(".advancedToggler").click(function() {
-    $("#advancedFilters").toggle();
-    $("#showAdvanced").toggle();
-    $("#hideAdvanced").toggle();
+  event.preventDefault();
+  $("#map").toggle();
+  $("#list").toggle();
+  $("#mapToggle").toggleClass("active");
+  $("#listToggle").toggleClass("active");
 });
 
 // Get the pre-compiled JSON from the file, and loop through it creating the markers.
@@ -150,11 +156,11 @@ function update() {
 function render() {
     // Clear all the map markers.
     dataLayer.clearLayers();
-    var listOutput = '<h3>Services</h3>'; 
+    var listOutput = '<h3>Services</h3>';
     // Add the filtered markers back to the map data layer.
     metaDimension.top(Infinity).forEach( function (feature) {
         // Add the filtered markers back to the map's data layer
-        dataLayer.addLayer(feature.properties.marker); 
+        dataLayer.addLayer(feature.properties.marker);
         // Build the output for the filtered list view
         listOutput += '<p>' + renderServiceText(feature, "list") + '</p>';
     } );
@@ -226,7 +232,7 @@ function renderServiceText(feature, style) {
         values = feature.properties[fields[i]];
         // Skip empty fields
         if (values) {
-            if (Object.getOwnPropertyNames(values).length) { 
+            if (Object.getOwnPropertyNames(values).length) {
                 // Strip the leading numeral from the field name.
                 var fieldName = fields[i].substr(fields[i].indexOf(" ") + 1);
                 // Add the field name to the output.

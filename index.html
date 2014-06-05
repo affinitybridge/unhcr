@@ -30,21 +30,20 @@
         <![endif]-->
 
         <main role="main">
-
-          <header class="clearfix">
-            <!-- Markup for the map and the filters -->
-            <div id="filters">
-              <div class="filter" id="activityName"><strong>Activity Category</strong></div>
-              <div class="filter" id="referralRequired"><strong>Referral required?</strong></div>
-              <a class="advancedToggler" id="showAdvanced">Filter your results</a>
-              <a class="advancedToggler" id="hideAdvanced">Hide filters</a>
-              <div id="advancedFilters">
-                <div class="filter" id="partnerName"><strong>Organization</strong></div>
-              </div>
+          <header class="map-actions clearfix">
+            <ul class="filter-togglers">
+              <li><a href="#activityName" class="filter-toggler">Activity Category</a></li>
+              <li><a href="#referralRequired" class="filter-toggler">Referral required?</a></li>
+              <li><a href="#partnerName" class="filter-toggler">Organization</a></li>
+            </ul>
+            <div class="filter-contents">
+              <div class="filter" id="activityName"></div>
+              <div class="filter" id="referralRequired"></div>
+              <div class="filter" id="partnerName"></div>
             </div>
-            <a id="toggler">
+            <div id="toggler">
               <span id="mapToggle">Map</span><span id="listToggle">List</span>
-            </a>
+            </div>
           </header>
 
           <section id="map"><h3 class="hide">Map</h3></section>

@@ -7,8 +7,9 @@ body,
 main { height: 100%; }
 
 /* Variables */
-$grey-clear: #f3f3f3;
+$grey-light: #f3f3f3;
 $grey-medium: #e5e5e5;
+$grey-dark: #333333;
 
 /* Utilities */
 .hide { display: none; }
@@ -23,7 +24,7 @@ $grey-medium: #e5e5e5;
 
 /* Header */
 header {
-  background: $grey-clear;
+  background: $grey-light;
   border-bottom: 1px solid $grey-medium;
 }
 
@@ -41,7 +42,6 @@ header {
   position: absolute;
   top: 20px;
   right: 20px;
-  cursor: pointer;
 
   span {
     padding: 5px 7px;
@@ -63,6 +63,7 @@ header {
 
 /* List styles */
 #list {
+  display: none;
   float: left;
   clear: both;
   padding: 0 15px;
@@ -104,19 +105,42 @@ header {
 }
 
 /* Filter styles */
-#filters {
-  padding-right: 100px; /* toggler's width */
+.map-actions {
+  position: relative;
+}
 
-  > .filter,
-  > .advancedToggler {
+ul.filter-togglers {
+  margin: 0;
+  padding: 0;
+
+  li {
     float: left;
+    list-style: none outside none;
+  }
+
+  a {
+    color: $grey-dark;
+    padding: 5px;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
   }
 }
 
+.filter-contents {
+  background: $grey-light;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 10000;
+}
+
 .filter {
+  display: none;
   padding: 10px;
   font-size: 0.8em;
-  border: 1px dashed #eee;
+
+  &.active { display: block; }
 
   form label {
     display: block;
@@ -130,14 +154,6 @@ header {
   float: left;
   width: 235px;
   padding: 0 20px 0 0;
-}
-
-#advancedFilters {
- float: left;
- clear: both;
- background-color: #eee;
- border: 1px dashed #ccc;
- margin: 0 5px 5px 5px;
 }
 
 span.glyph {
