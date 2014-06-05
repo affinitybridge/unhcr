@@ -1,0 +1,237 @@
+
+/* ==========================================================================
+   UNHCR-specific
+   ========================================================================== */
+html,
+body { height: 100%; }
+
+/* Map styles */
+#map {
+  height: 60%;
+  float: none;
+  clear: both;
+}
+
+/* Toggle styles */
+#toggler {
+  border: 2px solid #ddd;
+  padding: 3px 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+
+  span {
+    padding: 5px 7px;
+    margin: 0;
+    background-color: #bbb;
+
+    &.active {
+      background-color: #fff;
+    }
+  }
+}
+
+.advancedToggler {
+  cursor: pointer;
+  position: absolute;
+  top: 130px;
+  right: 20px;
+}
+
+/* List styles */
+#list {
+  float: left;
+  clear: both;
+  padding: 0 15px;
+
+  .serviceText {
+    margin: 0 0 15px 0;
+
+    h3,
+    p {
+      margin: 0;
+    }
+  }
+}
+
+/* Marker styles */
+.awesome-marker i {
+  font-size: 24px !important;
+  margin: 2px 0 0 8px !important;
+}
+
+/* Popup styles */
+.leaflet-popup-content {
+  font-size: 12px;
+
+  p {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 14px;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: 12px;
+    margin: 0;
+  }
+}
+
+/* Filter styles */
+#filters {
+  width: 100%;
+  clear: both;
+
+}
+
+.filter {
+  padding: 10px;
+  font-size: 0.8em;
+  border: 1px dashed #eee;
+
+  form label {
+    display: block;
+  }
+}
+
+#activityName,
+#referralRequired { float: left; }
+#activityName form label { line-height: 1.2em; }
+#partnerName { width: 100%; float: left; clear: both; }
+#partnerName form label {
+  line-height: 1.2em;
+  float: left;
+  width: 235px;
+  padding: 0 20px 0 0;
+}
+
+#advancedFilters {
+ float: left;
+ clear: both;
+ background-color: #eee;
+ border: 1px dashed #ccc;
+ margin: 0 5px 5px 5px;
+}
+
+span.glyph {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  padding: 0 5px;
+  position: relative;
+  top: 4px;
+  display: inline-block;
+}
+
+#partnerName span.glyph {
+  margin: 0 0 0d 6px;
+  width: 120px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+
+#filter-value-basic-needs sddpan.glyph:before {
+  content: "\f412";
+  color: #f96a1b;
+}
+
+#filter-value-child-protection span.glyph:before {
+  content: "\f368";
+  color: #1f497d;
+}
+
+#filter-value-maintain-food-security span.glyph:before {
+  content: "\f366";
+  color: #006600;
+}
+
+#filter-value-need-coverage span.glyph:before {
+  content: "\f32a";
+  color: #a48658;
+}
+
+#filter-value-shelter-rehabilitation-jordanians---syrians span.glyph:before {
+  content: "\f363";
+  color: #989aac;
+}
+
+#filter-value-education span.glyph:before {
+  content: "\f362";
+  color: #c00000;
+}
+
+#filter-value-health span.glyph:before {
+  content: "\f364";
+  color: #08a1d9;
+}
+
+#filter-value-wash span.glyph:before {
+  content: "\f369";
+  color: #7030a0;
+}
+
+#filter-value-acf span.glyph { background-image: url("../src/images/partner/acf.jpg"); }
+#filter-value-acted span.glyph { background-image: url("../src/images/partner/acted.jpg"); }
+#filter-value-actionaid span.glyph { background-image: url("../src/images/partner/actionaid.jpg"); }
+#filter-value-adra span.glyph { background-image: url("../src/images/partner/adra.jpg"); }
+#filter-value-avsi span.glyph { background-image: url("../src/images/partner/avsi.jpg"); }
+#filter-value-care span.glyph { background-image: url("../src/images/partner/care.jpg"); }
+#filter-value-chf span.glyph { background-image: url("../src/images/partner/chf.jpg"); }
+#filter-value-cvt span.glyph { background-image: url("../src/images/partner/cvt.jpg"); }
+#filter-value-drc span.glyph { background-image: url("../src/images/partner/drc.jpg"); }
+#filter-value-fao span.glyph { background-image: url("../src/images/partner/fao.jpg"); }
+#filter-value-fca span.glyph { background-image: url("../src/images/partner/fca.jpg"); }
+#filter-value-fpsc span.glyph { background-image: url("../src/images/partner/fpsci.jpg"); }
+#filter-value-hi span.glyph { background-image: url("../src/images/partner/hi.jpg"); }
+#filter-value-ifh span.glyph { background-image: url("../src/images/partner/ifh.jpg"); }
+#filter-value-ilo span.glyph { background-image: url("../src/images/partner/ilo.jpg"); }
+#filter-value-imc span.glyph { background-image: url("../src/images/partner/imc.jpg"); }
+#filter-value-intersos span.glyph { background-image: url("../src/images/partner/intersos.jpg"); }
+#filter-value-iocc span.glyph { background-image: url("../src/images/partner/iocc.jpg"); }
+#filter-value-iom span.glyph { background-image: url("../src/images/partner/iom.jpg"); }
+#filter-value-irc span.glyph { background-image: url("../src/images/partner/irc.jpg"); }
+#filter-value-ird span.glyph { background-image: url("../src/images/partner/ird.jpg"); }
+#filter-value-irw span.glyph { background-image: url("../src/images/partner/irw.jpg"); }
+#filter-value-jen span.glyph { background-image: url("../src/images/partner/jen.jpg"); }
+#filter-value-jhas span.glyph { background-image: url("../src/images/partner/jhas.jpg"); }
+#filter-value-jhco span.glyph { background-image: url("../src/images/partner/jhco.jpg"); }
+#filter-value-jrs span.glyph { background-image: url("../src/images/partner/jrs.jpg"); }
+#filter-value-knk span.glyph { background-image: url("../src/images/partner/knk.jpg"); }
+#filter-value-la span.glyph { background-image: url("../src/images/partner/la.jpg"); }
+#filter-value-lwf span.glyph { background-image: url("../src/images/partner/lwf.jpg"); }
+#filter-value-mc span.glyph { background-image: url("../src/images/partner/mc.jpg"); }
+#filter-value-mdm span.glyph { background-image: url("../src/images/partner/mdm.jpg"); }
+#filter-value-medair span.glyph { background-image: url("../src/images/partner/medair.jpg"); }
+#filter-value-po-la-paz span.glyph { background-image: url("../src/images/partner/movimiento-po-la-paz.jpg"); }
+#filter-value-msf span.glyph { background-image: url("../src/images/partner/msf.jpg"); }
+#filter-value-niccod span.glyph { background-image: url("../src/images/partner/niccod.jpg"); }
+#filter-value-nrc span.glyph { background-image: url("../src/images/partner/nrc.jpg"); }
+#filter-value-opm span.glyph { background-image: url("../src/images/partner/operation-mercy.jpg"); }
+#filter-value-oxfam span.glyph { background-image: url("../src/images/partner/oxfam.jpg"); }
+#filter-value-pu-ami span.glyph { background-image: url("../src/images/partner/pu-ami.jpg"); }
+#filter-value-qrc span.glyph { background-image: url("../src/images/partner/qrc.jpg"); }
+#filter-value-questcope span.glyph { background-image: url("../src/images/partner/quetscope.jpg"); }
+#filter-value-ri span.glyph { background-image: url("../src/images/partner/ri.jpg"); }
+#filter-value-taghyeer span.glyph { background-image: url("../src/images/partner/taghyeer.jpg"); }
+#filter-value-tdh span.glyph { background-image: url("../src/images/partner/tdh.jpg"); }
+#filter-value-tdhi span.glyph { background-image: url("../src/images/partner/tdh-it.jpg"); }
+#filter-value-thw span.glyph { background-image: url("../src/images/partner/thw.jpg"); }
+#filter-value-tgh span.glyph { background-image: url("../src/images/partner/triangle.jpg"); }
+#filter-value-undp span.glyph { background-image: url("../src/images/partner/undp.jpg"); }
+#filter-value-unesco span.glyph { background-image: url("../src/images/partner/unesco.jpg"); }
+#filter-value-unfpa span.glyph { background-image: url("../src/images/partner/unfpa.jpg"); }
+#filter-value-unhabitat span.glyph { background-image: url("../src/images/partner/unhabitat.jpg"); }
+#filter-value-unhcr span.glyph { background-image: url("../src/images/partner/unhcr.jpg"); }
+#filter-value-unicef span.glyph { background-image: url("../src/images/partner/unicef.jpg"); }
+#filter-value-unops span.glyph { background-image: url("../src/images/partner/unops.jpg"); }
+#filter-value-warchild span.glyph { background-image: url("../src/images/partner/warchild.jpg"); }
+#filter-value-wfp span.glyph { background-image: url("../src/images/partner/wfp.jpg"); }
+#filter-value-who span.glyph { background-image: url("../src/images/partner/who.jpg"); }
+#filter-value-wvi span.glyph { background-image: url("../src/images/partner/wvi.jpg"); }
