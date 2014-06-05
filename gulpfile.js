@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
+    sass = require('gulp-sass'),
     source = require('vinyl-source-stream'),
     watchify = require('watchify'),
     pathUtil = require('path');
@@ -7,9 +8,18 @@ var gulp = require('gulp'),
 
 var dest = path('./');
 
+gulp.task('sass', function () {
+    gulp.src('./scss/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('./css'));
+});
+
 gulp.task('default', ['watch']);
 
-gulp.task('watch', ['watchify']);
+gulp.task('watch', ['watchify', 'sass'], function() {
+  gutil.log('running sass');
+  gulp.watch('./scss/*.scss', ['sass']);
+});
 
 gulp.task('watchify', function () {
     var bundler = watchify('./src/index.js');
@@ -41,4 +51,3 @@ function path() {
         return gulp.dest(pathUtil.join.apply(pathUtil, pieces));
     };
 }
-

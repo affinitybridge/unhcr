@@ -1,187 +1,132 @@
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
-
 /*
  * What follows is the result of much research on cross-browser styling.
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
  */
-
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
-}
+html, button, input, select, textarea {
+  color: #222; }
 
 html {
-    font-size: 1em;
-    line-height: 1.4;
-}
+  font-size: 1em;
+  line-height: 1.4; }
 
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
-
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
+  background: #b3d4fc;
+  text-shadow: none; }
 
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
+  background: #b3d4fc;
+  text-shadow: none; }
 
 /*
  * A better looking default horizontal rule
  */
-
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
 
 /*
  * Remove the gap between images, videos, audio and canvas and the bottom of
  * their containers: h5bp.com/i/440
  */
-
-audio,
-canvas,
-img,
-video {
-    vertical-align: middle;
-}
+audio, canvas, img, video {
+  vertical-align: middle; }
 
 /*
  * Remove default fieldset styles.
  */
-
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
+  border: 0;
+  margin: 0;
+  padding: 0; }
 
 /*
  * Allow only vertical resizing of textareas.
  */
-
 textarea {
-    resize: vertical;
-}
+  resize: vertical; }
 
 /* ==========================================================================
    Browse Happy prompt
    ========================================================================== */
-
 .browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-
 /*
  * Image replacement
  */
-
 .ir {
-    background-color: transparent;
-    border: 0;
-    overflow: hidden;
-    /* IE 6/7 fallback */
-    *text-indent: -9999px;
-}
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px; }
 
 .ir:before {
-    content: "";
-    display: block;
-    width: 0;
-    height: 150%;
-}
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%; }
 
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
-
 .hidden {
-    display: none !important;
-    visibility: hidden;
-}
+  display: none !important;
+  visibility: hidden; }
 
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
 
 /*
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
 
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
-
 .invisible {
-    visibility: hidden;
-}
+  visibility: hidden; }
 
 /*
  * Clearfix: contain floats
@@ -194,324 +139,399 @@ textarea {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
 
-.clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
-
-.clearfix:after {
-    clear: both;
-}
+  clear: both; }
 
 /*
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
-
 .clearfix {
-    *zoom: 1;
-}
+  *zoom: 1; }
 
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media only screen and (min-width: 35em) { }
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
-
-@media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
+@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) { }
 
 /* ==========================================================================
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
-
 @media print {
-    * {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    /*
+  /*
      * Don't show links for images, or javascript/internal links
      */
+  @page {
+    margin: 0.5cm; }
 
-    .ir a:after,
-    a[href^="javascript:"]:after,
-    a[href^="#"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    @page {
-        margin: 0.5cm;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-}
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  a, a:visited {
+    text-decoration: underline; }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: ""; }
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */ }
+  tr, img {
+    page-break-inside: avoid; }
+  img {
+    max-width: 100% !important; }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+  h2, h3 {
+    page-break-after: avoid; } }
 
 /*
  * UNHCR-specific
  */
-html,
-body { height: 100%; }
+html, body {
+  height: 100%; }
 
 /* Map styles */
 #map {
-    height: 60%;
-    float: none;
-    clear: both;
-}
+  height: 60%;
+  float: none;
+  clear: both; }
 
 /* Toggle styles */
 #toggler {
-    border: 2px solid #ddd;
-    padding: 3px 0;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-}
+  border: 2px solid #ddd;
+  padding: 3px 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer; }
+
 #toggler span {
-    padding: 5px 7px;
-    margin: 0;
-    background-color: #bbb;
-}
+  padding: 5px 7px;
+  margin: 0;
+  background-color: #bbb; }
+
 #toggler span.active {
-    background-color: #fff;
-}
+  background-color: #fff; }
+
 .advancedToggler {
-    cursor: pointer;
-    position: absolute;
-    top: 130px;
-    right: 20px;
-}
+  cursor: pointer;
+  position: absolute;
+  top: 130px;
+  right: 20px; }
 
 /* List styles */
 div#list {
-   float: left;
-   clear: both;
-   padding: 0 15px;
-}
-div#list div.serviceText { margin: 0 0 15px 0; }
-div.serviceText h3 { margin: 0; }
+  float: left;
+  clear: both;
+  padding: 0 15px; }
+
+div#list div.serviceText {
+  margin: 0 0 15px 0; }
+
+div.serviceText h3 {
+  margin: 0; }
+
 div.serviceText p {
-    margin: 0;
-}
+  margin: 0; }
 
 /* Marker styles */
 .awesome-marker i {
-    font-size: 24px !important;
-    margin: 2px 0 0 8px !important;
-} 
+  font-size: 24px !important;
+  margin: 2px 0 0 8px !important; }
 
 /* Popup styles */
-div.leaflet-popup-content,
-div.leaflet-popup-content p {
-    font-size: 12px;
-}
+div.leaflet-popup-content, div.leaflet-popup-content p {
+  font-size: 12px; }
+
 div.leaflet-popup-content h3 {
-    font-size: 14px;
-    margin: 0;
-}
+  font-size: 14px;
+  margin: 0; }
+
 div.leaflet-popup-content h4 {
-    font-size: 12px;
-    margin: 0;
-}
+  font-size: 12px;
+  margin: 0; }
+
 div.leaflet-popup-content p {
-    margin: 0;
-}
+  margin: 0; }
 
 /* Filter styles */
 div#filters {
-    width: 100%;
-    clear: both;
-}
+  width: 100%;
+  clear: both; }
+
 div#filters div.filter {
-    padding: 10px;
-    font-size: 0.8em;
-    border: 1px dashed #eee;
-}
+  padding: 10px;
+  font-size: 0.8em;
+  border: 1px dashed #eee; }
+
 div.filter form label {
-    display: block;
-}
-div.filter#activityName,
-div.filter#referralRequired { float: left; }
-div.filter#activityName form label { line-height: 1.2em; }
-div.filter#partnerName { width: 100%; float: left; clear: both; }
+  display: block; }
+
+div.filter#activityName, div.filter#referralRequired {
+  float: left; }
+
+div.filter#activityName form label {
+  line-height: 1.2em; }
+
+div.filter#partnerName {
+  width: 100%;
+  float: left;
+  clear: both; }
+
 div.filter#partnerName form label {
-    line-height: 1.2em;
-    float: left;
-    width: 235px;
-    padding: 0 20px 0 0;
-}
+  line-height: 1.2em;
+  float: left;
+  width: 235px;
+  padding: 0 20px 0 0; }
+
 div#advancedFilters {
-   float: left;
-   clear: both;
-   background-color: #eee;
-   border: 1px dashed #ccc;
-   margin: 0 5px 5px 5px;
-}
+  float: left;
+  clear: both;
+  background-color: #eee;
+  border: 1px dashed #ccc;
+  margin: 0 5px 5px 5px; }
+
 span.glyph {
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    padding: 0 5px;
-    position: relative;
-    top: 4px;
-    display: inline-block;
-}
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  padding: 0 5px;
+  position: relative;
+  top: 4px;
+  display: inline-block; }
+
 #partnerName span.glyph {
-    margin: 0 0 0 6px;
-    width: 120px;
-    height: 30px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: left bottom;
-}
+  margin: 0 0 0 6px;
+  width: 120px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left bottom; }
+
 #filter-value-basic-needs span.glyph:before {
-    content: "\f412";
-    color: #f96a1b;
-}
+  content: "\f412";
+  color: #f96a1b; }
+
 #filter-value-child-protection span.glyph:before {
-    content: "\f368";
-    color: #1f497d;
-}
+  content: "\f368";
+  color: #1f497d; }
+
 #filter-value-maintain-food-security span.glyph:before {
-    content: "\f366";
-    color: #006600;
-}
+  content: "\f366";
+  color: #006600; }
+
 #filter-value-need-coverage span.glyph:before {
-    content: "\f32a";
-    color: #a48658;
-}
+  content: "\f32a";
+  color: #a48658; }
+
 #filter-value-shelter-rehabilitation-jordanians---syrians span.glyph:before {
-    content: "\f363";
-    color: #989aac;
-}
+  content: "\f363";
+  color: #989aac; }
+
 #filter-value-education span.glyph:before {
-    content: "\f362";
-    color: #c00000;
-}
+  content: "\f362";
+  color: #c00000; }
+
 #filter-value-health span.glyph:before {
-    content: "\f364";
-    color: #08a1d9;
-}
+  content: "\f364";
+  color: #08a1d9; }
+
 #filter-value-wash span.glyph:before {
-    content: "\f369";
-    color: #7030a0;
-}
+  content: "\f369";
+  color: #7030a0; }
 
-div#partnerName #filter-value-acf span.glyph { background-image: url("../src/images/partner/acf.jpg"); }
-div#partnerName #filter-value-acted span.glyph { background-image: url("../src/images/partner/acted.jpg"); }
-div#partnerName #filter-value-actionaid span.glyph { background-image: url("../src/images/partner/actionaid.jpg"); }
-div#partnerName #filter-value-adra span.glyph { background-image: url("../src/images/partner/adra.jpg"); }
-div#partnerName #filter-value-avsi span.glyph { background-image: url("../src/images/partner/avsi.jpg"); }
-div#partnerName #filter-value-care span.glyph { background-image: url("../src/images/partner/care.jpg"); }
-div#partnerName #filter-value-chf span.glyph { background-image: url("../src/images/partner/chf.jpg"); }
-div#partnerName #filter-value-cvt span.glyph { background-image: url("../src/images/partner/cvt.jpg"); }
-div#partnerName #filter-value-drc span.glyph { background-image: url("../src/images/partner/drc.jpg"); }
-div#partnerName #filter-value-fao span.glyph { background-image: url("../src/images/partner/fao.jpg"); }
-div#partnerName #filter-value-fca span.glyph { background-image: url("../src/images/partner/fca.jpg"); }
-div#partnerName #filter-value-fpsc span.glyph { background-image: url("../src/images/partner/fpsci.jpg"); }
-div#partnerName #filter-value-hi span.glyph { background-image: url("../src/images/partner/hi.jpg"); }
-div#partnerName #filter-value-ifh span.glyph { background-image: url("../src/images/partner/ifh.jpg"); }
-div#partnerName #filter-value-ilo span.glyph { background-image: url("../src/images/partner/ilo.jpg"); }
-div#partnerName #filter-value-imc span.glyph { background-image: url("../src/images/partner/imc.jpg"); }
-div#partnerName #filter-value-intersos span.glyph { background-image: url("../src/images/partner/intersos.jpg"); }
-div#partnerName #filter-value-iocc span.glyph { background-image: url("../src/images/partner/iocc.jpg"); }
-div#partnerName #filter-value-iom span.glyph { background-image: url("../src/images/partner/iom.jpg"); }
-div#partnerName #filter-value-irc span.glyph { background-image: url("../src/images/partner/irc.jpg"); }
-div#partnerName #filter-value-ird span.glyph { background-image: url("../src/images/partner/ird.jpg"); }
-div#partnerName #filter-value-irw span.glyph { background-image: url("../src/images/partner/irw.jpg"); }
-div#partnerName #filter-value-jen span.glyph { background-image: url("../src/images/partner/jen.jpg"); }
-div#partnerName #filter-value-jhas span.glyph { background-image: url("../src/images/partner/jhas.jpg"); }
-div#partnerName #filter-value-jhco span.glyph { background-image: url("../src/images/partner/jhco.jpg"); }
-div#partnerName #filter-value-jrs span.glyph { background-image: url("../src/images/partner/jrs.jpg"); }
-div#partnerName #filter-value-knk span.glyph { background-image: url("../src/images/partner/knk.jpg"); }
-div#partnerName #filter-value-la span.glyph { background-image: url("../src/images/partner/la.jpg"); }
-div#partnerName #filter-value-lwf span.glyph { background-image: url("../src/images/partner/lwf.jpg"); }
-div#partnerName #filter-value-mc span.glyph { background-image: url("../src/images/partner/mc.jpg"); }
-div#partnerName #filter-value-mdm span.glyph { background-image: url("../src/images/partner/mdm.jpg"); }
-div#partnerName #filter-value-medair span.glyph { background-image: url("../src/images/partner/medair.jpg"); }
-div#partnerName #filter-value-po-la-paz span.glyph { background-image: url("../src/images/partner/movimiento-po-la-paz.jpg"); }
-div#partnerName #filter-value-msf span.glyph { background-image: url("../src/images/partner/msf.jpg"); }
-div#partnerName #filter-value-niccod span.glyph { background-image: url("../src/images/partner/niccod.jpg"); }
-div#partnerName #filter-value-nrc span.glyph { background-image: url("../src/images/partner/nrc.jpg"); }
-div#partnerName #filter-value-opm span.glyph { background-image: url("../src/images/partner/operation-mercy.jpg"); }
-div#partnerName #filter-value-oxfam span.glyph { background-image: url("../src/images/partner/oxfam.jpg"); }
-div#partnerName #filter-value-pu-ami span.glyph { background-image: url("../src/images/partner/pu-ami.jpg"); }
-div#partnerName #filter-value-qrc span.glyph { background-image: url("../src/images/partner/qrc.jpg"); }
-div#partnerName #filter-value-questcope span.glyph { background-image: url("../src/images/partner/quetscope.jpg"); }
-div#partnerName #filter-value-ri span.glyph { background-image: url("../src/images/partner/ri.jpg"); }
-div#partnerName #filter-value-taghyeer span.glyph { background-image: url("../src/images/partner/taghyeer.jpg"); }
-div#partnerName #filter-value-tdh span.glyph { background-image: url("../src/images/partner/tdh.jpg"); }
-div#partnerName #filter-value-tdhi span.glyph { background-image: url("../src/images/partner/tdh-it.jpg"); }
-div#partnerName #filter-value-thw span.glyph { background-image: url("../src/images/partner/thw.jpg"); }
-div#partnerName #filter-value-tgh span.glyph { background-image: url("../src/images/partner/triangle.jpg"); }
-div#partnerName #filter-value-undp span.glyph { background-image: url("../src/images/partner/undp.jpg"); }
-div#partnerName #filter-value-unesco span.glyph { background-image: url("../src/images/partner/unesco.jpg"); }
-div#partnerName #filter-value-unfpa span.glyph { background-image: url("../src/images/partner/unfpa.jpg"); }
-div#partnerName #filter-value-unhabitat span.glyph { background-image: url("../src/images/partner/unhabitat.jpg"); }
-div#partnerName #filter-value-unhcr span.glyph { background-image: url("../src/images/partner/unhcr.jpg"); }
-div#partnerName #filter-value-unicef span.glyph { background-image: url("../src/images/partner/unicef.jpg"); }
-div#partnerName #filter-value-unops span.glyph { background-image: url("../src/images/partner/unops.jpg"); }
-div#partnerName #filter-value-warchild span.glyph { background-image: url("../src/images/partner/warchild.jpg"); }
-div#partnerName #filter-value-wfp span.glyph { background-image: url("../src/images/partner/wfp.jpg"); }
-div#partnerName #filter-value-who span.glyph { background-image: url("../src/images/partner/who.jpg"); }
-div#partnerName #filter-value-wvi span.glyph { background-image: url("../src/images/partner/wvi.jpg"); }
+div#partnerName #filter-value-acf span.glyph {
+  background-image: url("../src/images/partner/acf.jpg"); }
 
+div#partnerName #filter-value-acted span.glyph {
+  background-image: url("../src/images/partner/acted.jpg"); }
+
+div#partnerName #filter-value-actionaid span.glyph {
+  background-image: url("../src/images/partner/actionaid.jpg"); }
+
+div#partnerName #filter-value-adra span.glyph {
+  background-image: url("../src/images/partner/adra.jpg"); }
+
+div#partnerName #filter-value-avsi span.glyph {
+  background-image: url("../src/images/partner/avsi.jpg"); }
+
+div#partnerName #filter-value-care span.glyph {
+  background-image: url("../src/images/partner/care.jpg"); }
+
+div#partnerName #filter-value-chf span.glyph {
+  background-image: url("../src/images/partner/chf.jpg"); }
+
+div#partnerName #filter-value-cvt span.glyph {
+  background-image: url("../src/images/partner/cvt.jpg"); }
+
+div#partnerName #filter-value-drc span.glyph {
+  background-image: url("../src/images/partner/drc.jpg"); }
+
+div#partnerName #filter-value-fao span.glyph {
+  background-image: url("../src/images/partner/fao.jpg"); }
+
+div#partnerName #filter-value-fca span.glyph {
+  background-image: url("../src/images/partner/fca.jpg"); }
+
+div#partnerName #filter-value-fpsc span.glyph {
+  background-image: url("../src/images/partner/fpsci.jpg"); }
+
+div#partnerName #filter-value-hi span.glyph {
+  background-image: url("../src/images/partner/hi.jpg"); }
+
+div#partnerName #filter-value-ifh span.glyph {
+  background-image: url("../src/images/partner/ifh.jpg"); }
+
+div#partnerName #filter-value-ilo span.glyph {
+  background-image: url("../src/images/partner/ilo.jpg"); }
+
+div#partnerName #filter-value-imc span.glyph {
+  background-image: url("../src/images/partner/imc.jpg"); }
+
+div#partnerName #filter-value-intersos span.glyph {
+  background-image: url("../src/images/partner/intersos.jpg"); }
+
+div#partnerName #filter-value-iocc span.glyph {
+  background-image: url("../src/images/partner/iocc.jpg"); }
+
+div#partnerName #filter-value-iom span.glyph {
+  background-image: url("../src/images/partner/iom.jpg"); }
+
+div#partnerName #filter-value-irc span.glyph {
+  background-image: url("../src/images/partner/irc.jpg"); }
+
+div#partnerName #filter-value-ird span.glyph {
+  background-image: url("../src/images/partner/ird.jpg"); }
+
+div#partnerName #filter-value-irw span.glyph {
+  background-image: url("../src/images/partner/irw.jpg"); }
+
+div#partnerName #filter-value-jen span.glyph {
+  background-image: url("../src/images/partner/jen.jpg"); }
+
+div#partnerName #filter-value-jhas span.glyph {
+  background-image: url("../src/images/partner/jhas.jpg"); }
+
+div#partnerName #filter-value-jhco span.glyph {
+  background-image: url("../src/images/partner/jhco.jpg"); }
+
+div#partnerName #filter-value-jrs span.glyph {
+  background-image: url("../src/images/partner/jrs.jpg"); }
+
+div#partnerName #filter-value-knk span.glyph {
+  background-image: url("../src/images/partner/knk.jpg"); }
+
+div#partnerName #filter-value-la span.glyph {
+  background-image: url("../src/images/partner/la.jpg"); }
+
+div#partnerName #filter-value-lwf span.glyph {
+  background-image: url("../src/images/partner/lwf.jpg"); }
+
+div#partnerName #filter-value-mc span.glyph {
+  background-image: url("../src/images/partner/mc.jpg"); }
+
+div#partnerName #filter-value-mdm span.glyph {
+  background-image: url("../src/images/partner/mdm.jpg"); }
+
+div#partnerName #filter-value-medair span.glyph {
+  background-image: url("../src/images/partner/medair.jpg"); }
+
+div#partnerName #filter-value-po-la-paz span.glyph {
+  background-image: url("../src/images/partner/movimiento-po-la-paz.jpg"); }
+
+div#partnerName #filter-value-msf span.glyph {
+  background-image: url("../src/images/partner/msf.jpg"); }
+
+div#partnerName #filter-value-niccod span.glyph {
+  background-image: url("../src/images/partner/niccod.jpg"); }
+
+div#partnerName #filter-value-nrc span.glyph {
+  background-image: url("../src/images/partner/nrc.jpg"); }
+
+div#partnerName #filter-value-opm span.glyph {
+  background-image: url("../src/images/partner/operation-mercy.jpg"); }
+
+div#partnerName #filter-value-oxfam span.glyph {
+  background-image: url("../src/images/partner/oxfam.jpg"); }
+
+div#partnerName #filter-value-pu-ami span.glyph {
+  background-image: url("../src/images/partner/pu-ami.jpg"); }
+
+div#partnerName #filter-value-qrc span.glyph {
+  background-image: url("../src/images/partner/qrc.jpg"); }
+
+div#partnerName #filter-value-questcope span.glyph {
+  background-image: url("../src/images/partner/quetscope.jpg"); }
+
+div#partnerName #filter-value-ri span.glyph {
+  background-image: url("../src/images/partner/ri.jpg"); }
+
+div#partnerName #filter-value-taghyeer span.glyph {
+  background-image: url("../src/images/partner/taghyeer.jpg"); }
+
+div#partnerName #filter-value-tdh span.glyph {
+  background-image: url("../src/images/partner/tdh.jpg"); }
+
+div#partnerName #filter-value-tdhi span.glyph {
+  background-image: url("../src/images/partner/tdh-it.jpg"); }
+
+div#partnerName #filter-value-thw span.glyph {
+  background-image: url("../src/images/partner/thw.jpg"); }
+
+div#partnerName #filter-value-tgh span.glyph {
+  background-image: url("../src/images/partner/triangle.jpg"); }
+
+div#partnerName #filter-value-undp span.glyph {
+  background-image: url("../src/images/partner/undp.jpg"); }
+
+div#partnerName #filter-value-unesco span.glyph {
+  background-image: url("../src/images/partner/unesco.jpg"); }
+
+div#partnerName #filter-value-unfpa span.glyph {
+  background-image: url("../src/images/partner/unfpa.jpg"); }
+
+div#partnerName #filter-value-unhabitat span.glyph {
+  background-image: url("../src/images/partner/unhabitat.jpg"); }
+
+div#partnerName #filter-value-unhcr span.glyph {
+  background-image: url("../src/images/partner/unhcr.jpg"); }
+
+div#partnerName #filter-value-unicef span.glyph {
+  background-image: url("../src/images/partner/unicef.jpg"); }
+
+div#partnerName #filter-value-unops span.glyph {
+  background-image: url("../src/images/partner/unops.jpg"); }
+
+div#partnerName #filter-value-warchild span.glyph {
+  background-image: url("../src/images/partner/warchild.jpg"); }
+
+div#partnerName #filter-value-wfp span.glyph {
+  background-image: url("../src/images/partner/wfp.jpg"); }
+
+div#partnerName #filter-value-who span.glyph {
+  background-image: url("../src/images/partner/who.jpg"); }
+
+div#partnerName #filter-value-wvi span.glyph {
+  background-image: url("../src/images/partner/wvi.jpg"); }
