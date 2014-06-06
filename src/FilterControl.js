@@ -16,7 +16,7 @@ var FilterControl = L.Control.extend({
 
         this._numItems = 0;
         this.filters = {};
-	
+
         this._initLayout();
         this._initItems();
         this.update();
@@ -38,7 +38,7 @@ var FilterControl = L.Control.extend({
             var label = this.filters.All;
 
             if (filteredData.length) {
-                label.children[1].innerHTML = this._label(filteredData.reduce(function (p, c) { 
+                label.children[1].innerHTML = this._label(filteredData.reduce(function (p, c) {
                     return { key: "All", value: p.value + c.value };
                 }), true);
             }
@@ -79,7 +79,7 @@ var FilterControl = L.Control.extend({
             filteredData = group.all();
 
         if (this.options.type === 'radio' && filteredData.length && !this.filters.All) {
-            this.filters.All = this._addItem(filteredData.reduce(function (p, c) { 
+            this.filters.All = this._addItem(filteredData.reduce(function (p, c) {
                 return { key: "All", value: p.value + c.value };
             }), true);
         }

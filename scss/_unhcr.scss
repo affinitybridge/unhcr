@@ -111,7 +111,7 @@ $grey-dark: #333333;
   }
 }
 
-/* Filter styles */
+/* Filter Togglers */
 ul.filter-togglers {
   font-size: 13px;
   font-weight: bold;
@@ -135,6 +135,7 @@ ul.filter-togglers {
   }
 }
 
+/* Filter contents */
 .filter-contents {
   position: absolute;
   top: 100%;
@@ -169,36 +170,42 @@ ul.filter-togglers {
   width: 100%;
 }
 
-#activityName form label { line-height: 1.2em; }
-#partnerName { width: 100%; float: left; clear: both; }
-#partnerName form label {
-  line-height: 1.2em;
-  float: left;
-  width: 235px;
-  padding: 0 20px 0 0;
-}
-
-span.glyph {
+/*span.glyph {
   font-family: FontAwesome;
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
-  padding: 0 5px;
-  position: relative;
-  top: 4px;
-  display: inline-block;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+}*/
+
+/* Activity Category */
+#activityName {
+  padding: 0 10px;
+
+  label {
+    margin: 5px 0;
+    position: relative;
+  }
+
+  .filter-label-value {
+    margin-left: 20px;
+  }
+
+  .glyph {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+
+    font-size: 1.5em;
+    left: 15px;
+    position: absolute;
+    top: -0.3em;
+  }
 }
 
-#partnerName span.glyph {
-  margin: 0 0 0d 6px;
-  width: 120px;
-  height: 30px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left bottom;
-}
-
-#filter-value-basic-needs sddpan.glyph:before {
+#filter-value-basic-needs span.glyph:before {
   content: "\f412";
   color: #f96a1b;
 }
@@ -221,6 +228,18 @@ span.glyph {
 #filter-value-shelter-rehabilitation-jordanians---syrians span.glyph:before {
   content: "\f363";
   color: #989aac;
+}
+
+/* Referal Required */
+
+/* Organization */
+#partnerName span.glyph {
+  margin: 0 0 0d 6px;
+  width: 120px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left bottom;
 }
 
 #filter-value-education span.glyph:before {
