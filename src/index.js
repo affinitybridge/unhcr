@@ -91,7 +91,7 @@ $("#mapToggle").addClass("active"); // This make the "map" span in the map/list 
 $(".filter-toggler").click(function(event) {
   var target = this.getAttribute('href');
 
-  event.preventDefault;
+  event.preventDefault();
 
   if ($(this).hasClass('active')) {
     $(this).removeClass('active');
