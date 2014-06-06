@@ -260,14 +260,24 @@ body {
 
 /* List styles */
 #list {
-  display: none;
-  float: left;
-  clear: both;
-  padding: 0 15px; }
-  #list .serviceText {
-    margin: 0 0 15px 0; }
-    #list .serviceText h3, #list .serviceText p {
+  display: none; }
+
+.serviceText {
+  border-bottom: 1px solid #c0c0c0; }
+  .serviceText.expand .content {
+    display: block; }
+  .serviceText header {
+    padding: 10px; }
+    .serviceText header:hover {
+      cursor: pointer; }
+    .serviceText header * {
       margin: 0; }
+  .serviceText .content {
+    display: none;
+    padding: 0 10px 10px 10px; }
+    .serviceText .content > img {
+      float: right;
+      margin: 0 10px 0 10px; }
 
 /* Marker styles */
 .awesome-marker i {

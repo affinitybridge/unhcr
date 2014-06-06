@@ -165,7 +165,7 @@ function update() {
 function render() {
     // Clear all the map markers.
     dataLayer.clearLayers();
-    var listOutput = '<h3>Services</h3>';
+    var listOutput = '<h3 class="hide">Services</h3>';
     // Add the filtered markers back to the map data layer.
     metaDimension.top(Infinity).forEach( function (feature) {
         // Add the filtered markers back to the map's data layer
@@ -175,6 +175,12 @@ function render() {
     } );
     // Replace the contents of the list div with the new filtered output.
     $('#list').html(listOutput);
+
+    // According functionality for the list
+    $(".serviceText > header").click(function(event) {
+      event.preventDefault();
+      $(this).parent().toggleClass('expand');
+    });
 }
 
 // Prepare text output for a single item, to show in the map popups or the list view
@@ -192,7 +198,7 @@ function renderServiceText(feature, style) {
     }
 
     // Prepare the office hours output.
-    var hours = '<b>Hours:</b> ';
+    var hours = '<strong>Hours:</strong> ';
     var hourOpen = '';
     var hourClosed = '';
     for (var hoItem in feature.properties["8. Office Open at"]) {
@@ -248,7 +254,7 @@ function renderServiceText(feature, style) {
                 // Strip the leading numeral from the field name.
                 var fieldName = field.substr(field.indexOf(" ") + 1);
                 // Add the field name to the output.
-                output += '<p><b>' + fieldName + ':</b> ';
+                output += '<p><strong>' + fieldName + ':</strong> ';
                 // Loop through items, and if value is TRUE, add label to the output.
                 for (var lineItem in values) {
                     if (values[lineItem]) {
@@ -269,7 +275,7 @@ function renderServiceText(feature, style) {
     activityCategory = feature.properties.activityCategory; // eg "CASH"
 
     // Assemble the article header.
-    var header = '<header><h3>' + feature.properties.locationName + '</h3>' + hours + headerOutput + '</header>';
+    var header = '<header><h3>' + feature.properties.locationName + '</h3>' + '<div class="hours">' + hours + '</div>' + headerOutput + '</header>';
 
     // Preserve the line breaks in the original comment, but strip extra breaks from beginning and end.
     var comments = feature.properties.comments ?
