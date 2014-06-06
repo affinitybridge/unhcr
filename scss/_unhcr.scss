@@ -6,9 +6,13 @@ html,
 body,
 main { height: 100%; }
 
+body {
+  font: 12px/1.5 Helvetica, arial, freesans, clean, sans-serif;
+}
+
 /* Variables */
 $grey-light: #f3f3f3;
-$grey-medium: #e5e5e5;
+$grey-medium: #666666;
 $grey-dark: #333333;
 
 /* Utilities */
@@ -23,9 +27,11 @@ $grey-dark: #333333;
 }
 
 /* Header */
-header {
+.map-actions {
   background: $grey-light;
-  border-bottom: 1px solid $grey-medium;
+  border-bottom: 1px solid darken($grey-light, 20%);
+  padding: 5px 0px;
+  position: relative;
 }
 
 /* Map styles */
@@ -37,14 +43,15 @@ header {
 
 /* Toggle styles */
 #toggler {
-  border: 2px solid #ddd;
-  padding: 3px 0;
+  border: 1px solid darken($grey-light, 20%);
+  font-size: 14px;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 2px;
+  right: 10px;
 
   span {
-    padding: 5px 7px;
+    display: inline-block;
+    padding: 1px 8px;
     margin: 0;
     background-color: #bbb;
 
@@ -105,13 +112,11 @@ header {
 }
 
 /* Filter styles */
-.map-actions {
-  position: relative;
-}
-
 ul.filter-togglers {
+  font-size: 13px;
+  font-weight: bold;
   margin: 0;
-  padding: 0;
+  padding: 0 5px;
 
   li {
     float: left;
@@ -119,19 +124,18 @@ ul.filter-togglers {
   }
 
   a {
-    color: $grey-dark;
+    color: $grey-medium;
     padding: 5px;
     text-decoration: none;
 
     &:hover,
     &.active {
-      color: black;
+      color: $grey-dark;
     }
   }
 }
 
 .filter-contents {
-  background: $grey-light;
   position: absolute;
   top: 100%;
   width: 100%;
@@ -139,15 +143,30 @@ ul.filter-togglers {
 }
 
 .filter {
+  background: $grey-light;
   display: none;
   padding: 10px;
-  font-size: 0.8em;
+  position: absolute;
+  top: 1px;
 
   &.active { display: block; }
 
   form label {
     display: block;
   }
+}
+
+#activityName {
+  left: 10px;
+}
+
+#referralRequired {
+  left: 130px;
+}
+
+#partnerName {
+  left: 0px;
+  width: 100%;
 }
 
 #activityName form label { line-height: 1.2em; }

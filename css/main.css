@@ -211,6 +211,9 @@ textarea {
 html, body, main {
   height: 100%; }
 
+body {
+  font: 12px/1.5 Helvetica, arial, freesans, clean, sans-serif; }
+
 /* Variables */
 /* Utilities */
 .hide {
@@ -222,9 +225,11 @@ html, body, main {
   clear: both; }
 
 /* Header */
-header {
+.map-actions {
   background: #f3f3f3;
-  border-bottom: 1px solid #e5e5e5; }
+  border-bottom: 1px solid #c0c0c0;
+  padding: 5px 0px;
+  position: relative; }
 
 /* Map styles */
 #map {
@@ -234,13 +239,14 @@ header {
 
 /* Toggle styles */
 #toggler {
-  border: 2px solid #ddd;
-  padding: 3px 0;
+  border: 1px solid #c0c0c0;
+  font-size: 14px;
   position: absolute;
-  top: 20px;
-  right: 20px; }
+  top: 2px;
+  right: 10px; }
   #toggler span {
-    padding: 5px 7px;
+    display: inline-block;
+    padding: 1px 8px;
     margin: 0;
     background-color: #bbb; }
     #toggler span.active {
@@ -282,37 +288,47 @@ header {
     margin: 0; }
 
 /* Filter styles */
-.map-actions {
-  position: relative; }
-
 ul.filter-togglers {
+  font-size: 13px;
+  font-weight: bold;
   margin: 0;
-  padding: 0; }
+  padding: 0 5px; }
   ul.filter-togglers li {
     float: left;
     list-style: none outside none; }
   ul.filter-togglers a {
-    color: #333333;
+    color: #666666;
     padding: 5px;
     text-decoration: none; }
     ul.filter-togglers a:hover, ul.filter-togglers a.active {
-      color: black; }
+      color: #333333; }
 
 .filter-contents {
-  background: #f3f3f3;
   position: absolute;
   top: 100%;
   width: 100%;
   z-index: 10000; }
 
 .filter {
+  background: #f3f3f3;
   display: none;
   padding: 10px;
-  font-size: 0.8em; }
+  position: absolute;
+  top: 1px; }
   .filter.active {
     display: block; }
   .filter form label {
     display: block; }
+
+#activityName {
+  left: 10px; }
+
+#referralRequired {
+  left: 130px; }
+
+#partnerName {
+  left: 0px;
+  width: 100%; }
 
 #activityName form label {
   line-height: 1.2em; }
