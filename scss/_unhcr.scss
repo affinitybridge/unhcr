@@ -167,7 +167,7 @@ ul.filter-togglers {
 
 #partnerName {
   left: 0px;
-  width: 100%;
+  //width: 100%;
 }
 
 /*span.glyph {
@@ -233,14 +233,22 @@ ul.filter-togglers {
 /* Referal Required */
 
 /* Organization */
+
 #partnerName {
+  max-height: 300px;
+  overflow: auto;
 
   label {
     float: left;
     height: 40px;
-    min-width: 210px;
+    //min-width: 210px;
     position: relative;
     width: 25%;
+
+    @media only screen and (max-width: 600px) { width: 100%; }
+    @media only screen and (min-width: 601px) and (max-width: 800px) { width: 50%; }
+    @media only screen and (min-width: 801px) and (max-width: 1024px) { width: 33%; }
+    @media only screen and (min-width: 1025px) { width: 25%; }
   }
 
   .glyph {
