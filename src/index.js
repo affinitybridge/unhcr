@@ -276,7 +276,7 @@ function renderServiceText(feature, style) {
         feature.properties.comments.trim().replace(/\r\n|\n|\r/g, '<br />') : null;
 
     // Assemble the article content.
-    var content = '<div class="content">' + logo + comments + '</div>';
+    var content = '<div class="content">' + logo + contentOutput + comments + '</div>';
 
     return '<article class="serviceText">' + header + content + '</article>';
 }
