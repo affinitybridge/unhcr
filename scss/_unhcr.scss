@@ -233,13 +233,27 @@ ul.filter-togglers {
 /* Referal Required */
 
 /* Organization */
-#partnerName span.glyph {
-  margin: 0 0 0d 6px;
-  width: 120px;
-  height: 30px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left bottom;
+#partnerName {
+
+  label {
+    float: left;
+    height: 40px;
+    min-width: 210px;
+    position: relative;
+    width: 25%;
+  }
+
+  .glyph {
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    left: 6px;
+    height: 30px;
+    position: relative;
+    top: 8px;
+    width: 120px;
+    z-index: 2;
+  }
 }
 
 #filter-value-education span.glyph:before {
