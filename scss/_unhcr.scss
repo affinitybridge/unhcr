@@ -115,7 +115,7 @@ $grey-dark: #333333;
 ul.filter-togglers {
   font-size: 13px;
   font-weight: bold;
-  margin: 0;
+  margin: 0 100px 0 0;
   padding: 0 5px;
 
   li {
@@ -125,6 +125,7 @@ ul.filter-togglers {
 
   a {
     color: $grey-medium;
+    display: block;
     padding: 5px;
     text-decoration: none;
 
@@ -168,6 +169,25 @@ ul.filter-togglers {
 #partnerName {
   left: 0px;
   //width: 100%;
+}
+
+@media only screen and (max-width: 460px) {
+  ul.filter-togglers {
+    li {
+      float: none;
+    }
+
+    a {
+      padding: 0 5px;
+    }
+  }
+
+  #activityName,
+  #referralRequired,
+  #partnerName {
+    left: 0;
+    width: auto;
+  }
 }
 
 /*span.glyph {
@@ -233,7 +253,6 @@ ul.filter-togglers {
 /* Referal Required */
 
 /* Organization */
-
 #partnerName {
   max-height: 300px;
   overflow: auto;
