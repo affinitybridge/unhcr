@@ -113,6 +113,18 @@ $(".filter-toggler").click(function(event) {
   }
 });
 
+// Close filter containers by clicking outside
+$(document).mouseup(function (e) {
+    var container = $(".filter-contents > .filter.active");
+
+    // if the target of the click isn't the container nor a descendant of the container
+    if (container.length && !container.is(e.target) && container.has(e.target).length === 0) {
+      var target = container.attr('id');
+      $('a[href="#' + target + '"]').removeClass('active');
+      container.removeClass('active');
+    }
+});
+
 // Bind list/map view toggle to the toggler link.
 // Thus, if user clicks anywhere on the toggler link, the map and list toggle their visibility,
 // and the Map and List spans in the toggler link toggle their active-looking-ness.
