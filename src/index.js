@@ -32,25 +32,25 @@ jQuery.getJSON( "src/polygons.json", function( polygonData ) {
 */
 
 // Match possible Activity Categories to Humanitarian Font icons.
-var iconGlyphs = [
-    {category: 'CASH', glyph: 'ocha-sector-cash', markerColor: '#a48658' },
-    {category: 'EDUCATION', glyph: 'ocha-sector-education', markerColor: '#c00000' },
-    {category: 'FOOD', glyph: 'ocha-sector-foodsecurity', markerColor: '#006600' },
-    {category: 'HEALTH', glyph: 'ocha-sector-health', markerColor: '#08a1d9' },
-    {category: 'NFI', glyph: 'ocha-item-reliefgood', markerColor: '#f96a1b' },
-    {category: 'PROTECTION', glyph: 'ocha-sector-protection', markerColor: '#1f497d' },
-    {category: 'SHELTER', glyph: 'ocha-sector-shelter', markerColor: '#989aac' },
-    {category: 'WASH', glyph: 'ocha-sector-wash', markerColor: '#7030a0' }
-];
+var iconGlyphs = {
+    'CASH': {category: 'CASH', glyph: 'ocha-sector-cash', markerColor: '#a48658' },
+    'EDUCATION': {category: 'EDUCATION', glyph: 'ocha-sector-education', markerColor: '#c00000' },
+    'FOOD': {category: 'FOOD', glyph: 'ocha-sector-foodsecurity', markerColor: '#006600' },
+    'HEALTH': {category: 'HEALTH', glyph: 'ocha-sector-health', markerColor: '#08a1d9' },
+    'NFI': {category: 'NFI', glyph: 'ocha-item-reliefgood', markerColor: '#f96a1b' },
+    'PROTECTION': {category: 'PROTECTION', glyph: 'ocha-sector-protection', markerColor: '#1f497d' },
+    'SHELTER': {category: 'SHELTER', glyph: 'ocha-sector-shelter', markerColor: '#989aac' },
+    'WASH': {category: 'WASH', glyph: 'ocha-sector-wash', markerColor: '#7030a0' }
+};
 var iconObjects = {};
 // Create the icons, as objects named eg iconFOOD.
-for (var i=0, len=iconGlyphs.length; i < len; i++){
-    iconObjects[iconGlyphs[i].category] = L.AwesomeMarkers.icon({
-        icon: iconGlyphs[i].glyph,
+for (var category in iconGlyphs) {
+    iconObjects[category] = L.AwesomeMarkers.icon({
+        icon: iconGlyphs[category].glyph,
         prefix: 'icon', // necessary because Humanitarian Fonts prefixes its icon names with "icon"
-        iconColor: iconGlyphs[i].markerColor,
+        iconColor: iconGlyphs[category].markerColor,
         markerColor: "white",
-        extraClasses: iconGlyphs[i].category
+        extraClasses: category
     });
 }
 
@@ -273,9 +273,10 @@ function renderServiceText(feature, style) {
 
     // Get the activity-category icon.
     activityCategory = feature.properties.activityCategory; // eg "CASH"
+    var glyph = '<i class="glyphicon icon-' + iconGlyphs[activityCategory].glyph + '"></i>';
 
     // Assemble the article header.
-    var header = '<header><h3>' + feature.properties.locationName + '</h3>' + '<div class="hours">' + hours + '</div>' + headerOutput + '</header>';
+    var header = '<header><h3>' + glyph + feature.properties.locationName + '</h3>' + '<div class="hours">' + hours + '</div>' + headerOutput + '</header>';
 
     // Preserve the line breaks in the original comment, but strip extra breaks from beginning and end.
     var comments = feature.properties.comments ?

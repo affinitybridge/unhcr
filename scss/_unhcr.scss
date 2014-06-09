@@ -268,7 +268,7 @@ ul.filter-togglers {
   color: #989aac;
 }
 
-/* Referal Required */
+/* Referral Required */
 
 /* Organization */
 #partnerName {
@@ -315,6 +315,16 @@ ul.filter-togglers {
   content: "\f369";
   color: #7030a0;
 }
+
+i.glyphicon { font-size: 24px; margin-right: -13px; }
+i.glyphicon.icon-ocha-item-reliefgood { color: #f96a1b; }
+i.glyphicon.icon-ocha-sector-cash { color: #a48658; }
+i.glyphicon.icon-ocha-sector-protection { color: #1f497d; }
+i.glyphicon.icon-ocha-sector-health { color: #08a1d9; }
+i.glyphicon.icon-ocha-sector-wash { color: #7030a0; }
+i.glyphicon.icon-ocha-sector-foodsecurity { color: #006600; }
+i.glyphicon.icon-ocha-sector-education { color: #c00000; }
+i.glyphicon.icon-ocha-sector-shelter { color: #989aac; }
 
 #filter-value-acf span.glyph { background-image: url("../src/images/partner/acf.jpg"); }
 #filter-value-acted span.glyph { background-image: url("../src/images/partner/acted.jpg"); }
