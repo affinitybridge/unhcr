@@ -242,13 +242,15 @@ body {
   border: 1px solid #c0c0c0;
   font-size: 14px;
   position: absolute;
-  top: 2px;
+  top: 7px;
   right: 10px; }
   #toggler span {
     display: inline-block;
     padding: 1px 8px;
     margin: 0;
     background-color: #bbb; }
+    #toggler span:hover {
+      cursor: pointer; }
     #toggler span.active {
       background-color: #fff; }
 

@@ -46,7 +46,7 @@ $grey-dark: #333333;
   border: 1px solid darken($grey-light, 20%);
   font-size: 14px;
   position: absolute;
-  top: 2px;
+  top: 7px;
   right: 10px;
 
   span {
@@ -54,6 +54,8 @@ $grey-dark: #333333;
     padding: 1px 8px;
     margin: 0;
     background-color: #bbb;
+
+    &:hover { cursor: pointer; }
 
     &.active {
       background-color: #fff;

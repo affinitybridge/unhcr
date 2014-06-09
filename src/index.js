@@ -116,7 +116,7 @@ $(".filter-toggler").click(function(event) {
 // Bind list/map view toggle to the toggler link.
 // Thus, if user clicks anywhere on the toggler link, the map and list toggle their visibility,
 // and the Map and List spans in the toggler link toggle their active-looking-ness.
-$("#toggler").click(function() {
+$("#toggler").click(function(event) {
   event.preventDefault();
   $("#map").toggle();
   $("#list").toggle();
