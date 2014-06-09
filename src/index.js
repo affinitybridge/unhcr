@@ -10,16 +10,18 @@ var $ = require('jquery'),
     categoryFilter = require("./CategoryFilter");
 // Mapbox doesn't need its own var - it automatically attaches to Leaflet's L.
 require('mapbox.js');
-// Awesome Markers needs to be referred to by file path, because it's not in the build.
-// TODO: make Awesome Markers be properly part of the package, so it downloads automatically.
+// Use Awesome Markers lib to produce font-icon map markers
 require('./leaflet.awesome-markers.js');
+// Marker clustering
+require('../node_modules/leaflet.markercluster/dist/leaflet.markercluster.js');
+// File system
 var fs = require('fs');
 
 // Initialize the map, using Affinity Bridge's mapbox account.
 var map = L.mapbox.map('map', 'affinitybridge.ia7h38nj');
 
-// Add the data layer to the map.
-var dataLayer = L.featureGroup().addTo(map);
+// Add the layer for the clustered markers to the map. It's empty as yet.
+var clusterLayer = new L.MarkerClusterGroup().addTo(map);
 
 // Read the polygon file.
 // TODO: use these polygons as the basis for a filter/zoom tool
@@ -128,15 +130,15 @@ $("#toggler").click(function() {
 jQuery.getJSON( "src/compiled.json", function( data ) {
     $.each( data, function( key, feature ) {
 
-        // Create and add the markers.
+        // Create the marker and add it to the cluster layer.
         var serviceMarker = L.marker(feature.geometry.coordinates.reverse(),
                                      {icon: iconObjects[feature.properties.activityCategory]});
-        serviceMarker.addTo(dataLayer);
+        serviceMarker.addTo(clusterLayer);
 
-        // Make the popup and bind it to the marker.
+        // Make the popup, and bind it to the marker.
         serviceMarker.bindPopup(renderServiceText(feature, "marker"));
 
-        // Add the marker layer we just created to "feature"
+        // Add the marker we just created back to the feature, so we can re-use the same marker later.
         feature.properties.marker = serviceMarker;
     });
 
@@ -164,16 +166,20 @@ function update() {
 // Clear the data and re-render.
 function render() {
     // Clear all the map markers.
-    dataLayer.clearLayers();
+    clusterLayer.clearLayers();
+
+    // Initialize the list-view output.
     var listOutput = '<h3 class="hide">Services</h3>';
-    // Add the filtered markers back to the map data layer.
+
+    // Loop through the filtered results, adding the markers back to the map.
     metaDimension.top(Infinity).forEach( function (feature) {
         // Add the filtered markers back to the map's data layer
-        dataLayer.addLayer(feature.properties.marker);
+        clusterLayer.addLayer(feature.properties.marker);
         // Build the output for the filtered list view
         listOutput += renderServiceText(feature, "list");
     } );
-    // Replace the contents of the list div with the new filtered output.
+
+    // Replace the contents of the list div with this new filtered output.
     $('#list').html(listOutput);
 
     // According functionality for the list
