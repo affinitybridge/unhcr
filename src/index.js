@@ -21,7 +21,19 @@ var fs = require('fs');
 var map = L.mapbox.map('map', 'affinitybridge.ia7h38nj');
 
 // Add the layer for the clustered markers to the map. It's empty as yet.
-var clusterLayer = new L.MarkerClusterGroup().addTo(map);
+var clusterLayer = new L.MarkerClusterGroup({zoomToBoundsOnClick: false}).addTo(map);
+// When user clicks on a cluster, zoom directly to its bounds.  If we don't do this.
+// they have to click repeatedly to zoom in enough for the cluster to spiderfy.
+clusterLayer.on('clusterclick', function (a) {
+    // If the markers in this cluster are all in the same place, spiderfy on click.
+    var bounds = a.layer.getBounds();
+    if (bounds._northEast.equals(bounds._southWest)) {
+        a.layer.spiderfy();
+    } else {
+        // If the markers in this cluster are NOT all in the same place, zoom in on them.
+        a.layer.zoomToBounds();
+    }
+});
 
 // Read the polygon file.
 // TODO: use these polygons as the basis for a filter/zoom tool
