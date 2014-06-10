@@ -206,14 +206,6 @@ ul.filter-togglers {
   }
 }
 
-/*span.glyph {
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit;
-  -webkit-font-smoothing: antialiased;
-}*/
-
 /* Activity Category */
 #activityName {
   padding: 0 10px;
@@ -241,29 +233,37 @@ ul.filter-togglers {
   }
 }
 
-#filter-value-basic-needs span.glyph:before {
+#activityname-filter-value-basic-needs span.glyph:before {
   content: "\f412";
   color: #f96a1b;
 }
-
-#filter-value-child-protection span.glyph:before {
+#activityname-filter-value-child-protection span.glyph:before {
   content: "\f368";
   color: #1f497d;
 }
-
-#filter-value-maintain-food-security span.glyph:before {
+#activityname-filter-value-maintain-food-security span.glyph:before {
   content: "\f366";
   color: #006600;
 }
-
-#filter-value-need-coverage span.glyph:before {
+#activityname-filter-value-need-coverage span.glyph:before {
   content: "\f32a";
   color: #a48658;
 }
-
-#filter-value-shelter-rehabilitation-jordanians---syrians span.glyph:before {
+#activityname-filter-value-shelter-rehabilitation-jordanians---syrians span.glyph:before {
   content: "\f363";
   color: #989aac;
+}
+#activityname-filter-value-education span.glyph:before {
+    content: "\f362";
+    color: #c00000;
+}
+#activityname-filter-value-health span.glyph:before {
+    content: "\f364";
+    color: #08a1d9;
+}
+#activityname-filter-value-wash span.glyph:before {
+    content: "\f369";
+    color: #7030a0;
 }
 
 /* Referral Required */
@@ -300,17 +300,17 @@ ul.filter-togglers {
   }
 }
 
-#filter-value-education span.glyph:before {
+#activityname-filter-value-education span.glyph:before {
   content: "\f362";
   color: #c00000;
 }
 
-#filter-value-health span.glyph:before {
+#activityname-filter-value-health span.glyph:before {
   content: "\f364";
   color: #08a1d9;
 }
 
-#filter-value-wash span.glyph:before {
+#activityname-filter-value-wash span.glyph:before {
   content: "\f369";
   color: #7030a0;
 }
