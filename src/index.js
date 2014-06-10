@@ -74,19 +74,17 @@ var cf_activityName = categoryFilter({
     container: 'activityName',
     type: 'radio',
     key: 'activityName',
-    empty: 'No data'
+    all: true
 }, cf);
 var cf_referralRequired = categoryFilter({
     container: 'referralRequired',
     type: 'radio',
-    key: 'Referral required',
-    empty: 'No data'
+    key: 'Referral required'
 }, cf);
 var cf_partnerName = categoryFilter({
     container: 'partnerName',
     type: 'checkbox',
     key: 'partnerName',
-    empty: 'No data'
 }, cf);
 
 // Special meta-dimension for our crossFilter dimensions, used to grab the final set
@@ -101,7 +99,7 @@ cf_partnerName.on('update', update);
 
 $("#mapToggle").addClass("active"); // This make the "map" span in the map/list toggle look active.
 
-// Filter toggler
+// Filters visible/invisible toggler
 $(".filter-toggler").click(function(event) {
   var target = this.getAttribute('href');
 
@@ -127,9 +125,7 @@ $(".filter-toggler").click(function(event) {
   }
 });
 
-// Bind list/map view toggle to the toggler link.
-// Thus, if user clicks anywhere on the toggler link, the map and list toggle their visibility,
-// and the Map and List spans in the toggler link toggle their active-looking-ness.
+// List/map view toggler
 $("#toggler").click(function() {
   event.preventDefault();
   $("#map").toggle();
@@ -160,7 +156,6 @@ jQuery.getJSON( "src/compiled.json", function( data ) {
     // Add the markers to the map
     update();
 });
-
 
 // Functions...
 

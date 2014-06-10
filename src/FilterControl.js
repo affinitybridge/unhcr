@@ -13,6 +13,7 @@ var FilterControl = L.Control.extend({
     initialize: function (options) {
         L.setOptions(this, options);
         this.dimension = this.options.dimension;
+        this.options = this.options;
 
         this._numItems = 0;
         this.filters = {};
@@ -112,7 +113,7 @@ var FilterControl = L.Control.extend({
 
         input.className = 'leaflet-control-filter-selector';
         input.value = filter.key;
-        label.id = 'filter-value-' + filter.key.replace(/[\W_\s]/g, '-').toLowerCase();
+        label.id = (this.options.options.key + '-filter-value-' + filter.key).replace(/[\W_\s]/g, '-').toLowerCase();
 
         L.DomEvent.on(input, 'click', this._onInputClick, this);
 

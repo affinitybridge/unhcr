@@ -1,12 +1,3 @@
-// Amani.FilterFactory.include({
-//     category: function (options, cf, data) {
-//         var container = document.getElementById(options.container),
-//             dimension = cf.dimension(function (f) { return f.properties[options.key] || options.empty; });
-// 
-//         return new Amani.CategoryFilter(dimension, container, options);
-//     }
-// });
-
 // Require some libs.
 var jQuery = require('jquery'),
     BaseFilter = require('./BaseFilter'),
@@ -18,7 +9,7 @@ var CategoryFilter = BaseFilter.extend({
         if (options && dimension ) {
             if (!container) { container = document.getElementById(options.container); }
 
-            this._filter = filterControl({ dimension: dimension, type: options.type });
+            this._filter = filterControl({ dimension: dimension, type: options.type, options: options });
 
             this._filter.on('filter', function (e) {
                 dimension.filterAll();
