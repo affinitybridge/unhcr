@@ -238,21 +238,25 @@ function renderServiceText(feature, style) {
     // Make an array of the fields we want to show.
     var fields = {
          "x. Activity Details": {'section': 'header'},
-         "10. Referral Method": {'section': 'content'},
+         "10. Referral Method": {'section': 'header'},
     };
 
-    /* Add these fields and more back in later, when we implement the "full" view.
-    if (style == 'full') {
-        fields = jQuery.merge(fields, [
-        "6. Availability",
-        "7. Availability Day",
-        "1. Registration Type Requirement",
-        "2. Nationality",
-        "3. Intake Criteria",
-        "4. Accessibility",
-        "5. Coverage"]);
+    if (style == 'list') {
+        fields["10. Referral Method"] = {'section': 'content'};
+        fields["6. Availability"] = {'section': 'content'};
+        fields["7. Availability Day"] = {'section': 'content'};
+        fields.startDate = {'section': 'content', 'label': 'Start Date'};
+        fields.endDate = {'section': 'content', 'label': 'End Date'};
+        fields["1. Registration Type Requirement"] = {'section': 'content'};
+        fields["2. Nationality"] = {'section': 'content'};
+        fields["3. Intake Criteria"] = {'section': 'content'};
+        fields["4. Accessibility"] = {'section': 'content'};
+        fields["5. Coverage"] = {'section': 'content'};
+        fields["14. Feedback delay"] = {'section': 'content'};
+        fields["11. Immediate Next step  response after referal"] = {'section': 'content'};
+        fields["12. Response delay after referrals"] = {'section': 'content'};
+        fields["13. Feedback Mechanism"] = {'section': 'content'};
     }
-    */
 
     // Loop through the array, preparing info for the popup.
     var headerOutput = '';
@@ -263,18 +267,23 @@ function renderServiceText(feature, style) {
         var output = '';
         // Skip empty fields
         if (values) {
-            if (Object.getOwnPropertyNames(values).length) {
-                // Strip the leading numeral from the field name.
-                var fieldName = field.substr(field.indexOf(" ") + 1);
-                // Add the field name to the output.
-                output += '<p><strong>' + fieldName + ':</strong> ';
-                // Loop through items, and if value is TRUE, add label to the output.
-                for (var lineItem in values) {
-                    if (values[lineItem]) {
-                        output += lineItem + ' ';
+            if (typeof values === 'object') {
+                if (Object.getOwnPropertyNames(values).length) {
+                    // Strip the leading numeral from the field name.
+                    var fieldName = field.substr(field.indexOf(" ") + 1);
+                    // Add the field name to the output.
+                    output += '<p><strong>' + fieldName + ':</strong> ';
+                    // Loop through items, and if value is TRUE, add label to the output.
+                    for (var lineItem in values) {
+                        if (values[lineItem]) {
+                            output += lineItem + ' ';
+                        }
                     }
+                    output += '</p>';
                 }
-                output += '</p>';
+            } else {
+                // If this is one of the fields whose value is a string...
+                output += '<p><strong>' + fields[field].label + ':</strong> ' + values;
             }
         }
         if (fields[field].section == 'header') {
@@ -289,14 +298,14 @@ function renderServiceText(feature, style) {
     var glyph = '<i class="glyphicon icon-' + iconGlyphs[activityCategory].glyph + '"></i>';
 
     // Assemble the article header.
-    var header = '<header><h3>' + glyph + feature.properties.locationName + '</h3>' + '<div class="hours">' + hours + '</div>' + headerOutput + '</header>';
+    var header = '<header>' + logo + '<h3>' + glyph + feature.properties.locationName + '</h3>' + '<p class="hours">' + hours + '</p>' + headerOutput + '</header>';
 
     // Preserve the line breaks in the original comment, but strip extra breaks from beginning and end.
     var comments = feature.properties.comments ?
-        feature.properties.comments.trim().replace(/\r\n|\n|\r/g, '<br />') : null;
+        feature.properties.comments.trim().replace(/\r\n|\n|\r/g, '<br />') : '';
 
     // Assemble the article content.
-    var content = '<div class="content">' + logo + contentOutput + comments + '</div>';
+    var content = '<div class="content">' + contentOutput + '<div class="comments">' + comments + '</div></div>';
 
     return '<article class="serviceText">' + header + content + '</article>';
 }

@@ -88,16 +88,22 @@ $grey-dark: #333333;
     &:hover { cursor: pointer; }
 
     * { margin: 0; }
+    > img {
+        float: right;
+        margin: 0 10px 0 10px;
+    }
   }
 
   .content {
     display: none;
     padding: 0 10px 10px 10px;
 
-    > img {
-      float: right;
-      margin: 0 10px 0 10px;
+    > p {
+      margin: 2px 0;
     }
+  }
+  .comments {
+    margin-top: 10px;
   }
 }
 
@@ -125,7 +131,14 @@ $grey-dark: #333333;
     font-size: 12px;
     margin: 0;
   }
+  > .serviceText {
+      margin: 0;
+      border-bottom: none;
+  }
 }
+
+.leaflet-popup-content .serviceText header { padding: 0 !important; }
+.leaflet-popup-content .serviceText p { margin: 2px 0 !important; }
 
 /* Filter Togglers */
 ul.filter-togglers {
