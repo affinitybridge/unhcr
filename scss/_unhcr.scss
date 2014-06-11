@@ -36,7 +36,7 @@ $grey-dark: #333333;
 
 /* Map styles */
 #map {
-  height: 60%;
+  height: 90%;
   float: none;
   clear: both;
 }
@@ -48,6 +48,7 @@ $grey-dark: #333333;
   position: absolute;
   top: 2px;
   right: 10px;
+  cursor: pointer;
 
   span {
     display: inline-block;
@@ -139,6 +140,7 @@ $grey-dark: #333333;
 
 .leaflet-popup-content .serviceText header { padding: 0 !important; }
 .leaflet-popup-content .serviceText p { margin: 2px 0 !important; }
+.leaflet-popup-content .serviceText img { width: 100px; }
 
 /* Filter Togglers */
 ul.filter-togglers {
@@ -311,21 +313,6 @@ ul.filter-togglers {
     width: 120px;
     z-index: 2;
   }
-}
-
-#activityname-filter-value-education span.glyph:before {
-  content: "\f362";
-  color: #c00000;
-}
-
-#activityname-filter-value-health span.glyph:before {
-  content: "\f364";
-  color: #08a1d9;
-}
-
-#activityname-filter-value-wash span.glyph:before {
-  content: "\f369";
-  color: #7030a0;
 }
 
 i.glyphicon { font-size: 24px; margin-right: -13px; }
