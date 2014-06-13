@@ -278,17 +278,17 @@ function renderServiceText(feature, style) {
         hours = hourClosed ? hours += hourClosed : hours + 'unknown';
     }
 
-    // Create meta-fields for better display of office hours & indicators.
+    // Create meta-field for better display of indicators.
     feature.properties["x. Activity Details"] = feature.properties.indicators;
 
-    // Make an array of the fields we want to show.
+    // Make a list of the fields we want to show.
     var fields = (style == 'list') ? {
              "x. Activity Details": {'section': 'header'},
              "10. Referral Method": {'section': 'content'},
              "6. Availability": {'section': 'content'},
              "7. Availability Day": {'section': 'content'},
-             startDate: {'section': 'content', 'label': 'Start Date'},
-             endDate: {'section': 'content', 'label': 'End Date'},
+             "startDate": {'section': 'content', 'label': 'Start Date'},
+             "endDate": {'section': 'content', 'label': 'End Date'},
              "1. Registration Type Requirement": {'section': 'content'},
              "2. Nationality": {'section': 'content'},
              "3. Intake Criteria": {'section': 'content'},
@@ -304,38 +304,41 @@ function renderServiceText(feature, style) {
              "10. Referral Method": {'section': 'header'}
         };
 
-    // Loop through the array, preparing info for the popup.
+    // Loop through the list of fields, preparing output for display.
     var headerOutput = '';
     var contentOutput = '';
     for (var field in fields) {
         // Get the field items (they are all Booleans, we want their labels)
         values = feature.properties[field];
-        var output = '';
+        var fieldOutput = '';
+        // Strip the leading numeral from the field name.
+        var fieldName = field.substr(field.indexOf(" ") + 1);
         // Skip empty fields
         if (values) {
+            // Some fields have object values. These we must loop through.
             if (typeof values === 'object') {
                 if (Object.getOwnPropertyNames(values).length) {
-                    // Strip the leading numeral from the field name.
-                    var fieldName = field.substr(field.indexOf(" ") + 1);
-                    // Add the field name to the output.
-                    output += '<p><strong>' + fieldName + ':</strong> ';
                     // Loop through items, and if value is TRUE, add label to the output.
                     for (var lineItem in values) {
                         if (values[lineItem]) {
-                            output += lineItem + ' ';
+                            fieldOutput += lineItem + ' ';
                         }
                     }
-                    output += '</p>';
                 }
-            } else {
-                // If this is one of the fields whose value is a string...
-                output += '<p><strong>' + fields[field].label + ':</strong> ' + values;
+            // Other fields have a string for a value.
+            } else if (typeof values === 'string') {
+                fieldName = fields[field].label;
+                fieldOutput = values;
             }
         }
+        // Wrap the output with a label.  If no output, say unknown.
+        if (fieldOutput === '') { fieldOutput = "unknown"; }
+        fieldOutput = '<p><strong>' + fieldName + ':</strong> ' + fieldOutput + '</p>';
+        // Add the field output to the appropriate section.
         if (fields[field].section == 'header') {
-            headerOutput += output;
+            headerOutput += fieldOutput;
         } else {
-            contentOutput += output;
+            contentOutput += fieldOutput;
         }
     }
 
