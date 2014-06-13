@@ -21,7 +21,8 @@ var fs = require('fs');
 var map = L.mapbox.map('map', 'affinitybridge.ia7h38nj');
 
 // Initialize the empty layer for the markers, and add it to the map.
-var clusterLayer = new L.MarkerClusterGroup({zoomToBoundsOnClick: false, spiderfyDistanceMultiplier: 2}).addTo(map);
+var clusterLayer = new L.MarkerClusterGroup({zoomToBoundsOnClick: false, spiderfyDistanceMultiplier: 2})
+    .addTo(map);
 // When user clicks on a cluster, zoom directly to its bounds.  If we don't do this,
 // they have to click repeatedly to zoom in enough for the cluster to spiderfy.
 clusterLayer.on('clusterclick', function (a) {
@@ -60,7 +61,7 @@ var iconGlyphs = {
     'WASH': {glyph: 'ocha-sector-wash', markerColor: '#7030a0' }
 };
 var iconObjects = {};
-// Create the icons, as objects named eg iconFOOD.
+// Create the icon objects. We'll reuse the same icon for all markers in the same category.
 for (var category in iconGlyphs) {
     iconObjects[category] = L.AwesomeMarkers.icon({
         icon: iconGlyphs[category].glyph,
@@ -95,15 +96,12 @@ var cf_partnerName = categoryFilter({
 var metaDimension = cf.dimension(function (f) { return f.properties.activityName; });
 
 // Whenever the user changes their selection in the filters, run our update() method.
-// Bind the update() method to the "update" event on the category filter.
+// (In other words, bind the update() method to the "update" event on the category filter.)
 cf_activityName.on('update', update);
 cf_referralRequired.on('update', update);
 cf_partnerName.on('update', update);
 
-// This make the "map" span in the map/list toggle look active initially.
-$("#mapToggle").addClass("active");
-
-// Show/hide search filters toggler
+// Show/hide search filters togglers
 $(".filter-toggler").click(function(event) {
   var target = this.getAttribute('href');
 
@@ -129,8 +127,10 @@ $(".filter-toggler").click(function(event) {
   }
 });
 
-// List/map view toggler
-$("#toggler").click(function() {
+// Map/list view toggler - make "map" active on initial page load.
+$("#mapToggle").addClass("active");
+// Bind click of toggler to swapping visibility of map and list.
+$("#map-list-toggler").click(function() {
   event.preventDefault();
   $("#map").toggle();
   $("#list").toggle();
@@ -140,39 +140,43 @@ $("#toggler").click(function() {
 
 // When a popup is opened, bind its "show details" link to switch to list view.
 map.on('popupopen', function(e){
+    // We already gave the popups the service's unique ID as their className attribute.
     var id = e.popup.options.className;
-    $("#details-" + id).hide();
-    $("#toggler-" + id).click(function() {
-        // If the "show details" is clicked, view this item on the list.
+    $("#show-details-" + id).click(function() {
+        // If "show details" is clicked, expand the corresponding item in the still-hidden list view.
         $("#article-" + id).addClass('expand');
-        $("#toggler").click();
+        // Switch to list view.
+        $("#map-list-toggler").click();
+        // Scroll to the item.
         $('html, body').animate({
             scrollTop: $("#article-" + id).offset().top
         }, 500);
     });
 });
 
-// Get the pre-compiled JSON from the file, and loop through it creating the markers.
+// If all npm modules have been installed and gulp has been run, we should have
+// a pre-compiled single file containing the JSON from all our sources in sources.txt.
+// Get that pre-compiled JSON, and loop through it creating the markers.
 jQuery.getJSON( "src/compiled.json", function( data ) {
     $.each( data, function( key, feature ) {
 
-        // Create the marker and add it to the cluster layer.
+        // Create marker and add it to the cluster layer.
         var serviceMarker = L.marker(feature.geometry.coordinates.reverse(),
                                      {icon: iconObjects[feature.properties.activityCategory]});
         serviceMarker.addTo(clusterLayer);
 
-        // Make the popup, and bind it to the marker.
-        // Add the service ID as a classname; we'll use for the "Show details" link.
+        // Make the popup, and bind it to the marker.  Add the service's unique ID
+        // as a classname; we'll use it later for the "Show details" action.
         serviceMarker.bindPopup(renderServiceText(feature, "marker"), {className:feature.id});
 
-        // Add the marker we just created back to the feature, so we can re-use the same marker later.
+        // Add the marker to the feature object, so we can re-use the same marker during render().
         feature.properties.marker = serviceMarker;
     });
 
-    // Add the new data to the crossfilter
+    // Add the new data to the crossfilter.
     cf.add(data);
 
-    // Add the markers to the map
+    // Add the markers to the map.
     update();
 });
 
@@ -196,22 +200,25 @@ function render() {
 
     // Initialize the list-view output.
     var listOutput = '<h3 class="hide">Services</h3>';
+
+    // Initialize a list where we'll store the current markers for easy reference when
+    // building the "show on map" functionality.  TODO: can we streamline this out?
     var markers = {};
 
     // Loop through the filtered results, adding the markers back to the map.
     metaDimension.top(Infinity).forEach( function (feature) {
         // Add the filtered markers back to the map's data layer
         clusterLayer.addLayer(feature.properties.marker);
-        // TEMP: also add the marker to an array.
+        // Store the marker for easy reference.
         markers[feature.id] = feature.properties.marker;
         // Build the output for the filtered list view
         listOutput += renderServiceText(feature, "list");
     } );
 
-    // Replace the contents of the list div with this new filtered output.
+    // Replace the contents of the list div with this new, filtered output.
     $('#list').html(listOutput);
 
-    // According functionality for the list
+    // According functionality for the list - expand item when its header is clicked
     $(".serviceText > header").click(function(event) {
       event.preventDefault();
       $(this).parent().toggleClass('expand');
@@ -224,23 +231,23 @@ function render() {
         // Close any popups that are open already.
         map.closePopup();
         // Fire the toggler click event, to switch to viewing the map.
-        $("#toggler").click();
+        $("#map-list-toggler").click();
         // Pan and zoom the map.
         map.panTo(markers[id]._latlng);
         if (map.getZoom() < 12) { map.setZoom(12); }
-        // Clone the popup for this marker.  We'll show it at the right lat-long, but
+        // Clone the popup for this marker.  We'll show it at the correct lat-long, but
         // unbound from the marker.  We do this in case the marker is in a cluster.
         var unboundPopup = markers[id].getPopup();
-        // Send the id as the className of the popup, so that the "Show details" binding
-        // will work as usual when the popupopen event fires; also, offset the Y
-        // position so the popup is a little above the marker or cluster.
+        // Send the service's unique ID as the className of the popup, so that the "Show
+        // details" binding will work as usual when the popupopen event fires; also, offset
+        // the Y position so the popup is a little bit above the marker or cluster.
         map.openPopup(L.popup({className:id, offset: new L.Point(0,-25)})
             .setLatLng(markers[id]._latlng)
             .setContent(markers[id].getPopup()._content));
     });
 }
 
-// Prepare text output for a single item, to show in the map popups or the list view
+// Prepare text output for a single service, to show in the map popups or the list view.
 function renderServiceText(feature, style) {
 
     // Get the partner logo, if any.
@@ -268,20 +275,24 @@ function renderServiceText(feature, style) {
             hourClosed = hcItem;
         }
     }
+    // If we have hours, show them as compact as possible.
     if (hourOpen) {
-        // If we have hours, show them as compact as possible.
+        // If we have open time but no close time, say "Open at X o'clock"; if we
+        // have both, show "X o'clock to X o'clock".
         hours = hourClosed ?
             hours += hourOpen + ' - ' + hourClosed.replace('Close at', '') :
             hours + 'Open at ' + hourOpen;
     } else {
-        // If we have neither an open nor a close time, say "unknown".
+        // If we have no open time but yes close time, show close time only; if we have
+        // neither, say "unknown".
         hours = hourClosed ? hours += hourClosed : hours + 'unknown';
     }
 
     // Create meta-field for better display of indicators.
     feature.properties["x. Activity Details"] = feature.properties.indicators;
 
-    // Make a list of the fields we want to show.
+    // Make a list of the fields we want to show - lots of fields for this list view,
+    // not so many for the map-marker-popup view.
     var fields = (style == 'list') ? {
              "x. Activity Details": {'section': 'header'},
              "10. Referral Method": {'section': 'content'},
@@ -304,22 +315,23 @@ function renderServiceText(feature, style) {
              "10. Referral Method": {'section': 'header'}
         };
 
-    // Loop through the list of fields, preparing output for display.
+    // Loop through our list of fields, preparing output for display.
     var headerOutput = '';
     var contentOutput = '';
     for (var field in fields) {
-        // Get the field items (they are all Booleans, we want their labels)
+        // Get the field items
         values = feature.properties[field];
         var fieldOutput = '';
         // Strip the leading numeral from the field name.
         var fieldName = field.substr(field.indexOf(" ") + 1);
-        // Skip empty fields
+        // Skip empty fields.
         if (values) {
             // Some fields have object values. These we must loop through.
             if (typeof values === 'object') {
                 if (Object.getOwnPropertyNames(values).length) {
                     // Loop through items, and if value is TRUE, add label to the output.
                     for (var lineItem in values) {
+                        // Checking if the line item value is TRUE
                         if (values[lineItem]) {
                             fieldOutput += lineItem + ' ';
                         }
@@ -349,7 +361,7 @@ function renderServiceText(feature, style) {
     // In the list view only, the articles must have unique IDs so that we can scroll directly to them
     // when someone clicks the "Show details" link in a map marker.
     var articleID = '';
-    var toggleLink = '<a id="toggler-' + feature.id + '" href="#">Show details</a>';
+    var toggleLink = '<a id="show-details-' + feature.id + '" href="#">Show details</a>';
     // If this is for a marker popup, add a "Show details" link that will take us to the list view.
     if (style == 'list') {
         // Whereas if this if for list view, add a link to show this item on the map.
@@ -364,8 +376,8 @@ function renderServiceText(feature, style) {
     var comments = feature.properties.comments ?
         feature.properties.comments.trim().replace(/\r\n|\n|\r/g, '<br />') : '';
 
-    // Assemble the article content.
-    var content = '<div class="content" id="details-' + feature.id + '">' + contentOutput + '<div class="comments">' + comments + '</div></div>';
+    // Assemble the article content (for list view only).
+    var content = (style == 'list') ? '<div class="content" id="details-' + feature.id + '">' + contentOutput + '<div class="comments">' + comments + '</div></div>' : '';
 
     return '<article class="serviceText"' + articleID + '>' + header + toggleLink + content + '</article>';
 }
