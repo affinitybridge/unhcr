@@ -163,8 +163,8 @@ $("#partnerName > h4").click(function(e) {
 // Map/list view toggler - make "map" active on initial page load.
 $("#mapToggle").addClass("active");
 // Bind click of toggler to swapping visibility of map and list.
-$("#map-list-toggler").click(function() {
-  event.preventDefault();
+$("#map-list-toggler").click(function(e) {
+  e.preventDefault();
   $("#map").toggle();
   $("#list").toggle();
   $("#mapToggle").toggleClass("active");

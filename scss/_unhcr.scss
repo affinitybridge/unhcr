@@ -15,7 +15,7 @@ $grey-light: #f3f3f3;
 $grey-medium: #57595a;
 $grey-dark: #333333;
 
-$orange: #d64a2b;
+$orange-dark: #d64a2b;
 
 $brown-light: #e6c68b;
 
@@ -52,7 +52,7 @@ $header-bg-color: $grey-dark;
 }
 
 #search-map a {
-  border-bottom: 2px solid $orange;
+  border-bottom: 2px solid $orange-dark;
   display: block;
   font-size: 14px;
   padding: 10px;
@@ -67,10 +67,10 @@ $header-bg-color: $grey-dark;
 
 /* Toggle styles */
 #map-list-toggler {
-  border: 1px solid darken($grey-light, 20%);
+  border: 1px solid darken($orange-dark, 20%);
   font-size: 14px;
   position: absolute;
-  top: 2px;
+  top: 7px;
   right: 10px;
   cursor: pointer;
 
@@ -78,10 +78,14 @@ $header-bg-color: $grey-dark;
     display: inline-block;
     padding: 1px 8px;
     margin: 0;
-    background-color: #bbb;
+    background-color: #fff;
+    color: $orange-dark;
 
     &.active {
-      background-color: #fff;
+      background-color: $orange-dark;
+      color: #fff;
+
+      &:hover { cursor: default; }
     }
   }
 }
