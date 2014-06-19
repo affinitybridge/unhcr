@@ -102,40 +102,39 @@ cf_referralRequired.on('update', update);
 cf_partnerName.on('update', update);
 
 // Show/hide search filters togglers
-$(".filter-toggler").click(function(event) {
+$("#search-map a").click(function(e) {
   var target = this.getAttribute('href');
 
   event.preventDefault();
 
   if ($(this).hasClass('active')) {
     $(this).removeClass('active');
-    $(target).removeClass('active');
+    $(target)
+      .slideUp(function(e) {
+        $(this).removeClass('active');
+      });
   }
   else {
-    $(this)
-      .parents('.filter-togglers')
-        .find('.active')
-          .removeClass('active')
-        .end()
-      .end()
-      .addClass('active');
+    $(this).addClass('active');
     $(target)
-      .siblings()
-        .removeClass('active')
-      .end()
-      .addClass('active');
+      .slideDown(function(e) {
+        $(this).addClass('active');
+      });
   }
 });
 
 // Close filter containers by clicking outside
 $(document).mouseup(function (e) {
-  var container = $(".filter-contents > .filter.active");
+  var container = $(".filter-contents.active");
 
   // if the target of the click isn't the container nor a descendant of the container
   if (container.length && !container.is(e.target) && container.has(e.target).length === 0) {
     var target = container.attr('id');
     $('a[href="#' + target + '"]').removeClass('active');
-    container.removeClass('active');
+    container
+      .slideUp(function(e) {
+        $(this).removeClass('active');
+      });
   }
 });
 
