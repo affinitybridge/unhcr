@@ -105,7 +105,7 @@ cf_partnerName.on('update', update);
 $("#search-map a").click(function(e) {
   var target = this.getAttribute('href');
 
-  event.preventDefault();
+  e.preventDefault();
 
   if ($(this).hasClass('active')) {
     $(this).removeClass('active');
