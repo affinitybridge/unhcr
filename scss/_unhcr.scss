@@ -312,6 +312,24 @@ ul.filter-togglers {
   max-height: 300px;
   overflow: auto;
 
+  > h4 {
+
+    &:hover,
+    &:focus {
+     color: $brown-light;
+     cursor: pointer;
+    }
+
+    &.active > i:before {
+      -webkit-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+    }
+  }
+
+  .leaflet-control-filter {
+    display: none;
+  }
+
   label {
     float: left;
     height: 40px;

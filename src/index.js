@@ -109,17 +109,15 @@ $("#search-map a").click(function(e) {
 
   if ($(this).hasClass('active')) {
     $(this).removeClass('active');
-    $(target)
-      .slideUp(function(e) {
-        $(this).removeClass('active');
-      });
+    $(target).slideUp(function(e) {
+      $(this).removeClass('active');
+    });
   }
   else {
     $(this).addClass('active');
-    $(target)
-      .slideDown(function(e) {
-        $(this).addClass('active');
-      });
+    $(target).slideDown(function(e) {
+      $(this).addClass('active');
+    });
   }
 });
 
@@ -133,11 +131,32 @@ $(document).mouseup(function (e) {
     // make sure w are not clicking on the actual trigger
     if ($('a[href="#' + target + '"]')[0] != $(e.target)[0]) {
       $('a[href="#' + target + '"]').removeClass('active');
-      container
-        .slideUp(function(e) {
-          $(this).removeClass('active');
-        });
+      container.slideUp(function(e) {
+        $(this).removeClass('active');
+      });
     }
+  }
+});
+
+// Show/hide organizations
+$("#partnerName > h4").click(function(e) {
+  var that = this,
+      $txt = $(this).children('span'),
+      $filter = $(this).next('.leaflet-control-filter');
+
+  e.preventDefault();
+
+  if ($(this).hasClass('active')) {
+    $filter.slideUp(function(e) {
+      $(that).removeClass('active');
+      $txt.text("See Organizations");
+    });
+  }
+  else {
+    $filter.slideDown(function(e) {
+      $(that).addClass('active');
+      $txt.text("Hide Organizations");
+    });
   }
 });
 
