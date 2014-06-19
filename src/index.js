@@ -130,11 +130,14 @@ $(document).mouseup(function (e) {
   // if the target of the click isn't the container nor a descendant of the container
   if (container.length && !container.is(e.target) && container.has(e.target).length === 0) {
     var target = container.attr('id');
-    $('a[href="#' + target + '"]').removeClass('active');
-    container
-      .slideUp(function(e) {
-        $(this).removeClass('active');
-      });
+    // make sure w are not clicking on the actual trigger
+    if ($('a[href="#' + target + '"]')[0] != $(e.target)[0]) {
+      $('a[href="#' + target + '"]').removeClass('active');
+      container
+        .slideUp(function(e) {
+          $(this).removeClass('active');
+        });
+    }
   }
 });
 
