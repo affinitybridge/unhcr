@@ -32,15 +32,26 @@
 
         <main role="main">
           <header class="map-actions clearfix">
+            <div id="search-map">
+              <a href="#">Search</a>
+            </div>
+            <!--
             <ul class="filter-togglers">
               <li><a href="#activityName" class="filter-toggler">Activity Category</a></li>
               <li><a href="#referralRequired" class="filter-toggler">Referral required?</a></li>
               <li><a href="#partnerName" class="filter-toggler">Organization</a></li>
             </ul>
+            -->
             <div class="filter-contents">
-              <div class="filter" id="activityName"></div>
-              <div class="filter" id="referralRequired"></div>
-              <div class="filter" id="partnerName"></div>
+              <div class="filter" id="activityName">
+                <h4><i class="icon-circle-arrow-right"></i> <span>Activity Category</span></h4>
+              </div>
+              <div class="filter" id="referralRequired">
+                <h4><i class="icon-circle-arrow-right"></i> <span>Referral required?</span></h4>
+              </div>
+              <div class="filter" id="partnerName">
+                <h4><i class="icon-circle-arrow-right"></i> <span>Organization</span></h4>
+              </div>
             </div>
             <div id="map-list-toggler">
               <span id="mapToggle">Map</span><span id="listToggle">List</span>
