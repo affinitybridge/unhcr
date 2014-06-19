@@ -139,23 +139,20 @@ $(document).mouseup(function (e) {
 });
 
 // Show/hide organizations
-$("#partnerName > h4").click(function(e) {
-  var that = this,
-      $txt = $(this).children('span'),
-      $filter = $(this).next('.leaflet-control-filter');
+$(".advanced-search > h4").click(function(e) {
+  var $parent = $(this).parent();
+      $filter = $parent.children('.filter');
 
   e.preventDefault();
 
-  if ($(this).hasClass('active')) {
+  if ($parent.hasClass('active')) {
     $filter.slideUp(function(e) {
-      $(that).removeClass('active');
-      $txt.text("See Organizations");
+      $parent.removeClass('active');
     });
   }
   else {
     $filter.slideDown(function(e) {
-      $(that).addClass('active');
-      $txt.text("Hide Organizations");
+      $parent.addClass('active');
     });
   }
 });

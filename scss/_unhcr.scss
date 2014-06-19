@@ -200,49 +200,15 @@ ul.filter-togglers {
   display: none;
 }
 
-.filter {
+.filter,
+.advanced-search {
   border-bottom: 1px solid $header-bg-color - #101010;
   border-top: 1px solid $header-bg-color + #111111;
   padding: 10px;
 }
 
-/*
-#activityName {
-  left: 10px;
-}
-
-#referralRequired {
-  left: 130px;
-}
-
-#partnerName {
-  left: 0px;
-  //width: 100%;
-}
-
-@media only screen and (max-width: 460px) {
-  ul.filter-togglers {
-    li {
-      float: none;
-    }
-
-    a {
-      padding: 0 5px;
-    }
-  }
-
-  #activityName,
-  #referralRequired,
-  #partnerName {
-    left: 0;
-    width: auto;
-  }
-}
-*/
-
 /* Activity Category */
 #activityName {
-  //padding: 0 10px;
 
   label {
     display: inline-block;
@@ -311,10 +277,13 @@ ul.filter-togglers {
 }
 #referral-required-filter-value-yes { display: none !important; }
 
-/* Organization */
-#partnerName {
-  max-height: 300px;
-  overflow: auto;
+/* Advanced Search */
+.advanced-search {
+
+  &.active > h4 i:before {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
 
   > h4 {
 
@@ -323,16 +292,18 @@ ul.filter-togglers {
      color: $brown-light;
      cursor: pointer;
     }
-
-    &.active > i:before {
-      -webkit-transform: rotate(-90deg);
-      transform: rotate(-90deg);
-    }
   }
 
-  .leaflet-control-filter {
+  .filter {
+    border-bottom: 0 none;
     display: none;
+    margin-top: 10px;
   }
+}
+/* Organization */
+#partnerName {
+  max-height: 300px;
+  overflow: auto;
 
   label {
     float: left;
