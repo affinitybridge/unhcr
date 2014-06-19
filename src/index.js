@@ -127,6 +127,18 @@ $(".filter-toggler").click(function(event) {
   }
 });
 
+// Close filter containers by clicking outside
+$(document).mouseup(function (e) {
+  var container = $(".filter-contents > .filter.active");
+
+  // if the target of the click isn't the container nor a descendant of the container
+  if (container.length && !container.is(e.target) && container.has(e.target).length === 0) {
+    var target = container.attr('id');
+    $('a[href="#' + target + '"]').removeClass('active');
+    container.removeClass('active');
+  }
+});
+
 // Map/list view toggler - make "map" active on initial page load.
 $("#mapToggle").addClass("active");
 // Bind click of toggler to swapping visibility of map and list.
@@ -227,7 +239,7 @@ function render() {
     // Bind "show on map" behavior.  Do this here because now the list exists.
     $(".show-on-map").click(function(e) {
         // Get the unique ID of this service.
-        var id = e.target.id; 
+        var id = e.target.id;
         // Close any popups that are open already.
         map.closePopup();
         // Fire the toggler click event, to switch to viewing the map.
