@@ -3,13 +3,22 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
-
-# THANKS
-
-    <name>
+    Zoe Neill-St. Clair -- JS developer -- zoe@affinitybridge.com
+    Tom Nightingale -- JS developer
+    Alberto Trujillo Gonzales -- front-end developer
+    Edouard Legoupil, UNHCR -- design & plan
 
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3
-    Normalize.css, jQuery, Modernizr
+    HTML5, CSS3, SCSS
+    Jquery
+    gulp - http://gulpjs.com/
+    npm - https://www.npmjs.org/
+    Mapbox.js - https://www.mapbox.com/
+    Leaflet - http://leafletjs.com/
+    Leaflet.markercluster - https://github.com/Leaflet/Leaflet.markercluster
+    crossfilter - http://square.github.io/crossfilter/
+    vinyl-source-stream - https://www.npmjs.org/package/vinyl-source-stream
+    split - https://www.npmjs.org/package/split 
+
+

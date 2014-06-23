@@ -1,3 +1,7 @@
+/*
+ * Defines an interface for a single filter - for example, Filter By Aid Category.
+ */
+
 var L = require('leaflet');
 
 var BaseFilter = L.Class.extend({

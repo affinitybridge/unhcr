@@ -20,8 +20,6 @@
         <link rel="stylesheet" href="humanfont/assets/css/font-humanitarian.css">
         <link rel="stylesheet" href="node_modules/leaflet.markercluster/dist/MarkerCluster.css">
         <link rel="stylesheet" href="node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css">
-
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
 
     <body>
@@ -35,13 +33,6 @@
             <div id="search-map">
               <a href="#map-filters">Search</a>
             </div>
-            <!--
-            <ul class="filter-togglers">
-              <li><a href="#activityName" class="filter-toggler">Activity Category</a></li>
-              <li><a href="#referralRequired" class="filter-toggler">Referral required?</a></li>
-              <li><a href="#partnerName" class="filter-toggler">Organization</a></li>
-            </ul>
-            -->
             <div id="map-filters" class="filter-contents">
               <div class="filter" id="activityName">
                 <h4><i class="icon-circle-arrow-right"></i> <span>Activity Category</span></h4>
@@ -66,11 +57,8 @@
         </main>
 
         <!-- Include jquery -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-
-        <!-- plugins.js came with the boilerplate and contains nothing but a developer's utility. -->
-        <script src="js/plugins.js"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="node_modules/jquery/dist/jquery.min.js"><\/script>')</script>
 
         <!-- app.js is the main, browserified, minified application JS for the UNHCR map. -->
         <script src="js/app.js"></script>

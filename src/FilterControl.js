@@ -1,9 +1,10 @@
-/* This file defines the form elements for the filters. */
+/* Make the HTML form for the filters. */
 
 var L = require('leaflet');
 
 var FilterControl = L.Control.extend({
 
+    /* Provides the methods for binding to and triggering events. */
     includes: L.Mixin.Events,
 
     options: {
@@ -25,6 +26,9 @@ var FilterControl = L.Control.extend({
 
     container: function () { return this._container; },
 
+    /*
+     * This needs to be called whenever the dataset is changed.
+     */
     update: function () {
         var group = this.dimension.group(),
             filteredData = group.all();
@@ -50,6 +54,7 @@ var FilterControl = L.Control.extend({
         }, this);
     },
 
+    /* This resets the filters to a nothing-selected state. */
     reset: function () {
         var inputs = this._form.getElementsByTagName('input');
         for (var i = 0, len = inputs.length; i < len; i++) {
@@ -59,6 +64,7 @@ var FilterControl = L.Control.extend({
         this.fire('filter', { active: [] });
     },
 
+    /* Set up the form element. */
     _initLayout: function () {
         var class_name = 'leaflet-control-filter',
             container = this._container = L.DomUtil.create('div', class_name);
@@ -75,6 +81,10 @@ var FilterControl = L.Control.extend({
         container.appendChild(form);
     },
 
+    /*
+     * Set up the elements that represent the individual terms we can filter by - ie, the
+     * checkboxes and radio buttons.
+     */
     _initItems: function () {
         var group = this.dimension.group(),
             filteredData = group.all();
@@ -93,6 +103,7 @@ var FilterControl = L.Control.extend({
         }, this);
     },
 
+    /* Create an individual checkbox or radio button. */
     _addItem: function (filter, checked) {
         var type = this.options.type,
             label = L.DomUtil.create('label', 'filter-option'),
@@ -119,7 +130,7 @@ var FilterControl = L.Control.extend({
 
         var name = L.DomUtil.create('span', 'filter-label-value');
 
-        // Add a space for a logo or symbol.
+        // Add a space for a logo or symbol.  TODO: move this into index.js.
         var glyph = L.DomUtil.create('span', 'glyph');
 
         name.innerHTML = this._label(filter);
@@ -133,12 +144,14 @@ var FilterControl = L.Control.extend({
         return label;
     },
 
+    /* Make the label for each checkbox or radio button, with a result count.  */
     _label: function (item) {
         // return item.key;
         // TODO: Fix filter count values updating.
         return ' ' + item.key + ' (' + item.value + ')';
     },
 
+    /* Handle click event on a checkbox or radio button. */
     _onInputClick: function () {
         var i, len, input,
             active_filters = [],
@@ -153,6 +166,15 @@ var FilterControl = L.Control.extend({
     }
 });
 
+/*
+ * Module interface.
+ * Params:
+ * - "options" object with the following properties:
+ *   - container (HTML element to contain this filter)
+ *   - key (identifies this filter)
+ *   - empty (optional - items with no value for this filter group under this)
+ * - cf: a crossfilter instance, which is used to create a dimension
+ */
 module.exports = function (options) {
     return new FilterControl(options);
 };
