@@ -400,7 +400,7 @@ function renderServiceText(feature, style) {
     }
 
     // Assemble the article header.
-    var header = '<header>' + logo + '<h3>' + glyph + feature.properties.locationName + '</h3>' + '<p class="hours">' + hours + '</p>' + headerOutput + '</header>';
+    var header = '<header>' + logo + '<h3>' + glyph + feature.properties.locationName + '</h3>' + '<p class="hours">' + hours + '</p>' + headerOutput + toggleLink + '</header>';
 
     // Preserve the line breaks in the original comment, but strip extra breaks from beginning and end.
     var comments = feature.properties.comments ?
@@ -409,6 +409,6 @@ function renderServiceText(feature, style) {
     // Assemble the article content (for list view only).
     var content = (style == 'list') ? '<div class="content" id="details-' + feature.id + '">' + contentOutput + '<div class="comments">' + comments + '</div></div>' : '';
 
-    return '<article class="serviceText"' + articleID + '>' + header + toggleLink + content + '</article>';
+    return '<article class="serviceText"' + articleID + '>' + header + content + '</article>';
 }
 
