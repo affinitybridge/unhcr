@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'SelectUserLocationControl';
+  src: url('SelectUserLocationControl-Regular.eot'); /* IE9 Compat Modes */
+  src: url('SelectUserLocationControl-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('SelectUserLocationControl-Regular.woff') format('woff'), /* Modern Browsers */
+       url('SelectUserLocationControl-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('SelectUserLocationControl-Regular.svg#52bdbc959c2ed9a70a1d9b0ccc657035') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+

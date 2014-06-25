@@ -1,0 +1,27 @@
+[class^="sulc-icon-"]:before, [class*=" sulc-icon-"]:before {
+  font-family: "SelectUserLocationControl";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+
+  font-variant: normal;
+  text-transform: none;
+
+  line-height: 1.5em;
+
+  margin-left: .2em;
+
+  font-size: 150%;
+}
+
+.sulc-custom-pointer { cursor: crosshair !important; }
+
+.sulc-icon-toggled, .sulc-icon-toggled:hover { color: #ffffff !important; background-color: #666666 !important; }
+
+.sulc-icon-location:before { content: "A"; }

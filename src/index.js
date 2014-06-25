@@ -7,18 +7,24 @@
 var $ = require('jquery'),
     crossfilter = require('crossfilter'),
     console = require('console'),
-    categoryFilter = require("./CategoryFilter");
+    categoryFilter = require("./CategoryFilter"),
+    UserLocation = require('./UserLocation');
 // Mapbox doesn't need its own var - it automatically attaches to Leaflet's L.
 require('mapbox.js');
 // Use Awesome Markers lib to produce font-icon map markers
 require('./leaflet.awesome-markers.js');
 // Marker clustering
 require('../node_modules/leaflet.markercluster/dist/leaflet.markercluster.js');
+// Select user location control
+require('./SelectUserLocationControl');
 // File system
 var fs = require('fs');
 
 // Initialize the map, using Affinity Bridge's mapbox account.
 var map = L.mapbox.map('map', 'affinitybridge.ia7h38nj');
+
+// Object that holds user location - adds a layer with user's location marker
+var myLocation = new UserLocation(map);
 
 // Initialize the empty layer for the markers, and add it to the map.
 var clusterLayer = new L.MarkerClusterGroup({zoomToBoundsOnClick: false, spiderfyDistanceMultiplier: 2})
@@ -88,7 +94,7 @@ var cf_referralRequired = categoryFilter({
 var cf_partnerName = categoryFilter({
     container: 'partnerName',
     type: 'checkbox',
-    key: 'partnerName',
+    key: 'partnerName'
 }, cf);
 
 // Special meta-dimension for our crossFilter dimensions, used to grab the final set
@@ -221,6 +227,30 @@ function update() {
 
     // Add the markers to the map.
     render();
+
+    // Try to add user location marker
+    getUserLocation();
+}
+
+// Try getting user's location using map.locate() function
+// if gps is disabled or not available adds a map control
+// for manual selection (+ bind user-location-selected event)
+function getUserLocation() {
+    map.on("locationfound", function(evt) {
+        updateMyLocation(evt.latlng);
+    });
+    map.on("locationerror", function(evt) {
+        L.control.selectUserLocation().addTo(map);
+        map.on('user-location-selected', function(evt) {
+            updateMyLocation(evt.lanlng);
+        });
+    });
+    map.locate();
+}
+
+// Set user's location with lat/lng coming from gps or manual selection
+function updateMyLocation(l) {
+    myLocation.setLocation(l);
 }
 
 // Clear the data and re-render.
