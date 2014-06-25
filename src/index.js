@@ -242,7 +242,7 @@ function getUserLocation() {
     map.on("locationerror", function(evt) {
         L.control.selectUserLocation().addTo(map);
         map.on('user-location-selected', function(evt) {
-            updateMyLocation(evt.lanlng);
+            updateMyLocation(evt.latlng);
         });
     });
     map.locate();
