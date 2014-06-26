@@ -8,6 +8,7 @@ var $ = require('jquery'),
     crossfilter = require('crossfilter'),
     console = require('console'),
     categoryFilter = require("./CategoryFilter"),
+    proximityFilter = require("./ProximityFilter"),
     UserLocation = require('./UserLocation');
 // Mapbox doesn't need its own var - it automatically attaches to Leaflet's L.
 require('mapbox.js');
@@ -96,6 +97,12 @@ var cf_referralRequired = categoryFilter({
     type: 'radio',
     key: 'Referral required'
 }, cf);
+var cf_proximity = proximityFilter({
+    container: 'proximity',
+    type: 'radio',
+    map: map,
+    userLocation: myLocation
+}, cf);
 var cf_partnerName = categoryFilter({
     container: 'partnerName',
     type: 'checkbox',
@@ -110,6 +117,7 @@ var metaDimension = cf.dimension(function (f) { return f.properties.activityName
 // (In other words, bind the update() method to the "update" event on the category filter.)
 cf_activityName.on('update', update);
 cf_referralRequired.on('update', update);
+cf_proximity.on('update', update);
 cf_partnerName.on('update', update);
 
 // Show/hide search filters togglers
@@ -228,6 +236,7 @@ function update() {
     // Update the filters.
     cf_activityName.update();
     cf_referralRequired.update();
+    cf_proximity.update();
     cf_partnerName.update();
 
     // Add the markers to the map.

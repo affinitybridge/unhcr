@@ -1,7 +1,8 @@
 // Object that holds user location - adds a layer with user's location marker
 
 var L = require('leaflet'),
-    $ = require('jquery');
+    $ = require('jquery'),
+    events = require('events');
 
 function UserLocation(map, options) {
     // options:
@@ -52,6 +53,8 @@ function UserLocation(map, options) {
     };
 }
 
+UserLocation.prototype.__proto__ = events.EventEmitter.prototype;
+
 // set user location - update marker
 // l - L.LatLng
 UserLocation.prototype.setLocation = function(l) {
@@ -59,6 +62,9 @@ UserLocation.prototype.setLocation = function(l) {
     this._location = L.latLng(l.lat, l.lng);
     this._valid = true;
     this._updateMarker();
+    this.emit('user-location-updated', {
+        location: this.getLocation()
+    })
 };
 
 // get user location
@@ -67,6 +73,14 @@ UserLocation.prototype.getLocation = function() {
     if(!this._valid) return null;
 
     return L.latLng(this._location.lat, this._location.lng);
+};
+
+// get string representation of user location
+// return string
+UserLocation.prototype.getLocationString = function() {
+    if(!this._valid) return "";
+
+    return this._location.lat+","+this._location.lng;
 };
 
 // return true if user location has been set (by gps or manual selection)
