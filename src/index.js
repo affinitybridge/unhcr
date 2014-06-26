@@ -26,6 +26,11 @@ var map = L.mapbox.map('map', 'affinitybridge.ia7h38nj');
 // Object that holds user location - adds a layer with user's location marker
 var myLocation = new UserLocation(map);
 
+map.on('load', function() {
+    // Try to add user location marker
+    getUserLocation();
+});
+
 // Initialize the empty layer for the markers, and add it to the map.
 var clusterLayer = new L.MarkerClusterGroup({zoomToBoundsOnClick: false, spiderfyDistanceMultiplier: 2})
     .addTo(map);
@@ -227,9 +232,6 @@ function update() {
 
     // Add the markers to the map.
     render();
-
-    // Try to add user location marker
-    getUserLocation();
 }
 
 // Try getting user's location using map.locate() function
