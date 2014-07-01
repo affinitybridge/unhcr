@@ -24,6 +24,7 @@
     "leaflet": "^0.7.2",
     "leaflet.markercluster": "https://github.com/Leaflet/Leaflet.markercluster/archive/master.tar.gz",
     "mapbox.js": "^1.6.3",
-    "split": "^0.3.0"
+    "split": "^0.3.0",
+    "geojson-utils": "^1.1.0"
   }
 }

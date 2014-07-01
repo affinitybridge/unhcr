@@ -1,4 +1,4 @@
-/* Make the HTML form for the filters. */
+/* Make the HTML form for the proximity filter. */
 
 var L = require('leaflet');
 
@@ -46,6 +46,7 @@ var ProximityFilterControl = L.Control.extend({
      * This needs to be called whenever the dataset is changed.
      */
     update: function () {
+
     },
 
     /* This resets the filters to a nothing-selected state. */
