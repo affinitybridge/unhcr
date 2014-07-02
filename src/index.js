@@ -34,7 +34,7 @@ map.on('load', function() {
 });
 
 // Initialize the empty layer for the markers, and add it to the map.
-var clusterLayer = new L.MarkerClusterGroup({zoomToBoundsOnClick: false, spiderfyDistanceMultiplier: 2})
+var clusterLayer = new L.MarkerClusterGroup({zoomToBoundsOnClick: false, spiderfyDistanceMultiplier: 2, showCoverageOnHover: false})
     .addTo(map);
 // When user clicks on a cluster, zoom directly to its bounds.  If we don't do this,
 // they have to click repeatedly to zoom in enough for the cluster to spiderfy.
