@@ -242,34 +242,56 @@ ul.filter-togglers {
 }
 
 #activityname-filter-value-basic-needs span.glyph:before {
-  content: "\f412";
-  color: #f96a1b;
+    content: "\f412"; color: #f96a1b;
 }
-#activityname-filter-value-child-protection span.glyph:before {
-  content: "\f368";
-  color: #1f497d;
+#activityname-filter-value-child-protection span.glyph:before,
+#activityname-filter-value-protection span.glyph:before,
+#activityname-filter-value-case-focused-mhpss span.glyph:before,
+#activityname-filter-value-community-focused-mhpss-and-protection span.glyph:before,
+#activityname-filter-value-general-mhpss---protection span.glyph:before,
+#activityname-filter-value-refugee-right span.glyph:before {
+    content: "\f368";
+    color: #1f497d;
 }
-#activityname-filter-value-maintain-food-security span.glyph:before {
-  content: "\f366";
-  color: #006600;
+#activityname-filter-value-maintain-food-security span.glyph:before,
+#activityname-filter-value-improve-nutritional-status span.glyph:before {
+    content: "\f366";
+    color: #006600;
 }
 #activityname-filter-value-need-coverage span.glyph:before {
-  content: "\f32a";
-  color: #a48658;
+    content: "\f32a";
+    color: #a48658;
 }
-#activityname-filter-value-shelter-rehabilitation-jordanians---syrians span.glyph:before {
-  content: "\f363";
-  color: #989aac;
+#activityname-filter-value-shelter-rehabilitation-jordanians---syrians span.glyph:before,
+#activityname-filter-value-economic-capacity-of-syrian-refugee-families span.glyph:before {
+    content: "\f363";
+    color: #989aac;
 }
-#activityname-filter-value-education span.glyph:before {
+#activityname-filter-value-education span.glyph:before,
+#activityname-filter-value-access-to-appropriate-opportunities span.glyph:before,
+#activityname-filter-value-education-for-children-with-disabilities span.glyph:before,
+#activityname-filter-value-learning--environment span.glyph:before {
     content: "\f362";
     color: #c00000;
 }
-#activityname-filter-value-health span.glyph:before {
+#activityname-filter-value-health span.glyph:before,
+#activityname-filter-value-community-care---child-health span.glyph:before,
+#activityname-filter-value-community-care---environmental-health span.glyph:before,
+#activityname-filter-value-community-care---nutrition span.glyph:before,
+#activityname-filter-value-community-care---sti---hiv-aids span.glyph:before,
+#activityname-filter-value-primary-care---child-health span.glyph:before,
+#activityname-filter-value-primary-care---non-communicable-diseases span.glyph:before,
+#activityname-filter-value-primary-care---nutrition span.glyph:before,
+#activityname-filter-value-primary-care---sti---hiv-aids span.glyph:before,
+#activityname-filter-value-secondary---tertiary-care---non-communicable span.glyph:before {
     content: "\f364";
     color: #08a1d9;
 }
-#activityname-filter-value-wash span.glyph:before {
+#activityname-filter-value-wash span.glyph:before,
+#activityname-filter-value-drainage span.glyph:before,
+#activityname-filter-value-hygiene-promotion---hygiene-products-delivery span.glyph:before,
+#activityname-filter-value-sanitation-protection-from-the-spread-of-dise span.glyph:before,
+#activityname-filter-value-water-access span.glyph:before {
     content: "\f369";
     color: #7030a0;
 }
