@@ -313,7 +313,7 @@ function renderServiceText(feature, style) {
     // Get the partner logo, if any.
     partnerName = feature.properties.partnerName;
     var logo = partnerName;
-    var logoUrl = '/src/images/partner/' + partnerName.toLowerCase().replace(' ', '') + '.jpg';
+    var logoUrl = './src/images/partner/' + partnerName.toLowerCase().replace(' ', '') + '.jpg';
     var http = new XMLHttpRequest();
     http.open('HEAD', logoUrl, false);
     http.send();
