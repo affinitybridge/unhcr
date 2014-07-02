@@ -224,7 +224,7 @@ ul.filter-togglers {
   }
 
   .filter-label-value {
-    margin-left: 20px;
+    margin-left: 23px;
   }
 
   .glyph {
@@ -237,10 +237,14 @@ ul.filter-togglers {
     font-size: 1.5em;
     left: 15px;
     position: absolute;
-    top: -0.3em;
+    top: -0.01em;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    background-color: white;
   }
 }
-
+#activityname-filter-value-all span.glyph { background-color: transparent; }
 #activityname-filter-value-basic-needs span.glyph:before {
     content: "\f412"; color: #f96a1b;
 }
