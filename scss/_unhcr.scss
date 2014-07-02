@@ -121,6 +121,12 @@ $header-bg-color: $grey-dark;
         float: right;
         margin: 0 10px 0 10px;
     }
+    > h3 {
+      display: inline;
+    }
+    > a {
+      margin-left: 6px;
+    }
   }
 
   .content {

@@ -314,7 +314,7 @@ function render() {
         var id = e.target.id;
         // Close any popups that are open already.
         map.closePopup();
-        // Fire the toggler click event, to switch to viewing the map.
+        // Fire the map/list toggler click event, to switch to viewing the map.
         $("#map-list-toggler").click();
         // Pan and zoom the map.
         map.panTo(markers[id]._latlng);
@@ -444,25 +444,27 @@ function renderServiceText(feature, style) {
 
     // In the list view only, the articles must have unique IDs so that we can scroll directly to them
     // when someone clicks the "Show details" link in a map marker.
-    var articleID = '';
-    var toggleLink = '<a id="show-details-' + feature.id + '" href="#">Show details</a>';
+    var articleIDattribute = '';
+    var toggleLinks = '<a id="show-details-' + feature.id + '" href="#">Show details</a>';
     // If this is for a marker popup, add a "Show details" link that will take us to the list view.
     if (style == 'list') {
         // Whereas if this if for list view, add a link to show this item on the map.
-        toggleLink = '<a class="show-on-map" id="' + feature.id + '" href="#">Show on map</a>';
-        articleID = ' id="article-' + feature.id + '"';
+        toggleLinks = '<a class="show-on-map" id="' + feature.id + '" href="#">Show on map</a> ' +
+                '<a id="show-details-' + feature.id + '" href="#">Show details</a> ';
+        activityInfoLink = '<a class="show-activity-info" href="https://www.syrianrefugeeresponse.org/resources/sites/points?feature=' + feature.id + '">Show on ActivityInfo</a>';
+        articleIDattribute = ' id="article-' + feature.id + '"';
     }
 
     // Assemble the article header.
-    var header = '<header>' + logo + '<h3>' + glyph + feature.properties.locationName + '</h3>' + '<p class="hours">' + hours + '</p>' + headerOutput + toggleLink + '</header>';
+    var header = '<header>' + logo + '<h3>' + glyph + feature.properties.locationName + '</h3>' + toggleLinks + '<p class="hours">' + hours + '</p>' + headerOutput + '</header>';
 
     // Preserve the line breaks in the original comment, but strip extra breaks from beginning and end.
     var comments = feature.properties.comments ?
         feature.properties.comments.trim().replace(/\r\n|\n|\r/g, '<br />') : '';
 
     // Assemble the article content (for list view only).
-    var content = (style == 'list') ? '<div class="content" id="details-' + feature.id + '">' + contentOutput + '<div class="comments">' + comments + '</div></div>' : '';
+    var content = (style == 'list') ? '<div class="content" id="details-' + feature.id + '">' + contentOutput + '<div class="comments">' + comments + '</div>' + activityInfoLink + '</div>' : '';
 
-    return '<article class="serviceText"' + articleID + '>' + header + content + '</article>';
+    return '<article class="serviceText"' + articleIDattribute + '>' + header + content + '</article>';
 }
 
