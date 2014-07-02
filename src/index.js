@@ -8,6 +8,8 @@ var $ = require('jquery'),
     crossfilter = require('crossfilter'),
     console = require('console'),
     categoryFilter = require("./CategoryFilter"),
+    proximityFilter = require("./ProximityFilter"),
+    regionFilter = require("./RegionFilter"),
     UserLocation = require('./UserLocation');
 // Mapbox doesn't need its own var - it automatically attaches to Leaflet's L.
 require('mapbox.js');
@@ -25,6 +27,11 @@ var map = L.mapbox.map('map', 'affinitybridge.ia7h38nj');
 
 // Object that holds user location - adds a layer with user's location marker
 var myLocation = new UserLocation(map);
+
+map.on('load', function() {
+    // Try to add user location marker
+    getUserLocation();
+});
 
 // Initialize the empty layer for the markers, and add it to the map.
 var clusterLayer = new L.MarkerClusterGroup({zoomToBoundsOnClick: false, spiderfyDistanceMultiplier: 2})
@@ -45,15 +52,8 @@ clusterLayer.on('clusterclick', function (a) {
     }
 });
 
-// Read the polygon file.
-// TODO: use these polygons as the basis for a filter/zoom tool
-/* Commenting the polygons out for now because they aren't clickable yet
-jQuery.getJSON( "src/polygons.json", function( polygonData ) {
-    // Create the polygon layer and add to the map.
-    var polygonLayer = L.geoJson(polygonData);
-    map.addLayer(polygonLayer);
-});
-*/
+var polygonLayer = L.geoJson();
+map.addLayer(polygonLayer);
 
 // Match possible Activity Categories to Humanitarian Font icons.
 var iconGlyphs = {
@@ -91,11 +91,34 @@ var cf_referralRequired = categoryFilter({
     type: 'radio',
     key: 'Referral required'
 }, cf);
+var cf_proximity = proximityFilter({
+    container: 'proximity',
+    map: map,
+    userLocation: myLocation
+}, cf);
+var cf_region = regionFilter({
+    container: 'region',
+    type: 'radio',
+    all: true,
+    map: map,
+    key: 'region',
+    nameProperty: 'adm1_name',
+    regionsLayer: polygonLayer
+}, cf);
 var cf_partnerName = categoryFilter({
     container: 'partnerName',
     type: 'checkbox',
     key: 'partnerName'
 }, cf);
+
+// Read the polygon file.
+// TODO: use these polygons as the basis for a filter/zoom tool
+/* Commenting the polygons out for now because they aren't clickable yet */
+jQuery.getJSON( "src/polygons.json", function( polygonData ) {
+    // Create the polygon layer and add to the map.
+    polygonLayer.addData(polygonData);
+    cf_region.update();
+});
 
 // Special meta-dimension for our crossFilter dimensions, used to grab the final set
 // of data with all other dimensions' filters applied.
@@ -105,6 +128,8 @@ var metaDimension = cf.dimension(function (f) { return f.properties.activityName
 // (In other words, bind the update() method to the "update" event on the category filter.)
 cf_activityName.on('update', update);
 cf_referralRequired.on('update', update);
+cf_proximity.on('update', update);
+cf_region.on('update', update);
 cf_partnerName.on('update', update);
 
 // Show/hide search filters togglers
@@ -223,13 +248,12 @@ function update() {
     // Update the filters.
     cf_activityName.update();
     cf_referralRequired.update();
+    //cf_proximity.update();
+    //cf_region.update();
     cf_partnerName.update();
 
     // Add the markers to the map.
     render();
-
-    // Try to add user location marker
-    getUserLocation();
 }
 
 // Try getting user's location using map.locate() function

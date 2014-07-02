@@ -409,3 +409,12 @@ i.glyphicon.icon-ocha-sector-shelter { color: #989aac; }
 #partnername-filter-value-wfp span.glyph { background-image: url("../src/images/partner/wfp.jpg"); }
 #partnername-filter-value-who span.glyph { background-image: url("../src/images/partner/who.jpg"); }
 #partnername-filter-value-wvi span.glyph { background-image: url("../src/images/partner/wvi.jpg"); }
+
+#proximity .leaflet-control-filter-fieldset {
+  width: 50%; display: inline-block;
+  .filter-option { width: 200px; display: inline-block; }
+}
+
+.pfc-custom-pointer { cursor: crosshair; }
+
+#region .filter-option { display: inline-block; width: 170px; }

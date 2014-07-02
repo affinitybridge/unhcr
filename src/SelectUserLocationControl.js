@@ -50,7 +50,7 @@ L.Control.SelectUserLocation = L.Control.extend({
 
     // deactivate user's location selection
     _deactivateUserLocationSelection: function() {
-        this._map.off('click', this._userLocationSelected);
+        this._map.off('click', this._userLocationSelected, this);
 
         L.DomUtil.removeClass(this._link, 'sulc-icon-toggled');
 
@@ -76,11 +76,11 @@ L.Control.SelectUserLocation = L.Control.extend({
         L.DomEvent.stopPropagation(evt);
         L.DomEvent.preventDefault(evt);
 
+        this._deactivateUserLocationSelection();
+
         this._map.fire('user-location-selected', {
             latlng: evt.latlng
         });
-
-        this._deactivateUserLocationSelection();
     }
 });
 
