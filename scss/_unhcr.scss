@@ -245,10 +245,13 @@ ul.filter-togglers {
   }
 }
 #activityname-filter-value-all span.glyph { background-color: transparent; }
-#activityname-filter-value-basic-needs span.glyph:before {
+#activityname-filter-value-basic-needs span.glyph:before,
+#activityname-filter-value-distribution-for-basic-needs--nfi- span.glyph:before {
     content: "\f412"; color: #f96a1b;
 }
+#activityname-filter-value-protection-services span.glyph:before,
 #activityname-filter-value-child-protection span.glyph:before,
+#activityname-filter-value-community-focused-protection span.glyph:before,
 #activityname-filter-value-protection span.glyph:before,
 #activityname-filter-value-case-focused-mhpss span.glyph:before,
 #activityname-filter-value-community-focused-mhpss-and-protection span.glyph:before,
@@ -257,28 +260,38 @@ ul.filter-togglers {
     content: "\f368";
     color: #1f497d;
 }
+#activityname-filter-value-food-security span.glyph:before,
 #activityname-filter-value-maintain-food-security span.glyph:before,
+#activityname-filter-value-nutritional-status-impovement span.glyph:before,
 #activityname-filter-value-improve-nutritional-status span.glyph:before {
     content: "\f366";
     color: #006600;
 }
+#activityname-filter-value-financial-assistance span.glyph:before,
 #activityname-filter-value-need-coverage span.glyph:before {
     content: "\f32a";
     color: #a48658;
 }
+#activityname-filter-value-shelter-rehabilitation span.glyph:before,
 #activityname-filter-value-shelter-rehabilitation-jordanians---syrians span.glyph:before,
+#activityname-filter-value-cash-for-rent span.glyph:before,
 #activityname-filter-value-economic-capacity-of-syrian-refugee-families span.glyph:before {
     content: "\f363";
     color: #989aac;
 }
 #activityname-filter-value-education span.glyph:before,
+#activityname-filter-value-education-opportunities span.glyph:before,
 #activityname-filter-value-access-to-appropriate-opportunities span.glyph:before,
 #activityname-filter-value-education-for-children-with-disabilities span.glyph:before,
+#activityname-filter-value-support-for-learning--environment span.glyph:before,
 #activityname-filter-value-learning--environment span.glyph:before {
     content: "\f362";
     color: #c00000;
 }
 #activityname-filter-value-health span.glyph:before,
+#activityname-filter-value-health-services span.glyph:before,
+#activityname-filter-value-hygiene---hygiene-products-delivery span.glyph:before,
+#activityname-filter-value-psychosocial---mental-health span.glyph:before,
 #activityname-filter-value-community-care---child-health span.glyph:before,
 #activityname-filter-value-community-care---environmental-health span.glyph:before,
 #activityname-filter-value-community-care---nutrition span.glyph:before,

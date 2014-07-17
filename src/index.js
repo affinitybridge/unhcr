@@ -206,6 +206,8 @@ map.on('popupopen', function(e){
     $("#show-details-" + id).click(function() {
         // If "show details" is clicked, expand the corresponding item in the still-hidden list view.
         $("#article-" + id).addClass('expand');
+        // Since the article is expanded, the details toggle link should say "Hide details".
+        $("#article-" + id).find('.show-details').html("Hide details");
         // Switch to list view.
         $("#map-list-toggler").click();
         // Scroll to the item.
@@ -306,6 +308,12 @@ function render() {
     $(".serviceText > header").click(function(event) {
       event.preventDefault();
       $(this).parent().toggleClass('expand');
+      // Toggle the text of the "Show details" / "Hide details" link
+      if ($(this).find('.show-details').html() === "Show details") {
+        $(this).find('.show-details').html("Hide details");
+      } else {
+        $(this).find('.show-details').html("Show details");  
+      } 
     });
 
     // Bind "show on map" behavior.  Do this here because now the list exists.
@@ -450,7 +458,7 @@ function renderServiceText(feature, style) {
     if (style == 'list') {
         // Whereas if this if for list view, add a link to show this item on the map.
         toggleLinks = '<a class="show-on-map" id="' + feature.id + '" href="#">Show on map</a> ' +
-                '<a id="show-details-' + feature.id + '" href="#">Show details</a> ';
+                '<a class="show-details" id="show-details-' + feature.id + '" href="#">Show details</a> ';
         activityInfoLink = '<a class="show-activity-info" href="https://www.syrianrefugeeresponse.org/resources/sites/points?feature=' + feature.id + '">Show on ActivityInfo</a>';
         articleIDattribute = ' id="article-' + feature.id + '"';
     }
