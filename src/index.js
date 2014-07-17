@@ -464,7 +464,7 @@ function renderServiceText(feature, style) {
     }
 
     // Assemble the article header.
-    var header = '<header>' + logo + '<h3>' + glyph + feature.properties.locationName + '</h3>' + toggleLinks + '<p class="hours">' + hours + '</p>' + headerOutput + '</header>';
+    var header = '<header>' + logo + '<h3>' + glyph + feature.properties.locationName + ': ' + feature.properties.activityName + '</h3>' + toggleLinks + '<p class="hours">' + hours + '</p>' + headerOutput + '</header>';
 
     // Preserve the line breaks in the original comment, but strip extra breaks from beginning and end.
     var comments = feature.properties.comments ?
