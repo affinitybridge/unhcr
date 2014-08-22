@@ -2,9 +2,12 @@
 
 var L = require('leaflet'),
     $ = require('jquery'),
+    util = require('util'),
     events = require('events');
 
 function UserLocation(map, options) {
+    events.EventEmitter.call(this);
+    
     // options:
     //   markerStyle - style for point - L.CircleMarker
     //   markerRadius - point radius
@@ -53,7 +56,7 @@ function UserLocation(map, options) {
     };
 }
 
-UserLocation.prototype.__proto__ = events.EventEmitter.prototype;
+util.inherits(UserLocation, events.EventEmitter);
 
 // set user location - update marker
 // l - L.LatLng
